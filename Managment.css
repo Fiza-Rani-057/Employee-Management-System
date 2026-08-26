@@ -194,7 +194,7 @@
 
  .dashboard-cards {
      display: grid;
-     grid-template-columns: repeat(auto-fill , minmax(200px ,1fr));
+     grid-template-columns: repeat(auto-fill , minmax(180px ,1fr));
      gap: 1rem;
      margin-bottom: 2rem;
  }
@@ -214,8 +214,32 @@
     z-index: 1;
  }
  .card p{
-    font-size: 1rem;
+    font-size: 1.75rem;
+    font-weight: bold;
     margin-bottom: 0.5rem;
     position: relative;
     z-index: 1;
  }
+ .card-icon{
+    position: absolute;
+    right: 1rem;
+    bottom: 1rem;
+    font-size: 2.5rem;
+    opacity: 0.3;
+    z-index: 0;
+ }
+ .card-blue{
+    background-color: #51aeed;
+  }
+.card-green{
+    background-color: #2ecc71;
+}
+.card-purple{
+    background-color:#9b59b6;
+}
+.card-red{
+    background-color: #e74c3c;
+}
+.card-orange{
+    background-color: #e67e22;
+} 
