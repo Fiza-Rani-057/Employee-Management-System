@@ -172,7 +172,14 @@
  .section.active {
      display: block;
  }
+ .section-active h2{
+    color:  #022943;
+    margin: 1rem;
+ }
+ .section-active h2 i{
+    color: #022943;
 
+ }
  .section-header {
      display: flex;
      align-items: center;
@@ -229,19 +236,19 @@
     z-index: 0;
  }
  .card-blue{
-    background-color: #51aeed;
+    background-color: #034e80;
   }
 .card-green{
-    background-color: #2ecc71;
+    background-color: #034e80;
 }
 .card-purple{
-    background-color:#9b59b6;
+    background-color:#015287;
 }
 .card-red{
-    background-color: #e74c3c;
+    background-color: #083c6b;
 }
 .card-orange{
-    background-color: #e67e22;
+    background-color: #024b7b;
 } 
 .recent-activity{
     background-color: white;
