@@ -172,15 +172,18 @@
  .section.active {
      display: block;
  }
- .section-active h2{
-    color:  #022943;
-    margin: 1rem;
-    font-size: 18px;
+
+ .section-active h2 {
+     color: #022943;
+     margin: 1rem;
+     font-size: 18px;
  }
- .section-active h2 i{
-    color: #022943;
+
+ .section-active h2 i {
+     color: #022943;
 
  }
+
  .section-header {
      display: flex;
      align-items: center;
@@ -202,76 +205,90 @@
 
  .dashboard-cards {
      display: grid;
-     grid-template-columns: repeat(auto-fill , minmax(180px ,1fr));
+     grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
      gap: 1rem;
      margin-bottom: 2rem;
  }
- .card{
-    border-radius: 8px;
-    padding: 1.5rem;
-    box-shadow: 0 2px 4 px rgba(0 , 0, 0 , 0.05);
-    text-align: center;
-    position: relative;
-    overflow: hidden;
-    color: white;
+
+ .card {
+     border-radius: 8px;
+     padding: 1.5rem;
+     box-shadow: 0 2px 4 px rgba(0, 0, 0, 0.05);
+     text-align: center;
+     position: relative;
+     overflow: hidden;
+     color: white;
  }
- .card h3{
-    font-size: 1rem;
-    margin-bottom: 0.5rem;
-    position: relative;
-    z-index: 1;
+
+ .card h3 {
+     font-size: 1rem;
+     margin-bottom: 0.5rem;
+     position: relative;
+     z-index: 1;
  }
- .card p{
-    font-size: 1.75rem;
-    font-weight: bold;
-    margin-bottom: 0.5rem;
-    position: relative;
-    z-index: 1;
+
+ .card p {
+     font-size: 1.75rem;
+     font-weight: bold;
+     margin-bottom: 0.5rem;
+     position: relative;
+     z-index: 1;
  }
- .card-icon{
-    position: absolute;
-    right: 1rem;
-    bottom: 1rem;
-    font-size: 2.5rem;
-    opacity: 0.3;
-    z-index: 2;
-    color: #f3f5f7;
+
+ .card-icon {
+     position: absolute;
+     right: 1rem;
+     bottom: 1rem;
+     font-size: 2.5rem;
+     opacity: 0.3;
+     z-index: 2;
+     color: #f3f5f7;
  }
- .card-blue{
- background: linear-gradient(135deg, #00c6ff 0%, #021a38 100%);
+
+ .card-blue {
+     background: linear-gradient(135deg, #00c6ff 0%, #021a38 100%);
  }
-.card-green{
-    background: linear-gradient(135deg, #00c6ff 0%, #4c9af9 100%);
-}
-.card-purple{
-  background: linear-gradient(135deg, #68d4f1 0%, #0670f1 100%);
-}
-.card-red{
-    background: linear-gradient(135deg, #00c6ff 0%, #1b2e45 100%);
-}
-.card-orange{
-    background: linear-gradient(135deg, #90dcf1 0%, #014ead 100%);
-} 
-.recent-activity{
-    background-color: white;
-    border-radius: 8px;
-    padding: 1.5rem;
-    box-shadow: 0px 2px 2px rgba(42, 41, 41, 0.5);
-}
-.recent-activity h3{
-    margin-bottom: 1rem;
-    color: #2c3e50;
-}
-#activity-list{
-    list-style: none;
-}
-#activity-list li{
-    padding: 0.75rem;
-    border-bottom: 1px solid #eee;
-    display: flex;
-    align-items: center;
-    gap: 0.75rem;
-}
-#activity-list li :last-child{
-  border-bottom: none;
-}
+
+ .card-green {
+     background: linear-gradient(135deg, #00c6ff 0%, #4c9af9 100%);
+ }
+
+ .card-purple {
+     background: linear-gradient(135deg, #68d4f1 0%, #95bae8 100%);
+ }
+
+ .card-red {
+     background: linear-gradient(135deg, #d1e4e9 0%, #0766da 100%);
+ }
+
+ .card-orange {
+     background: linear-gradient(135deg, #47caee 0%, #506d91 100%);
+ }
+
+ .recent-activity {
+     background-color: white;
+     border-radius: 8px;
+     padding: 1.5rem;
+     box-shadow: 0px 2px 2px rgba(42, 41, 41, 0.5);
+ }
+
+ .recent-activity h3 {
+     margin-bottom: 1rem;
+     color: #2c3e50;
+ }
+
+ #activity-list {
+     list-style: none;
+ }
+
+ #activity-list li {
+     padding: 0.75rem;
+     border-bottom: 1px solid #eee;
+     display: flex;
+     align-items: center;
+     gap: 0.75rem;
+ }
+
+ #activity-list li :last-child {
+     border-bottom: none;
+ }
