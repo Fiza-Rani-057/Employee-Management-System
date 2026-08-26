@@ -9,11 +9,15 @@ let Form = document.querySelector('form');
 
     let ValidEmail = "admin@gmail.com";
     let ValidPassword = "admin1234";
- 
+    if(email.value  === "" || password.value === ""){
+        alert('please Enter email or password');
+        return;
+    }
     if(email.value !== ValidEmail || password.value!== ValidPassword){
         alert('please Enter a valid password or email');
         return;
     }
+     
         window.location.href = "Managment.html";
       
 });
