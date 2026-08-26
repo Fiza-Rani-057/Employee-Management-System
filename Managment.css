@@ -175,6 +175,7 @@
  .section-active h2{
     color:  #022943;
     margin: 1rem;
+    font-size: 18px;
  }
  .section-active h2 i{
     color: #022943;
@@ -233,22 +234,23 @@
     bottom: 1rem;
     font-size: 2.5rem;
     opacity: 0.3;
-    z-index: 0;
+    z-index: 2;
+    color: #f3f5f7;
  }
  .card-blue{
-    background-color: #034e80;
-  }
+ background: linear-gradient(135deg, #00c6ff 0%, #021a38 100%);
+ }
 .card-green{
-    background-color: #034e80;
+    background: linear-gradient(135deg, #00c6ff 0%, #4c9af9 100%);
 }
 .card-purple{
-    background-color:#015287;
+  background: linear-gradient(135deg, #68d4f1 0%, #0670f1 100%);
 }
 .card-red{
-    background-color: #083c6b;
+    background: linear-gradient(135deg, #00c6ff 0%, #1b2e45 100%);
 }
 .card-orange{
-    background-color: #024b7b;
+    background: linear-gradient(135deg, #90dcf1 0%, #014ead 100%);
 } 
 .recent-activity{
     background-color: white;
