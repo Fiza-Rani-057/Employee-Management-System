@@ -161,10 +161,10 @@
      padding: 1.5rem;
      }
 
- .section {
-     /* display: none; */
+ /* .section {
+     display: none;
 
- }
+ } */
 
  .section.active {
      display: block;
