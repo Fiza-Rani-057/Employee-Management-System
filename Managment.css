@@ -33,6 +33,7 @@
      align-items: center;
      gap: 0.5rem;
  }
+
  .user {
      color: #015287;
  }
@@ -406,15 +407,168 @@
      padding: 0.5rem 1rem;
      border-radius: 4px;
      cursor: pointer;
-     transition:  all 0.3s ease;
- }
- .pagination button:hover:not(:disabled){
-    background-color: #3498db;
-    color: white;
-    border-color: #3498db;
- }
- .pagination button:disabled{
-    opacity: 0.5;
-    cursor: not-allowed;
+     transition: all 0.3s ease;
  }
 
+ .pagination button:hover:not(:disabled) {
+     background-color: #3498db;
+     color: white;
+     border-color: #3498db;
+ }
+
+ .pagination button:disabled {
+     opacity: 0.5;
+     cursor: not-allowed;
+ }
+
+
+ /* Setting */
+
+ .setting-tabs {
+     background-color: white;
+     border-radius: 8px;
+     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+ }
+
+ .tab-btn {
+     display: flex;
+     border-bottom: 1px solid #eee;
+ }
+
+ .tab-btn {
+     background-color: none;
+     border: none;
+     cursor: pointer;
+     color: #7f8c8d;
+    font-weight: 500;
+    position: relative;
+ }
+ .tab-btn.active{
+   color: #3498db;
+ }
+ .tab-btn.active::after{
+    content: '';
+    position: absolute;
+    bottom: -1px;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background-color: #3498db;
+ }
+ .tab-content{
+    padding: 1.5rem;
+    display: none;
+ }
+ .tab-content.active{
+    display: block;
+ }
+
+  /* Form styles  */
+  .form-group{
+    margin-bottom: 1rem;
+
+  }
+  .form-row{
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 1rem;
+  }
+  .form-row .form-group{
+    flex: 1;
+    margin-bottom: 0;
+  }
+  .form-group label{
+   display: block;
+   margin-bottom: 0.5rem;
+   font-weight: 500;
+   color: #2c3e50;
+  }
+  .form-group input,
+  .form-group select,
+  .form-group textarea{
+    width: 100%;
+    padding: 0.5rem 1rem;
+  }
+  .form-group input :focus,
+  .form-group select:focus{
+    outline: none;
+    border-color: #00c6ff;
+    box-shadow: 0 0 0 2px rgba(52 , 152, 219,0.2);
+  }
+  .form-actions{
+    display: flex;
+    justify-content: flex-end;
+    gap: 0.5rem;
+    margin-top: 1.5rem;
+  }
+
+  /* Department Cards  */
+
+  .cards-container{
+    display: grid;
+    grid-template-columns: (repeat(auto-fill , minmax(300px , 1fr)));
+    gap: 1.5rem;
+  }
+  .dapartment-card{
+    background-color: white;
+    border-radius: 8px;
+    padding: 1.5rem;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  }
+  .department-card h3{
+    color: #2c3e50;
+    margin-bottom: 0.5rem;
+  }
+  .department-meta{
+    display: flex;
+    justify-content: space-between;
+    color: #7f8c8d;
+    font-size: 0.75rem;
+    margin-bottom: 1rem;
+  }
+  .department-stats{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 1rem;
+    padding-top: 1rem;
+    border-top: 1px solid #eee;
+  }
+  .stat-item{
+    text-align: center;
+
+  }
+  .stat-value{
+    font-weight: bold;
+    color: #2c3e50;
+  }
+  .stat-label{
+    font-size: 0.75rem;
+    color: #7f8c8d;
+  }
+ /* Reports  */
+
+ .reports-container {
+     background-color: white;
+     border-radius: 8px;
+     padding: 1.5rem;
+     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+ }
+
+ .report-controls {
+     display: flex;
+     gap: 1rem;
+     margin-bottom: 1.5rem;
+ }
+
+ #report-type {
+     padding: 0.5rem;
+     border: 1px solid #eee;
+     border-radius: 4px;
+     flex: 1;
+     max-width: 300px;
+ }
+
+ .chart-container {
+     height: 400px;
+     margin-top: 1rem;
+ }
