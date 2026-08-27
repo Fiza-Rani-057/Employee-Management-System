@@ -159,7 +159,7 @@
  main {
      flex: 1;
      padding: 1.5rem;
-     }
+ }
 
  /* .section {
      display: none;
@@ -288,4 +288,25 @@
 
  #activity-list li :last-child {
      border-bottom: none;
+ }
+
+ /* Table Style  */
+ .table-container {
+     overflow-x: auto;
+     margin-bottom: 1rem;
+     border-radius: 8px;
+     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+ }
+
+ table {
+     width: 100%;
+     border-collapse: collapse;
+     background-color: white;
+ }
+
+ th,
+ td {
+     padding: 0.75rem 1rem;
+     text-align-last: left;
+     border-bottom: 1px solid #eee;
  }
