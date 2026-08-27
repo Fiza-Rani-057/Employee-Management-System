@@ -86,12 +86,40 @@
 
                 </section>
                 <!-- Emplyees Section  -->
-                 <section id="employees-section" class="section">
+                <section id="employees-section" class="section">
                     <div class="section-header">
-                        <h2><i class="fas fa-user"></i>Employee</h2>
-                        <div class="section-action"></div>
-                    </div>g
-                 </section>
+                        <h2><i class="fas fa-users"></i>Employee</h2>
+                        <div class="section-actions">
+                            <button id="export-emplyees" class="btn btn-secondary">
+                                <i class="fas fa-file-export"></i> Export
+                            </button>
+                            <button id="filter-emplyees" class="btn btn-secondary">
+                                <i class="fas fa-filter"></i> Filter
+                            </button>
+
+                        </div>
+                    </div>
+
+   <div class="table-container"></div>
+   <table id="emplyees-table">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Department</th>
+            <th>Positions</th>
+            <th>Email</th>
+            <th>Phone</th>
+            <th>Status</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        <!-- employees row will be added here dynamically  -->
+    </tbody>
+
+   </table>
+                </section>
             </main>
         </div>
     </div>

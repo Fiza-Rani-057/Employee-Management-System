@@ -159,11 +159,10 @@
  main {
      flex: 1;
      padding: 1.5rem;
-     /* background-color: white; */
      }
 
  .section {
-     display: none;
+     /* display: none; */
 
  }
 
