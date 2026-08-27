@@ -118,16 +118,46 @@
                             <!-- employees row will be added here dynamically  -->
                         </tbody>
                     </table>
+                    <div class="pagination">
+                        <button id="prev-page" disabled>
+                            <i class="fas fa-chevron-left"></i>
+                        </button>
+                        <span id="page-info"> Page 1 of 1</span>
+                        <button id="next-page" disabled>
+                            <i class="fas fa-chevron-right"></i>
+                        </button>
+                    </div>
                 </section>
-                <div class="pagination">
-                    <button id="prev-page" disabled>
-                        <i class="fas fa-chevron-left"></i>
-                    </button>
-                    <span id="page-info"> Page 1 of 1</span>
-                    <button id="next-page" disabled>
-                        <i class="fas fa-chevron-right"></i>
-                    </button>
-                </div>
+
+                <!-- Department Section  -->
+                <section id="departments-section" class="section">
+                    <div class="section-header">
+                        <h2><i class="fas fa-building"></i>Department</h2>
+                        <div class="section-actions">
+                            <button id="add-department-btn" class="btn btn-primary">
+                                <i class="fas fa-file-plus"></i> Add Departments
+                            </button>
+
+                        </div>
+                    </div>
+
+                    <div class="table-container"></div>
+                    <table id="department-table">
+                        <thead>
+                            <tr>
+                                <th>ID</th>
+                                <th>Name</th>
+                                <th>Manager</th>
+                                <th>Budget</th>
+                                <th>Employees</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <!-- department row will be added here dynamically  -->
+                        </tbody>
+                    </table>
+                </section>
             </main>
         </div>
     </div>
