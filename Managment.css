@@ -310,3 +310,85 @@
      text-align-last: left;
      border-bottom: 1px solid #eee;
  }
+
+ th {
+     background-color: #3498db;
+     color: white;
+     font-weight: 500;
+ }
+
+ tr:hover {
+     background-color: #f5f7fa;
+ }
+
+ .status-badge {
+     padding: 0.25rem 0.5rem;
+     border-radius: 4px;
+     font-size: 0.75rem;
+     font-weight: 400;
+ }
+
+ .status-terminated {
+     background-color: #f8d7da;
+     color: #721c24;
+ }
+
+ .status-badge-approved {
+     background-color: #d4edda;
+     color: #115724;
+ }
+
+ .status-badge-pending {
+     background-color: #fff3cd;
+     color: #856404;
+ }
+
+ .status-badge-rejected {
+     background-color: #f8d7da;
+     color: #721c24;
+ }
+
+ .status-active {
+     background-color: #d4edda;
+     color: #155724;
+ }
+
+ .status-on-leave {
+     background-color: #fff3cd;
+     color: #856404;
+ }
+
+ .status-badge-paid {
+     background-color: #d4edda;
+     color: #155724;
+ }
+
+ .action-btns {
+     display: flex;
+     gap: 0.5rem;
+ }
+
+ .action-btn {
+     background-color: none;
+     border: none;
+     cursor: pointer;
+     color: #7f8c8d;
+     transition: color 0.3s all;
+ }
+
+ .action-btn:hover {
+     color: #3498db;
+ }
+
+ .action-btns .btn-danger {
+     background-color: #e74c3c;
+     color: white;
+     padding: 0.25rem 0.5rem;
+     border-radius: 4px;
+     font-size: 0.75rem;
+ }
+
+ .action-btns .btn-danger:hover {
+     background-color: #c0392b;
+ }
+  /* Pagination  */
