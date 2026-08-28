@@ -79,6 +79,7 @@
      color: white;
  }
 
+
  .btn-secondary {
      background-color: #95a5a6;
      color: white;
@@ -173,12 +174,10 @@
  .section-active h2 {
      color: #022943;
      margin: 1rem;
-     font-size: 18px;
  }
 
  .section-active h2 i {
      color: #022943;
-
  }
 
  .section-header {
@@ -242,24 +241,31 @@
      color: #f3f5f7;
  }
 
- .card-blue {
-     background: linear-gradient(135deg, #00c6ff 0%, #021a38 100%);
+  .card-blue {
+     /* background: linear-gradient(135deg, #00c6ff 0%, #021a38 100%); */
+       background-color: #063b6d;
  }
 
  .card-green {
-     background: linear-gradient(135deg, #00c6ff 0%, #4c9af9 100%);
+     /* background: linear-gradient(135deg, #00c6ff 0%, #4c9af9 100%); */
+       background-color: #063b6d;
  }
 
  .card-purple {
-     background: linear-gradient(135deg, #68d4f1 0%, #95bae8 100%);
+     /* background: linear-gradient(135deg, #68d4f1 0%, #95bae8 100%); */
+       background-color: #063b6d;
  }
 
  .card-red {
-     background: linear-gradient(135deg, #d1e4e9 0%, #0766da 100%);
+     /* background: linear-gradient(135deg, #d1e4e9 0%, #0766da 100%); */
+       background-color: #063b6d;
  }
 
- .card-orange {
+ /* .card-orange {
      background: linear-gradient(135deg, #47caee 0%, #506d91 100%);
+ }  */
+ .card-orange{
+    background-color: #063b6d;
  }
 
  .recent-activity {
@@ -312,7 +318,7 @@
  }
 
  th {
-     background-color: #3498db;
+     background-color: #022a45;
      color: white;
      font-weight: 500;
  }
@@ -447,7 +453,7 @@
  }
 
  .tab-btn-active {
-     color: #3498db;
+     color: #023252;
  }
 
  .tab-btn-active::after {
@@ -457,7 +463,7 @@
      left: 0;
      right: 0;
      height: 2px;
-     background-color: #3498db;
+     background-color: #021a2b;
  }
 
  .tab-content,
@@ -472,6 +478,9 @@
  .tab-content-active {
      display: block;
  }
+.form-group button {
+    margin-top: 20px !important;
+}
 
  /* Form styles  */
  .form-group {
