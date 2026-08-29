@@ -398,34 +398,34 @@
                         <input type="number" name="" id="salary" min="0" step="0.01">
                     </div>
                 </div>
-        <div class="form-group">
-            <label for="status">Status*</label>
-            <select id="status" required>
-                <option value="">Select Status</option>
-                <option value="active">Active</option>
-                <option value="on-leave">On Leave</option>
-                <option value="terminated">Terminated</option>
-            </select>
+                <div class="form-group">
+                    <label for="status">Status*</label>
+                    <select id="status" required>
+                        <option value="">Select Status</option>
+                        <option value="active">Active</option>
+                        <option value="on-leave">On Leave</option>
+                        <option value="terminated">Terminated</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <button type="button" class="btn btn-secondary" id="cancel-add-employee">
+                        Cancel
+                    </button>
+                    <button type="button" class="btn btn-primary" id="cancel-add-employee">
+                        Add Employee
+                    </button>
+                </div>
+            </form>
         </div>
-        <div class="form-group">
-            <button type="button" class="btn btn-secondary" id="cancel-add-employee">
-                Cancel
-            </button>
-            <button type="button" class="btn btn-primary" id="cancel-add-employee">
-                Add Employee
-            </button>
-        </div>
-        </form>
-    </div>
     </div>
 
-     <!-- Edit Employee Model  -->
+    <!-- Edit Employee Model  -->
     <div class="modal" id="edit-employee-modal">
         <div class="modal-content">
             <span class="close-btn">&times;</span>
             <h2>Edit Employee</h2>
             <form class="edit-employee-form">
-                <input type="hidden"  id="edit-employee-id">
+                <input type="hidden" id="edit-employee-id">
                 <div class="form-row">
                     <div class="form-group">
                         <label for="edit-first-name">First Name*</label>
@@ -468,28 +468,104 @@
                         <input type="number" name="" id="edit-salary" min="0" step="0.01">
                     </div>
                 </div>
-        <div class="form-group">
-            <label for="edit-status">Status*</label>
-            <select id="edit-status" required>
-                <option value="">Select Status</option>
-                <option value="active">Active</option>
-                <option value="on-leave">On Leave</option>
-                <option value="terminated">Terminated</option>
-            </select>
+                <div class="form-group">
+                    <label for="edit-status">Status*</label>
+                    <select id="edit-status" required>
+                        <option value="">Select Status</option>
+                        <option value="active">Active</option>
+                        <option value="on-leave">On Leave</option>
+                        <option value="terminated">Terminated</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <button type="button" class="btn btn-danger" id="delete-employee">
+                        <i class="fas fa-trash"></i> Delete
+                    </button>
+                    <button type="button" class="btn btn-secondary" id="cancel-edit-employee">
+                        <i class="fas fa-trash"></i> Cancel
+                    </button>
+                    <button type="submit" class="btn btn-primary" id="cancel-add-employee">
+                        Save Changes
+                    </button>
+                </div>
+            </form>
         </div>
-        <div class="form-group">
-               <button type="button" class="btn btn-danger" id="delete-employee">
-                <i class="fas fa-trash"></i> Delete
-            </button>
-      <button type="button" class="btn btn-secondary" id="cancel-edit-employee">
-                <i class="fas fa-trash"></i> Cancel
-            </button>
-    <button type="submit" class="btn btn-primary" id="cancel-add-employee">
-                Save Changes
-            </button>
-        </div>
-        </form>
     </div>
+
+    <!-- Add/Edit Department Modal -->
+    <div id="department-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn">&times;</span>
+            <h2 id="department-modal-title">Add New Department</h2>
+            <form id="department-form">
+
+                <input type="hidden" id="department-id">
+                <div class="form-group">
+                    <label for="department-name">Department Name*</label>
+                    <input type="text" id="department-name" required>
+                </div>
+                <div class="form-group">
+                    <label for="department-manager">Manager</label>
+                    <select id="department-manager">
+                        <option value="">Select Manager</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="department-budget">Budget*</label>
+                    <input type="number" id="department-budget" min="0" step="0.01" required>
+                </div>
+                <div class="form-actions">
+      <button type="button" class="btn btn-danger" id="delete-department">
+                        <i class="fas fa-trash"></i>
+                        Delete
+                    </button>
+      <button type="button" class="btn btn-secondary" id="cancel-department">
+                        Cancel
+                    </button>
+                    <button type="submit" class="btn btn-primary">
+                        Save Department
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+
+    <!-- Add/Edit Position Modal -->
+     <div id="position-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn">&times;</span>
+            <h2 id="position-modal-title">Add New Position</h2>
+            <form id="position-form">
+                <input type="hidden" id="position-id">
+
+                <div class="form-group">
+                    <label for="position-title">Position Title*</label>
+                    <input type="text" id="position-title" required>
+                </div>
+                <div class="form-group">
+                    <label for="position-department">Department*</label>
+                    <select id="position-department" required>
+                        <option value="">Select Department</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="position-salary">Base Salary*</label>
+                    <input type="number" id="position-salary" min="0" step="0.01" required>
+                </div>
+                <div class="form-group">
+                    <label for="position-description">Description</label>
+                    <textarea id="position-description" rows="3"></textarea>
+                </div>
+                <div class="form-actions">
+        <button type="button" class="btn btn-danger" id="delete-position">
+                        <i class="fas fa-trash"></i> Delete
+                    </button>
+     <button type="button" class="btn btn-secondary" id="cancel-position">Cancel</button>
+     <button type="submit" class="btn btn-primary">Save Position</button>
+                </div>
+            </form>
+        </div>
     </div>
 
     <script src="script.js"></script>
