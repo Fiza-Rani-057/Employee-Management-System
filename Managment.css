@@ -658,3 +658,20 @@
  .close-btn:hover {
      color: #e74c3c;
  }
+
+ #delete-employee {
+       background-color: #03386a;
+    color: white;
+}
+
+#cancel-edit-employee {
+    background-color: #03386a;
+    color: white;
+}
+ #delete-employee :hover{
+  background-color: #2c6991;
+ }
+ 
+#cancel-edit-employee:hover{
+    background-color: #2c6991;
+}
