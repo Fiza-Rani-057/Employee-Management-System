@@ -661,12 +661,15 @@
  }
 
  #delete-employee,
+ #delete-salary,
+ #cancel-salary, #delete-leave,
  #cancel-position {
      background-color: #03386a;
      color: white;
  }
 
- #cancel-edit-employee,#delete-department,
+ #cancel-edit-employee, #cancel-leave,
+ #delete-department,
  #delete-position,
  #cancel-department {
      background-color: #03386a;
@@ -674,12 +677,15 @@
  }
 
  #delete-employee :hover,
+ #cancel-salary:hover, #delete-leave:hover, #cancel-leave:hover,
  #cancel-position:hover {
      background-color: #2c6991;
  }
 
  #cancel-edit-employee:hover,
- #delete-position:hover, #delete-department:hover,
+ #delete-salary:hover,
+ #delete-position:hover,
+ #delete-department:hover,
  #cancel-department:hover {
      background-color: #2c6991;
  }
