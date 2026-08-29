@@ -684,6 +684,31 @@
   </div>
 </div>
 
+  <!-- Confirmation Modal -->
+<div id="confirmation-modal" class="modal small">
+  <div class="modal-content">
+    <h3 id="confirmation-title">Confirm Action</h3>
+    <p id="confirmation-message">Are you sure you want to perform this action?</p>
+    <div class="form-actions">
+      <button type="button" class="btn btn-secondary" id="cancel-confirmation">Cancel</button>
+      <button type="button" class="btn btn-danger" id="confirm-action">Confirm</button>
+    </div>
+  </div>
+</div>
+
+<!-- Notification Toast -->
+<div id="notification-toast" class="toast">
+  <div class="toast-content">
+    <i class="fas" id="toast-icon"></i>
+    <div class="message">
+      <span id="toast-title" class="title"></span>
+      <span id="toast-message" class="message-text"></span>
+    </div>
+  </div>
+  <i class="fas fa-times close-toast"></i>
+  <div class="progress"></div>
+</div>
+
     <script src="script.js"></script>
 </body>
 
