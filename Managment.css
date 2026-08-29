@@ -608,7 +608,7 @@
 
  /* Modal Background */
 .add-employee-modal {
-    display: none;
+    /* display: ; */
     position: fixed;
     z-index: 1000;
     top: 0;
