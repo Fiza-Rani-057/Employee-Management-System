@@ -1,5 +1,6 @@
- <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,6 +8,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
     <link rel="stylesheet" href="Managment.css">
 </head>
+
 <body>
     <div class="container">
         <header>
@@ -79,8 +81,10 @@
                     <div class="section-header">
                         <h2><i class="fas fa-users"></i>Employee</h2>
                         <div class="section-actions">
-                            <button id="export-employees" class="btn btn-secondary"><i class="fas fa-file-export"></i> Export</button>
-                            <button id="filter-employees" class="btn btn-secondary"><i class="fas fa-filter"></i> Filter</button>
+                            <button id="export-employees" class="btn btn-secondary"><i class="fas fa-file-export"></i>
+                                Export</button>
+                            <button id="filter-employees" class="btn btn-secondary"><i class="fas fa-filter"></i>
+                                Filter</button>
                         </div>
                     </div>
                     <div class="table-container">
@@ -110,7 +114,8 @@
                     <div class="section-header">
                         <h2><i class="fas fa-building"></i>Department</h2>
                         <div class="section-actions">
-                            <button id="add-department-btn" class="btn btn-primary"><i class="fas fa-plus"></i> Add Departments</button>
+                            <button id="add-department-btn" class="btn btn-primary"><i class="fas fa-plus"></i> Add
+                                Departments</button>
                         </div>
                     </div>
                     <div class="table-container">
@@ -133,7 +138,8 @@
                     <div class="section-header">
                         <h2><i class="fas fa-briefcase"></i>Positions</h2>
                         <div class="section-actions">
-                            <button id="add-position-btn" class="btn btn-primary"><i class="fas fa-plus"></i> Add Position</button>
+                            <button id="add-position-btn" class="btn btn-primary"><i class="fas fa-plus"></i> Add
+                                Position</button>
                         </div>
                     </div>
                     <div class="table-container">
@@ -156,7 +162,8 @@
                     <div class="section-header">
                         <h2><i class="fas fa-money-bill-wave"></i>Salaries</h2>
                         <div class="section-actions">
-                            <button id="add-salary-btn" class="btn btn-primary"><i class="fas fa-plus"></i> Add Salary</button>
+                            <button id="add-salary-btn" class="btn btn-primary"><i class="fas fa-plus"></i> Add
+                                Salary</button>
                         </div>
                     </div>
                     <div class="table-container">
@@ -183,7 +190,8 @@
                     <div class="section-header">
                         <h2><i class="fas fa-calendar-minus"></i>Leaves</h2>
                         <div class="section-actions">
-                            <button id="add-leave-btn" class="btn btn-primary"><i class="fas fa-plus"></i> Add Leave</button>
+                            <button id="add-leave-btn" class="btn btn-primary"><i class="fas fa-plus"></i> Add
+                                Leave</button>
                         </div>
                     </div>
                     <div class="table-container">
@@ -252,7 +260,8 @@
                         <div class="tab-content" data-tab="notifications">
                             <form id="notification-setting">
                                 <div class="form-group">
-                                    <label><input type="checkbox" id="system-notification" checked> System Notification</label>
+                                    <label><input type="checkbox" id="system-notification" checked> System
+                                        Notification</label>
                                 </div>
                                 <div class="form-group">
                                     <label for="notification-frequency">Notification Frequency</label>
@@ -276,7 +285,8 @@
                                     <input type="password" id="confirm-password" placeholder="Confirm New Password">
                                 </div>
                                 <div class="form-group">
-                                    <label><input type="checkbox" id="two-factor-auth"> Enable Two-Factor-authentication</label>
+                                    <label><input type="checkbox" id="two-factor-auth"> Enable
+                                        Two-Factor-authentication</label>
                                 </div>
                                 <button type="submit" class="btn btn-primary" id="submit">Save Setting</button>
                             </form>
@@ -386,12 +396,18 @@
                         <label for="edit-department">Department*</label>
                         <select id="edit-department" required>
                             <option value="">Select Department</option>
+                            <option value="IT">IT</option>
+                            <option value="HR">HR</option>
+                            <option value="Finance">Finance</option>
                         </select>
                     </div>
                     <div class="form-group">
                         <label for="edit-position">Position*</label>
                         <select id="edit-position" required>
                             <option value="">Select Position</option>
+                            <option value="Web Developer">Web Developer</option>
+                            <option value="HR Manager">HR Manager</option>
+                            <option value="Accountant">Accountant</option>
                         </select>
                     </div>
                 </div>
@@ -415,13 +431,15 @@
                     </select>
                 </div>
                 <div class="form-group">
-                    <button type="button" class="btn btn-danger" id="delete-employee"><i class="fas fa-trash"></i> Delete</button>
+                    <button type="button" class="btn btn-danger" id="delete-employee"><i class="fas fa-trash"></i>
+                        Delete</button>
                     <button type="button" class="btn btn-secondary" id="cancel-edit-employee">Cancel</button>
                     <button type="submit" class="btn btn-primary" id="save-edit-employee">Save Changes</button>
                 </div>
             </form>
         </div>
     </div>
+
 
     <div id="department-modal" class="modal">
         <div class="modal-content">
@@ -444,7 +462,8 @@
                     <input type="number" id="department-budget" min="0" step="0.01" required>
                 </div>
                 <div class="form-actions">
-                    <button type="button" class="btn btn-danger" id="delete-department"><i class="fas fa-trash"></i> Delete</button>
+                    <button type="button" class="btn btn-danger" id="delete-department"><i class="fas fa-trash"></i>
+                        Delete</button>
                     <button type="button" class="btn btn-secondary" id="cancel-department">Cancel</button>
                     <button type="submit" class="btn btn-primary">Save Department</button>
                 </div>
@@ -477,7 +496,8 @@
                     <textarea id="position-description" rows="3"></textarea>
                 </div>
                 <div class="form-actions">
-                    <button type="button" class="btn btn-danger" id="delete-position"><i class="fas fa-trash"></i> Delete</button>
+                    <button type="button" class="btn btn-danger" id="delete-position"><i class="fas fa-trash"></i>
+                        Delete</button>
                     <button type="button" class="btn btn-secondary" id="cancel-position">Cancel</button>
                     <button type="submit" class="btn btn-primary">Save Position</button>
                 </div>
@@ -531,7 +551,8 @@
                     <textarea id="salary-notes" rows="3"></textarea>
                 </div>
                 <div class="form-actions">
-                    <button type="button" class="btn btn-danger" id="delete-salary"><i class="fas fa-trash"></i> Delete</button>
+                    <button type="button" class="btn btn-danger" id="delete-salary"><i class="fas fa-trash"></i>
+                        Delete</button>
                     <button type="button" class="btn btn-secondary" id="cancel-salary">Cancel</button>
                     <button type="submit" class="btn btn-primary">Save Salary</button>
                 </div>
@@ -587,7 +608,8 @@
                     <textarea id="leave-reason" rows="3" required></textarea>
                 </div>
                 <div class="form-actions">
-                    <button type="button" class="btn btn-danger" id="delete-leave"><i class="fas fa-trash"></i> Delete</button>
+                    <button type="button" class="btn btn-danger" id="delete-leave"><i class="fas fa-trash"></i>
+                        Delete</button>
                     <button type="button" class="btn btn-secondary" id="cancel-leave">Cancel</button>
                     <button type="submit" class="btn btn-primary">Save Leave</button>
                 </div>
@@ -606,6 +628,29 @@
         </div>
     </div>
 
+    <div id="view-employee-modal" class="modal small">
+        <div class="modal-content">
+            <span class="close-btn" id="close-view-employee">&times;</span>
+
+            <h2>Employee Details</h2>
+
+            <div class="employee-details">
+                <p><strong>Name:</strong> <span id="view-name"></span></p>
+                <p><strong>Department:</strong> <span id="view-department"></span></p>
+                <p><strong>Position:</strong> <span id="view-position"></span></p>
+                <p><strong>Email:</strong> <span id="view-email"></span></p>
+                <p><strong>Phone:</strong> <span id="view-phone"></span></p>
+                <p><strong>Status:</strong> <span id="view-status"></span></p>
+            </div>
+
+            <div class="form-actions">
+                <button type="button" class="btn btn-primary" id="close-view-btn">
+                    Close
+                </button>
+            </div>
+        </div>
+    </div>
+
     <div id="notification-toast" class="toast">
         <div class="toast-content">
             <i class="fas" id="toast-icon"></i>
@@ -618,6 +663,38 @@
         <div class="progress"></div>
     </div>
 
+    <div id="confirmation-modal" class="modal small">
+        <div class="modal-content">
+            <h3 id="confirmation-title">Confirm Delete</h3>
+            <p id="confirmation-message">Are you sure you want to delete this employee?</p>
+            <div class="form-actions">
+                <button type="button" class="btn btn-secondary" id="cancel-confirmation">Cancel</button>
+                <button type="button" class="btn btn-danger" id="confirm-action"><i class="fas fa-trash"></i>
+                    Delete</button>
+            </div>
+        </div>
+    </div>
+
+    <div id="view-employee-modal" class="modal small">
+        <div class="modal-content">
+            <span class="close-btn" id="close-view-employee">&times;</span>
+            <h2><i class="fas fa-user"></i> Employee Details</h2>
+            <div class="employee-details">
+                <p><strong>Name:</strong> <span id="view-name"></span></p>
+                <p><strong>Department:</strong> <span id="view-department"></span></p>
+                <p><strong>Position:</strong> <span id="view-position"></span></p>
+                <p><strong>Email:</strong> <span id="view-email"></span></p>
+                <p><strong>Phone:</strong> <span id="view-phone"></span></p>
+                <p><strong>Status:</strong> <span id="view-status"></span></p>
+            </div>
+            <div class="form-actions">
+                <button type="button" class="btn btn-primary" id="close-view-btn">Close</button>
+            </div>
+        </div>
+    </div>
+
+
     <script src="Managment.js"></script>
 </body>
+
 </html>
