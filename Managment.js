@@ -109,7 +109,8 @@ employeesTable.addEventListener('click', function (e) {
     if (button.classList.contains('delete-btn')) {
         rowToDelete = row;
 
-        confirmationMessage.textContent = 'Are you sure you want to delete ' + row.cells[1].textContent + '?';
+        confirmationMessage.textContent = 'Are you sure you want to delete '
+         + row.cells[1].textContent + '?';
 
         confirmationModal.classList.add('active');
     }
