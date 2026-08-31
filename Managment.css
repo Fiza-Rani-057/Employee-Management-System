@@ -820,3 +820,65 @@ tr:hover {
     padding: 1rem;
   }
 }
+ /* Employee Action Buttons */
+
+#employees-table td:last-child {
+    white-space: nowrap;
+}
+
+#employees-table .action-btn,
+#employees-table .delete-btn {
+    border: 1px solid #193458;
+    padding: 7px 12px;
+    border-radius: 5px;
+    font-size: 13px;
+    cursor: pointer;
+    margin-right: 5px;
+    transition: 0.3s ease;
+}
+
+/* View */
+#employees-table .view-btn {
+    background: white;
+    color: #193458;
+}
+
+#employees-table .view-btn:hover {
+    background: #193458;
+    color: white;
+}
+
+/* Edit */
+#employees-table .edit-btn {
+    background: #193458;
+    color: white;
+}
+
+#employees-table .edit-btn:hover {
+    background: #10243d;
+}
+
+/* Delete */
+#employees-table .delete-btn {
+    background: #193458;
+    color: white;
+    border-color: #193458;
+}
+
+#employees-table .delete-btn:hover {
+    background: #233c5e;
+    color: white;
+}
+
+ /* Add Employee Cancel Button */
+
+#cancel-add-employee {
+    background-color: #193458;
+    color: white;
+    border: 1px solid #193458;
+}
+
+#cancel-add-employee:hover {
+    background-color: #2f517d;
+    color: white;
+}

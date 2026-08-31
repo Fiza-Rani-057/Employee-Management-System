@@ -1,7 +1,5 @@
-`
-<!DOCTYPE html>
+ <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,7 +7,6 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
     <link rel="stylesheet" href="Managment.css">
 </head>
-
 <body>
     <div class="container">
         <header>
@@ -82,10 +79,8 @@
                     <div class="section-header">
                         <h2><i class="fas fa-users"></i>Employee</h2>
                         <div class="section-actions">
-                            <button id="export-employees" class="btn btn-secondary"><i class="fas fa-file-export"></i>
-                                Export</button>
-                            <button id="filter-employees" class="btn btn-secondary"><i class="fas fa-filter"></i>
-                                Filter</button>
+                            <button id="export-employees" class="btn btn-secondary"><i class="fas fa-file-export"></i> Export</button>
+                            <button id="filter-employees" class="btn btn-secondary"><i class="fas fa-filter"></i> Filter</button>
                         </div>
                     </div>
                     <div class="table-container">
@@ -115,8 +110,7 @@
                     <div class="section-header">
                         <h2><i class="fas fa-building"></i>Department</h2>
                         <div class="section-actions">
-                            <button id="add-department-btn" class="btn btn-primary"><i class="fas fa-plus"></i> Add
-                                Departments</button>
+                            <button id="add-department-btn" class="btn btn-primary"><i class="fas fa-plus"></i> Add Departments</button>
                         </div>
                     </div>
                     <div class="table-container">
@@ -139,8 +133,7 @@
                     <div class="section-header">
                         <h2><i class="fas fa-briefcase"></i>Positions</h2>
                         <div class="section-actions">
-                            <button id="add-position-btn" class="btn btn-primary"><i class="fas fa-plus"></i> Add
-                                Position</button>
+                            <button id="add-position-btn" class="btn btn-primary"><i class="fas fa-plus"></i> Add Position</button>
                         </div>
                     </div>
                     <div class="table-container">
@@ -163,8 +156,7 @@
                     <div class="section-header">
                         <h2><i class="fas fa-money-bill-wave"></i>Salaries</h2>
                         <div class="section-actions">
-                            <button id="add-salary-btn" class="btn btn-primary"><i class="fas fa-plus"></i> Add
-                                Salary</button>
+                            <button id="add-salary-btn" class="btn btn-primary"><i class="fas fa-plus"></i> Add Salary</button>
                         </div>
                     </div>
                     <div class="table-container">
@@ -191,8 +183,7 @@
                     <div class="section-header">
                         <h2><i class="fas fa-calendar-minus"></i>Leaves</h2>
                         <div class="section-actions">
-                            <button id="add-leave-btn" class="btn btn-primary"><i class="fas fa-plus"></i> Add
-                                Leave</button>
+                            <button id="add-leave-btn" class="btn btn-primary"><i class="fas fa-plus"></i> Add Leave</button>
                         </div>
                     </div>
                     <div class="table-container">
@@ -261,8 +252,7 @@
                         <div class="tab-content" data-tab="notifications">
                             <form id="notification-setting">
                                 <div class="form-group">
-                                    <label><input type="checkbox" id="system-notification" checked> System
-                                        Notification</label>
+                                    <label><input type="checkbox" id="system-notification" checked> System Notification</label>
                                 </div>
                                 <div class="form-group">
                                     <label for="notification-frequency">Notification Frequency</label>
@@ -286,8 +276,7 @@
                                     <input type="password" id="confirm-password" placeholder="Confirm New Password">
                                 </div>
                                 <div class="form-group">
-                                    <label><input type="checkbox" id="two-factor-auth"> Enable
-                                        Two-Factor-authentication</label>
+                                    <label><input type="checkbox" id="two-factor-auth"> Enable Two-Factor-authentication</label>
                                 </div>
                                 <button type="submit" class="btn btn-primary" id="submit">Save Setting</button>
                             </form>
@@ -297,6 +286,7 @@
             </main>
         </div>
     </div>
+
     <div class="modal" id="add-employee-modal">
         <div class="modal-content">
             <span class="close-btn">&times;</span>
@@ -366,6 +356,7 @@
             </form>
         </div>
     </div>
+
     <div class="modal" id="edit-employee-modal">
         <div class="modal-content">
             <span class="close-btn">&times;</span>
@@ -424,14 +415,14 @@
                     </select>
                 </div>
                 <div class="form-group">
-                    <button type="button" class="btn btn-danger" id="delete-employee"><i class="fas fa-trash"></i>
-                        Delete</button>
+                    <button type="button" class="btn btn-danger" id="delete-employee"><i class="fas fa-trash"></i> Delete</button>
                     <button type="button" class="btn btn-secondary" id="cancel-edit-employee">Cancel</button>
                     <button type="submit" class="btn btn-primary" id="save-edit-employee">Save Changes</button>
                 </div>
             </form>
         </div>
     </div>
+
     <div id="department-modal" class="modal">
         <div class="modal-content">
             <span class="close-btn">&times;</span>
@@ -453,14 +444,14 @@
                     <input type="number" id="department-budget" min="0" step="0.01" required>
                 </div>
                 <div class="form-actions">
-                    <button type="button" class="btn btn-danger" id="delete-department"><i class="fas fa-trash"></i>
-                        Delete</button>
+                    <button type="button" class="btn btn-danger" id="delete-department"><i class="fas fa-trash"></i> Delete</button>
                     <button type="button" class="btn btn-secondary" id="cancel-department">Cancel</button>
                     <button type="submit" class="btn btn-primary">Save Department</button>
                 </div>
             </form>
         </div>
     </div>
+
     <div id="position-modal" class="modal">
         <div class="modal-content">
             <span class="close-btn">&times;</span>
@@ -486,14 +477,14 @@
                     <textarea id="position-description" rows="3"></textarea>
                 </div>
                 <div class="form-actions">
-                    <button type="button" class="btn btn-danger" id="delete-position"><i class="fas fa-trash"></i>
-                        Delete</button>
+                    <button type="button" class="btn btn-danger" id="delete-position"><i class="fas fa-trash"></i> Delete</button>
                     <button type="button" class="btn btn-secondary" id="cancel-position">Cancel</button>
                     <button type="submit" class="btn btn-primary">Save Position</button>
                 </div>
             </form>
         </div>
     </div>
+
     <div id="salary-modal" class="modal">
         <div class="modal-content">
             <span class="close-btn">&times;</span>
@@ -540,14 +531,14 @@
                     <textarea id="salary-notes" rows="3"></textarea>
                 </div>
                 <div class="form-actions">
-                    <button type="button" class="btn btn-danger" id="delete-salary"><i class="fas fa-trash"></i>
-                        Delete</button>
+                    <button type="button" class="btn btn-danger" id="delete-salary"><i class="fas fa-trash"></i> Delete</button>
                     <button type="button" class="btn btn-secondary" id="cancel-salary">Cancel</button>
                     <button type="submit" class="btn btn-primary">Save Salary</button>
                 </div>
             </form>
         </div>
     </div>
+
     <div id="leave-modal" class="modal">
         <div class="modal-content">
             <span class="close-btn">&times;</span>
@@ -596,14 +587,14 @@
                     <textarea id="leave-reason" rows="3" required></textarea>
                 </div>
                 <div class="form-actions">
-                    <button type="button" class="btn btn-danger" id="delete-leave"><i class="fas fa-trash"></i>
-                        Delete</button>
+                    <button type="button" class="btn btn-danger" id="delete-leave"><i class="fas fa-trash"></i> Delete</button>
                     <button type="button" class="btn btn-secondary" id="cancel-leave">Cancel</button>
                     <button type="submit" class="btn btn-primary">Save Leave</button>
                 </div>
             </form>
         </div>
     </div>
+
     <div id="confirmation-modal" class="modal small">
         <div class="modal-content">
             <h3 id="confirmation-title">Confirm Action</h3>
@@ -614,6 +605,7 @@
             </div>
         </div>
     </div>
+
     <div id="notification-toast" class="toast">
         <div class="toast-content">
             <i class="fas" id="toast-icon"></i>
@@ -625,6 +617,7 @@
         <i class="fas fa-times close-toast"></i>
         <div class="progress"></div>
     </div>
+
     <script src="Managment.js"></script>
 </body>
 </html>
