@@ -839,35 +839,35 @@ tr:hover {
 
 /* View */
 #employees-table .view-btn {
-    background: white;
     color: #193458;
 }
-
+ #employees-table .view-btn:hover{
+  background-color: #011426;
+  color: white;
+ }
 #employees-table .view-btn:hover {
-    background: #193458;
     color: white;
+    background-color: #011426;
 }
 
 /* Edit */
 #employees-table .edit-btn {
-    background: #193458;
-    color: white;
+    color: #193458;
 }
 
 #employees-table .edit-btn:hover {
     background: #10243d;
+    color: white;
 }
 
 /* Delete */
 #employees-table .delete-btn {
-    background: #193458;
-    color: white;
-    border-color: #193458;
+    color: #193458;
 }
 
 #employees-table .delete-btn:hover {
-    background: #233c5e;
     color: white;
+    background-color: #011426;
 }
 
  /* Add Employee Cancel Button */
