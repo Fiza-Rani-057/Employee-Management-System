@@ -1,3 +1,5 @@
+//   Add employee 
+
 const addEmployeeBtn = document.getElementById('add-employee-btn');
 const addEmployeeModal = document.getElementById('add-employee-modal');
 
@@ -71,6 +73,9 @@ const confirmationMessage = document.getElementById('confirmation-message');
 let rowToDelete = null;
 let rowToEdit = null;
 
+
+//   Veiw Button 
+
 employeesTable.addEventListener('click', function (e) {
     const button = e.target.closest('button');
     if (!button) return;
@@ -87,7 +92,7 @@ employeesTable.addEventListener('click', function (e) {
 
         viewEmployeeModal.classList.add('active');
     }
-
+    //    Edit Button 
     if (button.classList.contains('edit-btn')) {
         rowToEdit = row;
 
@@ -110,7 +115,7 @@ employeesTable.addEventListener('click', function (e) {
         rowToDelete = row;
 
         confirmationMessage.textContent = 'Are you sure you want to delete '
-         + row.cells[1].textContent + '?';
+            + row.cells[1].textContent + '?';
 
         confirmationModal.classList.add('active');
     }
