@@ -2,28 +2,32 @@
 
 const sidebarItems = document.querySelectorAll(".sidebar li[data-section]");
 const sections = document.querySelectorAll("main section");
+
 sidebarItems.forEach(function(item) {
+
     item.addEventListener("click", function() {
+        // Sab items se active hatao
         sidebarItems.forEach(function(li) {
             li.classList.remove("active");
         });
-
+        
+        // Clicked item ko active karo
         item.classList.add("active");
+
+        // Sab sections hide karo
         sections.forEach(function(section) {
             section.style.display = "none";
         });
 
-        const sectionId = item.getAttribute("data-section") + "-section";
-        const section = document.getElementById(sectionId);
+        // Clicked item ka section show karo
+        let id = item.getAttribute("data-section") + "-section";
+        let section = document.getElementById(id);
 
-        if (section) {
-            section.style.display = "block";
-        }
+        section.style.display = "block";
 
     });
 
 });
-
 //   Add employee 
 
 const addEmployeeBtn = document.getElementById('add-employee-btn');
