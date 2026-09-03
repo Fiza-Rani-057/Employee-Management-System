@@ -620,12 +620,12 @@ tr:hover {
 
 
 .whatsapp-profile {
-    max-width: 100%;
-    margin: auto auto;
+     width: 100%;
     background: #fff;
     border-radius: 10px;
     overflow: hidden;
     height: 100%;
+    border:  1px solid #011426;
 }
 
 .profile-cover {
@@ -660,13 +660,13 @@ tr:hover {
 .profile-name h2 {
     margin: 0;
     color: #193458;
-    font-size: 23px;
+    font-size: 29px;
 }
 
 .profile-name p {
     margin: 5px 0 0;
     color: #777;
-    font-size: 14px;
+    font-size: 18px;
 }
 
 .profile-about {
@@ -677,14 +677,14 @@ tr:hover {
 
 .profile-about h4 {
     margin: 0 0 5px;
-    color: #777;
-    font-size: 13px;
+    color: #1a1a1a;
+    font-size: 18px;
 }
 
 .profile-about p {
     margin: 0;
     color: #333;
-    font-size: 14px;
+    font-size: 15px;
 }
 
 .profile-list {
@@ -706,21 +706,21 @@ tr:hover {
 .profile-item > i {
     width: 25px;
     color: #193458;
-    font-size: 18px;
+    font-size: 20px;
     text-align: center;
 }
 
 .profile-item span {
     display: block;
-    color: #888;
-    font-size: 12px;
+    color: #242323;
+    font-size: 15px;
     margin-bottom: 3px;
 }
 
 .profile-item p {
     margin: 0;
     color: #333;
-    font-size: 14px;
+    font-size: 18px;
 }
 
 @media (max-width: 600px) {
