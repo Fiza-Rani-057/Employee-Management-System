@@ -1,30 +1,28 @@
-//    SideBar 
+// Sidebar
 
 const sidebarItems = document.querySelectorAll(".sidebar li[data-section]");
 const sections = document.querySelectorAll("main section");
-
-sidebarItems.forEach(function (item) {
-    item.addEventListener("click", function () {
-
-        sidebarItems.forEach(function (li) {
+sidebarItems.forEach(function(item) {
+    item.addEventListener("click", function() {
+        sidebarItems.forEach(function(li) {
             li.classList.remove("active");
         });
 
         item.classList.add("active");
-
-        sections.forEach(function (section) {
+        sections.forEach(function(section) {
             section.style.display = "none";
         });
 
         const sectionId = item.getAttribute("data-section") + "-section";
-        const selectedSection = document.getElementById(sectionId);
+        const section = document.getElementById(sectionId);
 
-        if (selectedSection) {
-            selectedSection.style.display = "block";
+        if (section) {
+            section.style.display = "block";
         }
-    });
-});
 
+    });
+
+});
 
 //   Add employee 
 
