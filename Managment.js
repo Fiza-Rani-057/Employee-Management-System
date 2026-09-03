@@ -1,3 +1,31 @@
+//    SideBar 
+
+const sidebarItems = document.querySelectorAll(".sidebar li[data-section]");
+const sections = document.querySelectorAll("main section");
+
+sidebarItems.forEach(function (item) {
+    item.addEventListener("click", function () {
+
+        sidebarItems.forEach(function (li) {
+            li.classList.remove("active");
+        });
+
+        item.classList.add("active");
+
+        sections.forEach(function (section) {
+            section.style.display = "none";
+        });
+
+        const sectionId = item.getAttribute("data-section") + "-section";
+        const selectedSection = document.getElementById(sectionId);
+
+        if (selectedSection) {
+            selectedSection.style.display = "block";
+        }
+    });
+});
+
+
 //   Add employee 
 
 const addEmployeeBtn = document.getElementById('add-employee-btn');
