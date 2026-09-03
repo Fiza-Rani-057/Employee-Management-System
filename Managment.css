@@ -9,6 +9,9 @@ body {
   color: #333;
   line-height: 1.6;
 }
+main .section {
+    display: none;
+}
 
 .container {
   display: flex;
@@ -616,82 +619,125 @@ tr:hover {
 }
 
 
- .admin-profile-card {
+.whatsapp-profile {
+    max-width: 100%;
+    margin: auto auto;
     background: #fff;
-    border-radius: 12px;
-    padding: 20px;
-    margin-top: 15px;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+    border-radius: 10px;
+    overflow: hidden;
+    height: 100%;
 }
 
-.admin-profile-top {
-    display: flex;
-    align-items: center;
-    gap: 18px;
-    padding-bottom: 18px;
-    border-bottom: 1px solid #ddd;
+.profile-cover {
+    height: 120px;
+    width: 100%;
+    background: #193458;
 }
 
-.admin-avatar {
-    width: 85px;
-    height: 85px;
+.profile-photo {
+    width: 120px;
+    height: 110px;
     border-radius: 50%;
     background: #193458;
-    color: white;
+    color: #fff;
+    border: 5px solid #fff;
+    margin: -55px auto 10px;
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 35px;
+    font-size: 45px;
+}
+  .profile-photo img{
+    height: 70px;
+    width: 70px;
+    border-radius: 50%;
+  }
+.profile-name {
+    text-align: center;
+    padding: 5px 20px 20px;
 }
 
-.admin-main-info h2 {
-    margin: 0 0 5px;
+.profile-name h2 {
+    margin: 0;
     color: #193458;
-    font-size: 22px;
+    font-size: 23px;
 }
 
-.admin-main-info p {
-    margin: 5px 0;
-    color: #666;
+.profile-name p {
+    margin: 5px 0 0;
+    color: #777;
     font-size: 14px;
 }
 
-.admin-profile-details {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 15px;
-    margin-top: 15px;
-}
-
-.profile-detail-box {
-    border: 1px solid #ddd;
-    border-radius: 8px;
-    padding: 15px;
-}
-
-.profile-detail-box h3 {
-    color: #193458;
-    font-size: 16px;
-    margin: 0 0 10px;
-    padding-bottom: 8px;
-    border-bottom: 1px solid #ddd;
-}
-
-.detail-row {
-    display: flex;
-    justify-content: space-between;
-    padding: 8px 0;
+.profile-about {
+    padding: 15px 25px;
+    border-top: 1px solid #eee;
     border-bottom: 1px solid #eee;
 }
 
-.detail-row span {
+.profile-about h4 {
+    margin: 0 0 5px;
     color: #777;
     font-size: 13px;
 }
 
-.detail-row strong {
+.profile-about p {
+    margin: 0;
     color: #333;
-    font-size: 13px;
+    font-size: 14px;
+}
+
+.profile-list {
+    padding: 5px 0;
+}
+
+.profile-item {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    padding: 15px 25px;
+    border-bottom: 1px solid #eee;
+}
+
+.profile-item:last-child {
+    border-bottom: none;
+}
+
+.profile-item > i {
+    width: 25px;
+    color: #193458;
+    font-size: 18px;
+    text-align: center;
+}
+
+.profile-item span {
+    display: block;
+    color: #888;
+    font-size: 12px;
+    margin-bottom: 3px;
+}
+
+.profile-item p {
+    margin: 0;
+    color: #333;
+    font-size: 14px;
+}
+
+@media (max-width: 600px) {
+    .whatsapp-profile {
+        margin: 15px 5px;
+    }
+
+    .profile-cover {
+        height: 100px;
+    }
+
+    .profile-photo {
+        width: 90px;
+        height: 90px;
+        margin-top: -45px;
+        font-size: 35px;
+    }
 }
 /* Toast Notification */
 .toast {
