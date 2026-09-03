@@ -35,10 +35,10 @@
                         <li data-section="calender"><i class="fa-regular fa-calendar"></i>Calender</li>
                         <li data-section="performance"><i class="fa-solid fa-arrow-trend-up"></i>Performance</li>
                         <li data-section="messages"><i class="fa-regular fa-message"></i>Messages</li>
-                        <li data-section="notifications"><i class="fa-regular fa-bell"></i>Notifications</li>
                         <h3>Management</h3>
                         <li data-section="setting"><i class="fas fa-cog"></i>Setting</li>
                         <li data-section="profile"><i class="fa-regular fa-user"></i>Profile</li>
+
                     </ul>
                 </nav>
             </aside>
@@ -99,11 +99,6 @@
                             </thead>
                             <tbody></tbody>
                         </table>
-                    </div>
-                    <div class="pagination">
-                        <button id="prev-page" disabled><i class="fas fa-chevron-left"></i></button>
-                        <span id="page-info">Page 1 of 1</span>
-                        <button id="next-page" disabled><i class="fas fa-chevron-right"></i></button>
                     </div>
                 </section>
                 <section id="departments-section" class="section">
@@ -224,6 +219,169 @@
                         </div>
                         <div class="chart-container">
                             <canvas id="report-chart"></canvas>
+                        </div>
+                    </div>
+                </section>
+
+
+                <!-- Calendar -->
+
+                <section id="calender-section" class="section">
+                    <div class="section-header">
+                        <h2><i class="fa-regular fa-calendar"></i> Calendar</h2>
+                        <button id="add-calendar-event" class="btn btn-primary">
+                            <i class="fas fa-plus"></i> Add Event
+                        </button>
+                    </div>
+
+                    <div class="table-container">
+                        <table id="calendar-table">
+                            <thead>
+                                <tr>
+                                    <th>Date</th>
+                                    <th>Event</th>
+                                    <th>Time</th>
+                                    <th>Location</th>
+                                    <th>Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody></tbody>
+                        </table>
+                    </div>
+                </section>
+
+
+                <!-- Performance -->
+
+                <section id="performance-section" class="section">
+                    <div class="section-header">
+                        <h2><i class="fa-solid fa-arrow-trend-up"></i> Performance</h2>
+                    </div>
+
+                    <div class="table-container">
+                        <table id="performance-table">
+                            <thead>
+                                <tr>
+                                    <th>Employee</th>
+                                    <th>Department</th>
+                                    <th>Performance</th>
+                                    <th>Status</th>
+                                    <th>Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody></tbody>
+                        </table>
+                    </div>
+                </section>
+
+
+                <!-- Messages -->
+
+                <section id="messages-section" class="section">
+                    <div class="section-header">
+                        <h2><i class="fa-regular fa-message"></i> Messages</h2>
+                        <button id="new-message-btn" class="btn btn-primary">
+                            <i class="fas fa-plus"></i> New Message
+                        </button>
+                    </div>
+
+                    <div class="table-container">
+                        <table id="messages-table">
+                            <thead>
+                                <tr>
+                                    <th>Sender</th>
+                                    <th>Message</th>
+                                    <th>Date</th>
+                                    <th>Status</th>
+                                    <th>Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody></tbody>
+                        </table>
+                    </div>
+                </section>
+
+
+                <!-- Profile -->
+                <section id="profile-section" class="section">
+                    <div class="section-header">
+                        <h2><i class="fas fa-user-circle"></i> Admin Profile</h2>
+                    </div>
+
+                    <div class="admin-profile-card">
+                        <div class="admin-profile-top">
+                            <div class="admin-avatar">
+                                <i class="fas fa-user"></i>
+                            </div>
+
+                            <div class="admin-main-info">
+                                <h2>Admin User</h2>
+                                <span class="admin-role">System Administrator</span>
+                                <p>
+                                    <i class="fas fa-envelope"></i>
+                                    admin@ems.com
+                                </p>
+                                <p>
+                                    <i class="fas fa-phone"></i>
+                                    +92 300 1234567
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="admin-profile-details">
+                            <div class="profile-detail-box">
+                                <h3>
+                                    <i class="fas fa-user"></i>
+                                    Personal Information
+                                </h3>
+
+                                <div class="detail-row">
+                                    <span>Full Name</span>
+                                    <strong>Admin User</strong>
+                                </div>
+
+                                <div class="detail-row">
+                                    <span>Email</span>
+                                    <strong>admin@ems.com</strong>
+                                </div>
+
+                                <div class="detail-row">
+                                    <span>Phone</span>
+                                    <strong>+92 300 1234567</strong>
+                                </div>
+
+                                <div class="detail-row">
+                                    <span>Location</span>
+                                    <strong>Karachi, Pakistan</strong>
+                                </div>
+                            </div>
+
+                            <div class="profile-detail-box">
+                                <h3>
+                                    <i class="fas fa-shield-halved"></i>
+                                    Account Information
+                                </h3>
+
+                                <div class="detail-row">
+                                    <span>Role</span>
+                                    <strong>Administrator</strong>
+                                </div>
+
+                                <div class="detail-row">
+                                    <span>Department</span>
+                                    <strong>Management</strong>
+                                </div>
+
+                                <div class="detail-row">
+                                    <span>Account Status</span>
+                                    <strong class="active-status">Active</strong>
+                                </div>
+
+                                <div class="detail-row">
+                                    <span>Last Login</span>
+                                    <strong>Today, 10:30 PM</strong>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </section>
