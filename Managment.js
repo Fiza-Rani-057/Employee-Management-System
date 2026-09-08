@@ -24,7 +24,6 @@ sidebarItems.forEach(function(item) {
         let section = document.getElementById(id);
 
         section.style.display = "block";
-
     });
 
 });

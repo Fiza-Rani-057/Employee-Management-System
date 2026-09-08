@@ -19,5 +19,4 @@ let Form = document.querySelector('form');
     }
      
         window.location.href = "Managment.html";
-      
 });
