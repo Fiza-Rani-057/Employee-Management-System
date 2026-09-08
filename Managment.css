@@ -9,8 +9,9 @@ body {
   color: #333;
   line-height: 1.6;
 }
+
 main .section {
-    display: none;
+  display: none;
 }
 
 .container {
@@ -20,20 +21,12 @@ main .section {
 }
 
 header {
-  background-color: #011426;
-  color: white;
-  padding: 1rem 2rem;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-}
-
-header h1 {
-  font-size: 1.5rem;
+  height: 100px;
   display: flex;
   align-items: center;
-  gap: 0.5rem;
+  justify-content: flex-end;
+  padding: 0 40px;
+  background: #fff;
 }
 
 .user {
@@ -43,24 +36,26 @@ header h1 {
 .header-controles {
   display: flex;
   align-items: center;
-  gap: 1rem;
+  justify-content: flex-end;
+  gap: 24px;
 }
 
 .search-container {
   display: flex;
-  align-items: center;
+  align-items: flex-end;
 }
 
 #search-input {
   padding: 0.5rem 1rem;
-  border: 2px solid #d1e7f5;
+  border: 1px solid #021b2b;
   border-radius: 4px 0 0 4px;
   outline: none;
-  width: 250px;
+  width: 300px;
+  
 }
 
 .btn {
-  padding: 0.5rem 1rem;
+  padding: 0.4rem 1rem;
   border: none;
   border-radius: 4px;
   cursor: pointer;
@@ -105,7 +100,7 @@ header h1 {
   background-color: #053d62;
   color: white;
   border-radius: 0 4px 4px 0;
-  padding: 0.8rem 1rem;
+  padding: 0.7rem 1rem;
 }
 
 .btn-search:hover {
@@ -197,7 +192,7 @@ main {
 .dashboard-cards {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
-  gap: 1rem;
+  gap: 0.9rem;
   margin-bottom: 2rem;
 }
 
@@ -620,125 +615,128 @@ tr:hover {
 
 
 .whatsapp-profile {
-     width: 100%;
-    background: #fff;
-    border-radius: 10px;
-    overflow: hidden;
-    height: 100%;
-    border:  1px solid #011426;
+  width: 100%;
+  background: #fff;
+  border-radius: 10px;
+  overflow: hidden;
+  height: 100%;
+  border: 1px solid #011426;
 }
 
 .profile-cover {
-    height: 120px;
-    width: 100%;
-    background: #193458;
+  height: 120px;
+  width: 100%;
+  background: #193458;
 }
 
 .profile-photo {
-    width: 120px;
-    height: 110px;
-    border-radius: 50%;
-    background: #193458;
-    color: #fff;
-    border: 5px solid #fff;
-    margin: -55px auto 10px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 45px;
+  width: 120px;
+  height: 110px;
+  border-radius: 50%;
+  background: #193458;
+  color: #fff;
+  border: 5px solid #fff;
+  margin: -55px auto 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 45px;
 }
-  .profile-photo img{
-    height: 70px;
-    width: 70px;
-    border-radius: 50%;
-  }
+
+.profile-photo img {
+  height: 70px;
+  width: 70px;
+  border-radius: 50%;
+}
+
 .profile-name {
-    text-align: center;
-    padding: 5px 20px 20px;
+  text-align: center;
+  padding: 5px 20px 20px;
 }
 
 .profile-name h2 {
-    margin: 0;
-    color: #193458;
-    font-size: 29px;
+  margin: 0;
+  color: #193458;
+  font-size: 29px;
 }
 
 .profile-name p {
-    margin: 5px 0 0;
-    color: #777;
-    font-size: 18px;
+  margin: 5px 0 0;
+  color: #777;
+  font-size: 18px;
 }
 
 .profile-about {
-    padding: 15px 25px;
-    border-top: 1px solid #eee;
-    border-bottom: 1px solid #eee;
+  padding: 15px 25px;
+  border-top: 1px solid #eee;
+  border-bottom: 1px solid #eee;
 }
 
 .profile-about h4 {
-    margin: 0 0 5px;
-    color: #1a1a1a;
-    font-size: 18px;
+  margin: 0 0 5px;
+  color: #1a1a1a;
+  font-size: 18px;
 }
 
 .profile-about p {
-    margin: 0;
-    color: #333;
-    font-size: 15px;
+  margin: 0;
+  color: #333;
+  font-size: 15px;
 }
 
 .profile-list {
-    padding: 5px 0;
+  padding: 5px 0;
 }
 
 .profile-item {
-    display: flex;
-    align-items: center;
-    gap: 18px;
-    padding: 15px 25px;
-    border-bottom: 1px solid #eee;
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  padding: 15px 25px;
+  border-bottom: 1px solid #eee;
 }
 
 .profile-item:last-child {
-    border-bottom: none;
+  border-bottom: none;
 }
 
-.profile-item > i {
-    width: 25px;
-    color: #193458;
-    font-size: 20px;
-    text-align: center;
+.profile-item>i {
+  width: 25px;
+  color: #193458;
+  font-size: 20px;
+  text-align: center;
 }
 
 .profile-item span {
-    display: block;
-    color: #242323;
-    font-size: 15px;
-    margin-bottom: 3px;
+  display: block;
+  color: #242323;
+  font-size: 15px;
+  margin-bottom: 3px;
 }
 
 .profile-item p {
-    margin: 0;
-    color: #333;
-    font-size: 18px;
+  margin: 0;
+  color: #333;
+  font-size: 18px;
 }
 
 @media (max-width: 600px) {
-    .whatsapp-profile {
-        margin: 15px 5px;
-    }
+  .whatsapp-profile {
+    margin: 15px 5px;
+  }
 
-    .profile-cover {
-        height: 100px;
-    }
+  .profile-cover {
+    height: 100px;
+  }
 
-    .profile-photo {
-        width: 90px;
-        height: 90px;
-        margin-top: -45px;
-        font-size: 35px;
-    }
+  .profile-photo {
+    width: 90px;
+    height: 90px;
+    margin-top: -45px;
+    font-size: 35px;
+  }
 }
+
 /* Toast Notification */
 .toast {
   position: fixed;
@@ -916,65 +914,246 @@ tr:hover {
     padding: 1rem;
   }
 }
- /* Employee Action Buttons */
+
+/* Employee Action Buttons */
 
 #employees-table td:last-child {
-    white-space: nowrap;
+  white-space: nowrap;
 }
 
 #employees-table .action-btn,
 #employees-table .delete-btn {
-    border: 1px solid #193458;
-    padding: 7px 12px;
-    border-radius: 5px;
-    font-size: 13px;
-    cursor: pointer;
-    margin-right: 5px;
-    transition: 0.3s ease;
+  border: 1px solid #193458;
+  padding: 7px 12px;
+  border-radius: 5px;
+  font-size: 13px;
+  cursor: pointer;
+  margin-right: 5px;
+  transition: 0.3s ease;
 }
 
 /* View */
 #employees-table .view-btn {
-    color: #193458;
+  color: #193458;
 }
- #employees-table .view-btn:hover{
+
+#employees-table .view-btn:hover {
   background-color: #011426;
   color: white;
- }
+}
+
 #employees-table .view-btn:hover {
-    color: white;
-    background-color: #011426;
+  color: white;
+  background-color: #011426;
 }
 
 /* Edit */
 #employees-table .edit-btn {
-    color: #193458;
+  color: #193458;
 }
 
 #employees-table .edit-btn:hover {
-    background: #10243d;
-    color: white;
+  background: #10243d;
+  color: white;
 }
 
 /* Delete */
 #employees-table .delete-btn {
-    color: #193458;
+  color: #193458;
 }
 
 #employees-table .delete-btn:hover {
-    color: white;
-    background-color: #011426;
+  color: white;
+  background-color: #011426;
 }
 
- /* Add Employee Cancel Button */
+/* Add Employee Cancel Button */
 
 #cancel-add-employee {
-    background-color: #193458;
-    color: white;
-    border: 1px solid #193458;
+  background-color: #193458;
+  color: white;
+  border: 1px solid #193458;
 }
 
 #cancel-add-employee:hover {
-    background-color: #2f517d;
-    color: white;
+  background-color: #2f517d;
+  color: white;
+}
+/* Main Layout Fix */
+.container{
+  display:block;
+  min-height:100vh;
+}
+
+.content{
+  display:flex;
+  min-height:100vh;
+}
+
+.sidebar{
+  width:250px;
+  min-height:100vh;
+  flex-shrink:0;
+}
+
+.right-content{
+  flex:1;
+  min-width:0;
+  min-height:100vh;
+}
+
+.right-content header{
+  height:100px;
+  width:100%;
+  display:flex;
+  align-items:center;
+  justify-content:flex-end;
+  padding:0 40px;
+  background:#fff;
+}
+
+.right-content main{
+  flex:1;
+  width:100%;
+  padding:1.5rem;
+}
+
+/* Header */
+.header-controles{
+  display:flex;
+  align-items:center;
+  justify-content:flex-end;
+  gap:24px;
+}
+
+.search-container{
+  display:flex;
+  align-items:center;
+}
+
+#search-input{
+  width:300px;
+  height:40px;
+}
+
+/* Sidebar */
+.sidebar h1{
+  padding:0 1.5rem;
+  margin-bottom:1.5rem;
+  font-size: 25px;
+}
+
+.sidebar nav{
+  width:100%;
+}
+
+/* Fix section visibility */
+main .section{
+  display:none;
+}
+
+main .section.active,
+main .section-active{
+  display:block;
+}
+
+/* Mobile */
+@media (max-width:768px){
+  .content{
+    flex-direction:column;
+  }
+
+  .sidebar{
+    width:100%;
+    min-height:auto;
+  }
+
+  .sidebar nav ul{
+    display:flex;
+    overflow-x:auto;
+  }
+
+  .sidebar nav ul li{
+    white-space:nowrap;
+  }
+
+  .right-content header{
+    height:auto;
+    padding:20px;
+  }
+
+  .header-controles{
+    width:100%;
+    flex-direction:column;
+    align-items:stretch;
+  }
+
+  .search-container{
+    width:100%;
+  }
+
+  #search-input{
+    width:100%;
+  }
+
+  .right-content main{
+    padding:1rem;
+  }
+}
+/* Final Header Fix */
+.right-content header{
+  height:70px;
+  padding:0 30px;
+}
+
+.right-content main{
+  padding:10px 30px 30px;
+}
+
+.section-active h2{
+  margin:0 0 18px 0;
+}
+
+/* Add Employee Button */
+#add-employee-btn{
+  padding:8px 20px;
+  min-height:42px;
+  font-size:14px;
+  border-radius:5px;
+}
+
+/* Search */
+.search-container{
+  display:flex;
+  align-items:stretch;
+}
+
+#search-input{
+  width:280px;
+  height:42px;
+  padding:10px 14px;
+  border:1px solid #021b2b;
+  border-right:none;
+  border-radius:5px 0 0 5px;
+}
+
+#search-btn{
+  width:48px;
+  height:42px;
+  padding:0;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  border-radius:0 5px 5px 0;
+}
+
+#search-btn i{
+  font-size:15px;
+  margin:0;
+}
+
+/* Dashboard Heading */
+#dashboard-section h2{
+  margin:0 0 10px 0;
+  font-size:25px;
 }
