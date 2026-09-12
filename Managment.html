@@ -8,6 +8,13 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
     <link rel="stylesheet" href="Managment.css">
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script>
+    const savedTheme = localStorage.getItem("emplyraTheme");
+
+    if (savedTheme === "dark") {
+        document.documentElement.classList.add("dark-mode");
+    }
+</script>
 </head>
 
 <body>

@@ -4,6 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>EMPLYRA</title>
+    <script>
+    const savedTheme = localStorage.getItem("emplyraTheme");
+
+    if (savedTheme === "dark") {
+        document.documentElement.classList.add("dark-mode");
+    }
+</script>
 </head>
 <body>
      
