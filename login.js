@@ -14,13 +14,17 @@ showLogin.addEventListener("click", function () {
     loginForm.classList.remove("hidden");
 });
 
+/* PASSWORD SHOW / HIDE */
 
 function passwordToggle(inputId, buttonId) {
     const input = document.getElementById(inputId);
     const button = document.getElementById(buttonId);
+
     if (!input || !button) return;
+
     button.addEventListener("click", function () {
         const icon = button.querySelector("i");
+
         if (input.type === "password") {
             input.type = "text";
             icon.className = "fas fa-eye-slash";
@@ -30,26 +34,20 @@ function passwordToggle(inputId, buttonId) {
         }
     });
 }
-passwordToggle(
-    "password",
-    "login-password-toggle"
-);
 
-passwordToggle(
-    "signup-password",
-    "signup-password-toggle"
-);
+passwordToggle("password", "login-password-toggle");
+passwordToggle("signup-password", "signup-password-toggle");
+
+/* SIGN UP */
 
 const signupButton = document.getElementById("signup");
+
 signupButton.addEventListener("click", function () {
-    const name =
-        document.getElementById("signup-name").value.trim();
-    const email =
-        document.getElementById("signup-email").value.trim();
-    const password =
-        document.getElementById("signup-password").value;
-    const confirmPassword =
-        document.getElementById("confirm-password").value;
+    const name = document.getElementById("signup-name").value.trim();
+    const email = document.getElementById("signup-email").value.trim();
+    const password = document.getElementById("signup-password").value;
+    const confirmPassword = document.getElementById("confirm-password").value;
+
     if (!name || !email || !password || !confirmPassword) {
         alert("Please fill all fields.");
         return;
@@ -60,64 +58,69 @@ signupButton.addEventListener("click", function () {
         return;
     }
 
-
     const user = {
         name: name,
         email: email,
         password: password
     };
 
-
-    localStorage.setItem(
-        "emplyraUser",
-        JSON.stringify(user)
-    );
-
+    localStorage.setItem("emplyraUser", JSON.stringify(user));
 
     alert("Account created successfully!");
+
     signupForm.classList.add("hidden");
     loginForm.classList.remove("hidden");
-    document.getElementById("email").value = email;
 
+    document.getElementById("email").value = email;
 });
 
+/* LOGIN */
 
 const loginButton = document.getElementById("login");
+
 loginButton.addEventListener("click", function () {
-    const email =
-        document.getElementById("email").value.trim();
-    const password =
-        document.getElementById("password").value;
-    const savedUser = JSON.parse(
-        localStorage.getItem("emplyraUser")
-    );
+    const email = document.getElementById("email").value.trim();
+    const password = document.getElementById("password").value;
+
     if (!email || !password) {
         alert("Please enter email and password.");
         return;
     }
-  if (!savedUser) {
+
+    /* ADMIN LOGIN */
+
+    if (email === "admin@gmail.com" && password === "admin1234") {
+        localStorage.setItem("emplyraLoggedIn", "true");
+        localStorage.setItem("emplyraUserName", "Admin");
+        localStorage.setItem("emplyraRole", "admin");
+
+        window.location.href = "Managment.html";
+        return;
+    }
+
+    /* NORMAL USER LOGIN */
+
+    const savedUser = JSON.parse(
+        localStorage.getItem("emplyraUser")
+    );
+
+    if (!savedUser) {
         alert("No account found. Please Sign Up first.");
         return;
     }
+
     if (
         email === savedUser.email &&
         password === savedUser.password
     ) {
-        localStorage.setItem(
-            "emplyraLoggedIn",
-            "true"
-        );
+        localStorage.setItem("emplyraLoggedIn", "true");
+        localStorage.setItem("emplyraUserName", savedUser.name);
+        localStorage.setItem("emplyraRole", "user");
 
-        localStorage.setItem(
-            "emplyraUserName",
-            savedUser.name
-        );
         window.location.href = "index.html";
-
     } else {
-
         alert("Invalid email or password.");
-
     }
-
 });
+
+
