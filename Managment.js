@@ -240,3 +240,4 @@ deleteEmployee.addEventListener('click', function () {
         themeToggle.innerHTML =  '<i class="fas fa-sun"></i>';
     }
  });
+ 
