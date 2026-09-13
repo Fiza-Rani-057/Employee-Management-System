@@ -364,8 +364,8 @@ main section > h2,
 }
 .card {
     position: relative;
-    background: var(--bg-card);
-    border: 2px solid var(--border);
+    background: var(--bg-main);
+    border: 1px solid var(--primary);
     border-radius: 14px;
     box-shadow: 0 3px 12px rgba(15, 23, 42, 0.06);
     transition: all 0.25s ease;
