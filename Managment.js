@@ -240,7 +240,7 @@ deleteEmployee.addEventListener('click', function () {
         themeToggle.innerHTML =  '<i class="fas fa-sun"></i>';
     }
  });
-
+//    Charts 
  document.addEventListener("DOMContentLoaded",function(){
 
     const productivityChart=document.getElementById("productivityChart");
