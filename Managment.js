@@ -3,19 +3,19 @@
 const sidebarItems = document.querySelectorAll(".sidebar li[data-section]");
 const sections = document.querySelectorAll("main section");
 
-sidebarItems.forEach(function(item) {
+sidebarItems.forEach(function (item) {
 
-    item.addEventListener("click", function() {
+    item.addEventListener("click", function () {
         // Sab items se active hatao
-        sidebarItems.forEach(function(li) {
+        sidebarItems.forEach(function (li) {
             li.classList.remove("active");
         });
-        
+
         // Clicked item ko active karo
         item.classList.add("active");
 
         // Sab sections hide karo
-        sections.forEach(function(section) {
+        sections.forEach(function (section) {
             section.style.display = "none";
         });
 
@@ -229,15 +229,176 @@ deleteEmployee.addEventListener('click', function () {
 
 //  Themee Toggle 
 
- const themeToggle = document.querySelector('#theme-toggle');
+const themeToggle = document.querySelector('#theme-toggle');
 
- themeToggle.addEventListener('click' , ()=>{
+themeToggle.addEventListener('click', () => {
     document.body.classList.toggle('dark-mode');
-    if(document.body.classList.contains('dark-mode')){
-        themeToggle.innerHTML =  '<i class="fas fa-sun"></i>';
+    if (document.body.classList.contains('dark-mode')) {
+        themeToggle.innerHTML = '<i class="fas fa-sun"></i>';
     }
-    else{
-        themeToggle.innerHTML =  '<i class="fas fa-sun"></i>';
+    else {
+        themeToggle.innerHTML = '<i class="fas fa-sun"></i>';
     }
- });
- 
+});
+
+document.addEventListener("DOMContentLoaded", function () {
+
+    const productivityChart = document.getElementById("productivityChart");
+
+    new Chart(productivityChart, {
+        type: "bar",
+        data: {
+            labels: ["Engineering", "Sales", "Marketing", "HR", "Finance", "Support"],
+            datasets: [{
+                label: "Productivity",
+                data: [85, 72, 68, 90, 65, 78],
+                backgroundColor: "#8257e5",
+                borderRadius: 7
+            }]
+        },
+        options: {
+            responsive: true,
+            maintainAspectRatio: false,
+            plugins: {
+                legend: {
+                    display: false
+                }
+            },
+            scales: {
+                x: {
+                    grid: {
+                        display: false
+                    },
+                    ticks: {
+                        color: "#8b949e"
+                    }
+                },
+                y: {
+                    beginAtZero: true,
+                    ticks: {
+                        color: "#8b949e"
+                    }
+                }
+            }
+        }
+    });
+
+
+    const attendanceChart = document.getElementById("attendanceChart");
+
+    new Chart(attendanceChart, {
+        type: "line",
+        data: {
+            labels: ["Jan", "Feb", "Mar", "Apr", "May", "Jun"],
+            datasets: [{
+                label: "Attendance",
+                data: [82, 88, 85, 91, 87, 94],
+                borderColor: "#8257e5",
+                backgroundColor: "rgba(130,87,229,.12)",
+                fill: true,
+                tension: .4
+            }]
+        },
+        options: {
+            responsive: true,
+            maintainAspectRatio: false,
+            plugins: {
+                legend: {
+                    display: false
+                }
+            },
+            scales: {
+                x: {
+                    grid: {
+                        display: false
+                    },
+                    ticks: {
+                        color: "#8b949e"
+                    }
+                },
+                y: {
+                    beginAtZero: true,
+                    ticks: {
+                        color: "#8b949e"
+                    }
+                }
+            }
+        }
+    });
+
+
+    const leaveChart = document.getElementById("leaveChart");
+
+    new Chart(leaveChart, {
+        type: "doughnut",
+        data: {
+            labels: ["Approved", "Pending", "Rejected"],
+            datasets: [{
+                data: [60, 25, 15],
+                backgroundColor: [
+                    "#8257e5",
+                    "#39d353",
+                    "#4ca1af"
+                ],
+                borderWidth: 0
+            }]
+        },
+        options: {
+            responsive: true,
+            maintainAspectRatio: false,
+            cutout: "70%",
+            plugins: {
+                legend: {
+                    position: "bottom",
+                    labels: {
+                        color: "#8b949e",
+                        padding: 15
+                    }
+                }
+            }
+        }
+    });
+
+
+    const performanceChart = document.getElementById("performanceChart");
+
+    new Chart(performanceChart, {
+        type: "bar",
+        data: {
+            labels: ["Excellent", "Good", "Average", "Needs Improvement"],
+            datasets: [{
+                label: "Employees",
+                data: [35, 45, 15, 5],
+                backgroundColor: "#8257e5",
+                borderRadius: 7
+            }]
+        },
+        options: {
+            responsive: true,
+            maintainAspectRatio: false,
+            plugins: {
+                legend: {
+                    display: false
+                }
+            },
+            scales: {
+                x: {
+                    grid: {
+                        display: false
+                    },
+                    ticks: {
+                        color: "#8b949e"
+                    }
+                },
+                y: {
+                    beginAtZero: true,
+                    ticks: {
+                        color: "#8b949e"
+                    }
+                }
+            }
+        }
+    });
+
+});
+
