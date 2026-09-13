@@ -362,16 +362,14 @@ main section > h2,
     gap: 18px;
     margin-bottom: 24px;
 }
-
 .card {
     position: relative;
     background: var(--bg-card);
-    border: 1px solid var(--border);
-    border-radius: var(--radius);
-    box-shadow: var(--shadow);
-    transition: background var(--transition), border-color var(--transition), transform var(--transition);
+    border: 2px solid var(--border);
+    border-radius: 14px;
+    box-shadow: 0 3px 12px rgba(15, 23, 42, 0.06);
+    transition: all 0.25s ease;
 }
-
 .dashboard-cards .card {
     min-height: 135px;
     padding: 22px;
