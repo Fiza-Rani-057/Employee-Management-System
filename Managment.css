@@ -96,45 +96,47 @@ body {
         background var(--transition),
         border-color var(--transition);
 }
-.sidebar > h1 {
+
+.sidebar>h1 {
     height: 54px;
     display: flex;
     align-items: center;
-    gap: 12px;
+    gap: 8px;
     padding: 0 9px;
     margin-bottom: 28px;
-    font-size: 23px;
+    font-size: 25px;
     font-weight: 700;
     letter-spacing: 0.5px;
     color: var(--text-main);
 }
-
-.sidebar > h1 i {
+.sidebar>h1 i {
     width: 36px;
-    height: 36px;
+    height: 30px;
     display: flex;
     align-items: center;
     justify-content: center;
     background: var(--primary);
     color: white;
     border-radius: 9px;
-    font-size: 17px;
+    font-size: 15px;
 }
 
-.sidebar > h1::after {
+.sidebar>h1::after {
     content: "EMPLOYEE MANAGEMENT";
     position: absolute;
-    top: 65px;
+    top: 68px;
     left: 65px;
-    font-size: 8px;
+    font-size: 9px;
     font-weight: 600;
     color: var(--text-muted);
     letter-spacing: 1.2px;
 }
+
 /* Navigation */
 .sidebar nav ul {
     list-style: none;
 }
+
 .sidebar nav li {
     position: relative;
     min-height: 44px;
@@ -227,7 +229,7 @@ header {
 }
 
 .search-container {
-    height: 42px;
+    height: 45px;
     display: flex;
     align-items: center;
 }
@@ -242,7 +244,7 @@ header {
     border-right: none;
     border-radius: 7px 0 0 7px;
     outline: none;
-    font-size: 13px;
+    font-size: 14px;
 }
 
 .search-container input::placeholder {
@@ -358,7 +360,7 @@ main section.section-active {
    SECTION HEADINGS
 ========================= */
 
-main section > h2,
+main section>h2,
 .section-header h2 {
     margin-bottom: 18px;
 
@@ -676,11 +678,9 @@ tbody tr:hover {
     height: 135px;
 
     background:
-        linear-gradient(
-            135deg,
+        linear-gradient(135deg,
             var(--primary),
-            #6366f1
-        );
+            #6366f1);
 }
 
 .profile-photo {
@@ -770,7 +770,7 @@ tbody tr:hover {
     border-radius: 8px;
 }
 
-.profile-item > i {
+.profile-item>i {
     width: 34px;
     height: 34px;
 
@@ -1068,7 +1068,7 @@ tbody tr:hover {
     margin-top: 14px;
 }
 
-.add-employee-form > .form-group:last-child {
+.add-employee-form>.form-group:last-child {
     display: flex;
 
     justify-content: flex-end;
@@ -1164,7 +1164,7 @@ tbody tr:hover {
     gap: 12px;
 }
 
-.toast-content > i {
+.toast-content>i {
     color: var(--primary);
 
     font-size: 19px;
@@ -1369,7 +1369,7 @@ body.dark-mode ::-webkit-scrollbar-thumb {
         font-size: 11px;
     }
 
-    main section > h2,
+    main section>h2,
     .section-header h2 {
         font-size: 23px;
     }
