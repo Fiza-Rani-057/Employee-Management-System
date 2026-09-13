@@ -237,7 +237,7 @@ deleteEmployee.addEventListener('click', function () {
         themeToggle.innerHTML =  '<i class="fas fa-sun"></i>';
     }
     else{
-        themeToggle.innerHTML =  '<i class="fas fa-sun"></i>';
+      themeToggle.innerHTML = '<i class="fas fa-moon"></i>';
     }
  });
 //    Charts 
