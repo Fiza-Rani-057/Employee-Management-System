@@ -401,5 +401,3 @@ deleteEmployee.addEventListener('click', function () {
     });
 
 });
-
- 
