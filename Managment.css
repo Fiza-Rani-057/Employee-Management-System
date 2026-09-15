@@ -223,7 +223,7 @@ header {
     padding: 0 14px;
     background: var(--bg-card);
     color: var(--text-main);
-    border: 1px solid var(--text-main);
+    border: 1px solid var(--text-muted);
     border-right: none;
     border-radius: 7px 0 0 7px;
     outline: none;
@@ -461,7 +461,7 @@ tbody tr:hover {
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    border: 1px solid var(--border);
+    border: 1px solid transparent;
     border-radius: 6px;
     background: transparent;
     color: var(--text-main);
@@ -470,9 +470,8 @@ tbody tr:hover {
 }
 
 .action-btn:hover {
-    background: var(--primary);
-    border-color: var(--primary);
-    color: white;
+    border-color: transparent;
+    color: var(--primary);
 }
 
 /* Reports */
