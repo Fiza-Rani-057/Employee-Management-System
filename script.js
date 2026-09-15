@@ -14,3 +14,9 @@ themeToggle.addEventListener("click", function(){
     }
 
 });
+const menuToggle = document.querySelector("#menuToggle");
+const navLinks = document.querySelector(".nav-links");
+
+menuToggle.addEventListener("click", function () {
+    navLinks.classList.toggle("show");
+});
