@@ -285,7 +285,7 @@ body.dark-mode {
 
 body.dark-mode .auth-box {
     background: #141628;
-    border-color: #e5e6e9;
+    border-color:1px solid #e5e6e9;
     box-shadow: 0 0px 15px rgba(157, 155, 155, 0.35);
      
 }
