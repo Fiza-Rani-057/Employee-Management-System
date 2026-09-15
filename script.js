@@ -1,4 +1,4 @@
-const themeToggle = document.querySelector("#theme-toggle");
+const themeToggle = document.querySelector("#themeToggle");
 
 themeToggle.addEventListener("click", function(){
     document.body.classList.toggle("dark-mode");
