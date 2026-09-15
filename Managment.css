@@ -223,7 +223,7 @@ header {
     padding: 0 14px;
     background: var(--bg-card);
     color: var(--text-main);
-    border: 1px solid var(--border);
+    border: 1px solid var(--text-main);
     border-right: none;
     border-radius: 7px 0 0 7px;
     outline: none;
@@ -422,7 +422,7 @@ thead {
 
 th {
     padding: 14px 16px;
-    color: var(--text-muted);
+    color: var(--text-main);
     text-align: left;
     font-size: 12px;
     font-weight: 700;
@@ -1076,7 +1076,7 @@ body.dark-mode ::-webkit-scrollbar-thumb {
 
 .chart-card {
     background: var(--bg-card);
-    border: 1px solid var(--border);
+    border: 1px solid var(--text-main);
     border-radius: 16px;
     padding: 20px;
     box-shadow: var(--shadow);
