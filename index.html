@@ -6,9 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>EMPLYRA</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
     <script>
         const savedTheme = localStorage.getItem("emplyraTheme");
-
         if (savedTheme === "dark") {
             document.documentElement.classList.add("dark-mode");
         }
@@ -16,7 +16,38 @@
 </head>
 
 <body>
-    
+    <nav class="navbar">
+
+        <div class="nav-logo">
+            <div class="logo-icon">
+             <i class="fas fa-user-tie"></i>
+            </div>
+            <span>EMPLYRA</span>
+        </div>
+
+        <div class="nav-links">
+            <a href="#home" class="active">Home</a>
+            <a href="#features">Features</a>
+            <a href="#solutions">Solutions</a>
+            <a href="#about">About</a>
+            <a href="#contact">Contact</a>
+        </div>
+
+        <div class="nav-actions">
+            <button class="theme-btn" id="themeToggle">
+                <i class="fa-regular fa-moon"></i>
+            </button>
+            <a href="#" class="login-btn">Login</a>
+            <a href="#" class="get-started">
+                Get Started
+                <i class="fa-solid fa-arrow-right"></i>
+            </a>
+
+        </div>
+
+    </nav>
+
+
 
 
     <script src="script.js"></script>

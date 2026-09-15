@@ -140,6 +140,7 @@ body {
     font-weight: 500;
     cursor: pointer;
     transition: background var(--transition), color var(--transition);
+      color: var(--text-main);
 }
 
 .sidebar nav li i {
@@ -149,13 +150,13 @@ body {
 }
 
 .sidebar nav li:hover {
-    background: var(--primary-light);
-    color: var(--primary);
+    background: var(--primary);
+    color: #ffffff;
 }
 
 .sidebar nav li.active {
-    background: var(--primary-light);
-    color: var(--primary);
+    background: var(--primary);
+    color: #ffffff;
 }
 
 .sidebar nav li.active::before {
@@ -1153,49 +1154,50 @@ body.dark-mode ::-webkit-scrollbar-thumb {
         padding: 15px;
     }
 }
-.dashboard-heading{
-    display:flex;
-    align-items:center;
-    justify-content:space-between;
-    gap:20px;
-    margin-bottom:24px;
+
+.dashboard-heading {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    margin-bottom: 24px;
 }
 
-.dashboard-heading > div:first-child span{
-    display:block;
-    font-size:12px;
-    font-weight:700;
-    letter-spacing:1.5px;
-    color:#8257e5;
-    margin-bottom:6px;
+.dashboard-heading>div:first-child span {
+    display: block;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    color: #8257e5;
+    margin-bottom: 6px;
 }
 
-.dashboard-heading h2{
-    margin:0;
-    font-size:20px;
-    font-weight:700;
-    color:var(--text-main);
+.dashboard-heading h2 {
+    margin: 0;
+    font-size: 20px;
+    font-weight: 700;
+    color: var(--text-main);
 }
 
-.dashboard-heading p{
-    margin:6px 0 0;
-    font-size:13px;
-    color:var(--text-muted);
+.dashboard-heading p {
+    margin: 6px 0 0;
+    font-size: 13px;
+    color: var(--text-muted);
 }
 
 
 
-@media(max-width:700px){
-    .dashboard-heading{
-        align-items:flex-start;
-        flex-direction:column;
+@media(max-width:700px) {
+    .dashboard-heading {
+        align-items: flex-start;
+        flex-direction: column;
     }
 
-    .dashboard-heading h2{
-        font-size:24px;
+    .dashboard-heading h2 {
+        font-size: 24px;
     }
 
-    .dashboard-date{
-        width:100%;
+    .dashboard-date {
+        width: 100%;
     }
 }
