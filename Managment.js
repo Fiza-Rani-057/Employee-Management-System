@@ -229,17 +229,11 @@ deleteEmployee.addEventListener('click', function () {
 
 //  Themee Toggle 
 
- const themeToggle = document.querySelector('#theme-toggle');
+const savedTheme = localStorage.getItem("theme");
 
- themeToggle.addEventListener('click' , ()=>{
-    document.body.classList.toggle('dark-mode');
-    if(document.body.classList.contains('dark-mode')){
-        themeToggle.innerHTML =  '<i class="fas fa-sun"></i>';
-    }
-    else{
-      themeToggle.innerHTML = '<i class="fas fa-moon"></i>';
-    }
- });
+if (savedTheme === "dark") {
+    document.body.classList.add("dark-mode");
+}
 //    Charts 
  document.addEventListener("DOMContentLoaded",function(){
 

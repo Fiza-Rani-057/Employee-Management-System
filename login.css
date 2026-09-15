@@ -1,4 +1,4 @@
-* {
+ *{
     box-sizing: border-box;
     margin: 0;
     padding: 0;
@@ -18,7 +18,7 @@ body {
         radial-gradient(circle at bottom right, rgba(59, 130, 246, 0.14), transparent 35%),
         #f5f7fb;
     color: #172033;
-    transition: background 0.3s ease, color 0.3s ease;
+   transition: background 0.3s ease, color 0.3s ease;
 }
 
 /* AUTH CONTAINER */
@@ -43,7 +43,7 @@ body {
     border-radius: 20px;
     box-shadow: 0 20px 50px rgba(15, 23, 42, 0.10);
     overflow: hidden;
-    transition: background 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+transition: background 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
 }
 
 .auth-box::before {
@@ -269,59 +269,59 @@ body {
 .hidden {
     display: none;
 }
-
 /* DARK MODE */
 
-html.dark-mode body {
+body.dark-mode {
     background:
         radial-gradient(circle at top left, rgba(124, 58, 237, 0.18), transparent 35%),
         radial-gradient(circle at bottom right, rgba(59, 130, 246, 0.12), transparent 35%),
         #0f172a;
+
     color: #f8fafc;
 }
 
-html.dark-mode .auth-box {
+body.dark-mode .auth-box {
     background: #1a1c29;
     border-color: #292f45;
     box-shadow: 0 20px 50px rgba(0, 0, 0, 0.35);
 }
 
-html.dark-mode .logo,
-html.dark-mode .auth-form h1 {
+body.dark-mode .logo,
+body.dark-mode .auth-form h1 {
     color: #f8fafc;
 }
 
-html.dark-mode .subtitle,
-html.dark-mode .switch-text,
-html.dark-mode .remember {
+body.dark-mode .subtitle,
+body.dark-mode .switch-text,
+body.dark-mode .remember {
     color: #94a3b8;
 }
 
-html.dark-mode .input-box input {
+body.dark-mode .input-box input {
     color: #ffffff;
     border-bottom-color: #475569;
 }
 
-html.dark-mode .input-box input:focus {
+body.dark-mode .input-box input:focus {
     border-bottom-color: #8b5cf6;
 }
 
-html.dark-mode .input-box label {
+body.dark-mode .input-box label {
     color: #94a3b8;
 }
 
-html.dark-mode .input-box input:focus ~ label,
-html.dark-mode .input-box input:not(:placeholder-shown) ~ label {
+body.dark-mode .input-box input:focus ~ label,
+body.dark-mode .input-box input:not(:placeholder-shown) ~ label {
     color: #a78bfa;
 }
 
-html.dark-mode .theme-toggle {
+body.dark-mode .theme-toggle {
     background: #252a3b;
     border-color: #374151;
     color: #c4b5fd;
 }
 
-html.dark-mode .theme-toggle:hover {
+body.dark-mode .theme-toggle:hover {
     background: #312e81;
     color: #ffffff;
 }
