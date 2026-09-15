@@ -276,12 +276,18 @@ transition: background 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
 body.dark-mode {
     background: #00010f;
     color: #f8fafc;
+       background:
+        radial-gradient(circle at top left, rgba(124, 58, 237, 0.18), transparent 35%),
+        radial-gradient(circle at bottom right, rgba(59, 130, 246, 0.12), transparent 35%),
+        #00010f;
+    color: #f8fafc;
 }
 
 body.dark-mode .auth-box {
-    background: #06091c;
+    background: #141628;
     border-color: #e5e6e9;
     box-shadow: 0 0px 15px rgba(157, 155, 155, 0.35);
+     
 }
 
 body.dark-mode .logo,
