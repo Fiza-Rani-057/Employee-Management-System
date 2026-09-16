@@ -277,10 +277,11 @@
  }
 
  /* Hero Section  */
- /* =========================================
-   HERO SECTION (Futuristic Vercel/Stripe Style)
-========================================= */
 
+body.dark-mode .hero-section {
+  background: linear-gradient(135deg, rgba(6, 1, 33, 0.45) 0%, rgba(11, 2, 37, 0.4) 100%), 
+              url(images/img2.jpg) center/cover no-repeat;
+}
 .hero-section {
     min-height: 100vh;
     padding: 140px 6% 80px;
@@ -585,13 +586,12 @@
     .hero-primary, .hero-secondary {
         width: 100%;
     }
-}
-/* =========================================
-   DEFAULT (LIGHT THEME) HERO SECTION
-========================================= */
+}  
+
+/* Light theme */
 .hero-section {
-    background-color: #f8fafc; /* Light background */
-    color: #0f172a;            /* Dark text for light mode */
+    background-color: #f8fafc; 
+    color: #0f172a;           
 }
 
 .hero-section h1 {
@@ -602,13 +602,9 @@
     color: #475569;
 }
 
-
-/* =========================================
-   DARK THEME HERO SECTION (Jab Body par dark-mode ho)
-========================================= */
 body.dark-mode .hero-section {
-    background-color: #06060b; /* Dark background */
-    color: #f8fafc;            /* Light text for dark mode */
+    background-color: #06060b;
+    color: #f8fafc;            
 }
 
 body.dark-mode .hero-section h1 {
@@ -619,7 +615,6 @@ body.dark-mode .hero-section p {
     color: #9ca3af;
 }
 
-/* Agar badge ka color bhi change karna ho */
 body.dark-mode .hero-badge {
     background: rgba(20, 18, 40, 0.6);
     border-color: rgba(139, 92, 246, 0.25);
@@ -628,9 +623,7 @@ body.dark-mode .hero-badge {
 /* =========================================
    HERO SECTION (Light Theme Version)
 ========================================= */
-
 .hero-section {
-    min-height: 100vh;
     padding: 140px 6% 80px;
     position: relative;
     overflow: hidden;
@@ -638,12 +631,15 @@ body.dark-mode .hero-badge {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    background: #f8fafc;
-    background-image: 
-        radial-gradient(circle at 15% 20%, rgba(109, 74, 255, 0.08) 0%, transparent 40%),
-        radial-gradient(circle at 85% 30%, rgba(14, 165, 233, 0.08) 0%, transparent 45%),
-        radial-gradient(circle at 50% 80%, rgba(249, 115, 22, 0.05) 0%, transparent 40%);
+    
+    /* Sabhi gradients aur background image ko aik sath combine kiya gaya hai */
+    background: 
+        radial-gradient(circle at 15% 20%, rgba(109, 74, 255, 0.15) 0%, transparent 40%),
+        radial-gradient(circle at 85% 30%, rgba(14, 165, 233, 0.1) 0%, transparent 45%),
+        radial-gradient(circle at 50% 80%, rgba(139, 92, 246, 0.1) 0%, transparent 40%),
+        url('images/img3.jpg') center / cover no-repeat;
 }
+
 
 .hero-container {
     width: 100%;
@@ -707,7 +703,7 @@ body.dark-mode .hero-badge {
 
 /* Headings & Text (Light Theme) */
 .hero-container h1 {
-    color: #0f172a;
+    color: #650bec;
     font-size: clamp(42px, 5.5vw, 72px);
     line-height: 1.08;
     letter-spacing: -2px;
@@ -718,7 +714,7 @@ body.dark-mode .hero-badge {
 }
 
 .hero-container h1 span {
-    background: linear-gradient(135deg, #7c3aed, #0284c7);
+    background: linear-gradient(135deg, #672bd0, #065075);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 }
@@ -830,10 +826,13 @@ body.dark-mode .hero-badge {
 }
 
 .hero-stat-item strong {
-    color: #0f172a;
+    color: #f4f7f7;
     font-size: 24px;
     font-weight: 700;
     letter-spacing: -0.5px;
+}
+body.dark-mode .hero-stat-item strong {
+    color: #eaecef;
 }
 
 .hero-stat-item span {
