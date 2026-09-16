@@ -283,7 +283,6 @@ body.dark-mode .hero-section {
               url(images/Gemini_Generated_Image_hmstlkhmstlkhmst.jpg) center/cover no-repeat;
 }
 .hero-section {
-    min-height: 100vh;
     padding: 140px 6% 80px;
     position: relative;
     overflow: hidden;
