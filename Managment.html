@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
     <link rel="stylesheet" href="Managment.css">
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-   
+
 </head>
 
 <body>
@@ -397,67 +397,178 @@
                             </table>
                         </div>
                     </section>
-
+               <!-- Profile  -->
                     <section id="profile-section" class="section">
                         <div class="section-header">
-                            <h2> Profile</h2>
+                            <div>
+                                <h2>My Profile</h2>
+                                <p>Manage your personal information and account settings</p>
+                            </div>
+
+                            <button class="profile-edit-btn">
+                                <i class="fas fa-pen"></i>
+                                Edit Profile
+                            </button>
                         </div>
 
-                        <div class="whatsapp-profile">
-                            <div class="profile-cover"></div>
+                        <div class="admin-profile-container">
 
-                            <div class="profile-photo">
-                                <img src="img1.avif" alt="">
+                            <!-- Profile Header -->
+                            <div class="admin-profile-header">
+
+                                <div class="profile-cover"></div>
+
+                                <div class="profile-header-content">
+
+                                    <div class="profile-avatar">
+                                        <img src="img1.avif" alt="Admin Profile">
+                                        <span class="online-status"></span>
+                                    </div>
+
+                                    <div class="profile-main-info">
+                                        <h2>Jane Deo</h2>
+                                        <p class="profile-role">
+                                            <i class="fas fa-shield-halved"></i>
+                                            System Administrator
+                                        </p>
+                                        <p class="profile-id">Employee ID: ADM-001</p>
+                                    </div>
+
+                                    <div class="profile-status">
+                                        <span>
+                                            <i class="fas fa-circle"></i>
+                                            Active
+                                        </span>
+                                    </div>
+
+                                </div>
                             </div>
 
-                            <div class="profile-name">
-                                <h2>Jane Deo</h2>
-                                <p>System Administrator</p>
-                            </div>
+                            <!-- Profile Content -->
+                            <div class="profile-content-grid">
 
-                            <div class="profile-about">
-                                <h4>About</h4>
-                                <p>Managing employees and system activities</p>
-                            </div>
+                                <!-- Personal Information -->
+                                <div class="profile-card">
 
-                            <div class="profile-list">
-                                <div class="profile-item">
-                                    <i class="fas fa-envelope"></i>
-                                    <div>
-                                        <span>Email</span>
-                                        <p>admin@ems.com</p>
+                                    <div class="profile-card-header">
+                                        <div>
+                                            <h3>Personal Information</h3>
+                                            <p>Your basic account information</p>
+                                        </div>
+
+                                        <i class="fas fa-user"></i>
+                                    </div>
+
+                                    <div class="profile-info-grid">
+
+                                        <div class="profile-info-item">
+                                            <span>Full Name</span>
+                                            <strong>Jane Deo</strong>
+                                        </div>
+
+                                        <div class="profile-info-item">
+                                            <span>Email Address</span>
+                                            <strong>admin@ems.com</strong>
+                                        </div>
+
+                                        <div class="profile-info-item">
+                                            <span>Phone Number</span>
+                                            <strong>+92 300 1234567</strong>
+                                        </div>
+
+                                        <div class="profile-info-item">
+                                            <span>Location</span>
+                                            <strong>Karachi, Pakistan</strong>
+                                        </div>
+
                                     </div>
                                 </div>
 
-                                <div class="profile-item">
-                                    <i class="fas fa-phone"></i>
-                                    <div>
-                                        <span>Phone</span>
-                                        <p>+92 300 1234567</p>
+                                <!-- Work Information -->
+                                <div class="profile-card">
+
+                                    <div class="profile-card-header">
+                                        <div>
+                                            <h3>Work Information</h3>
+                                            <p>Your role and organization details</p>
+                                        </div>
+
+                                        <i class="fas fa-briefcase"></i>
+                                    </div>
+
+                                    <div class="profile-info-grid">
+
+                                        <div class="profile-info-item">
+                                            <span>Role</span>
+                                            <strong>Administrator</strong>
+                                        </div>
+
+                                        <div class="profile-info-item">
+                                            <span>Department</span>
+                                            <strong>Management</strong>
+                                        </div>
+
+                                        <div class="profile-info-item">
+                                            <span>Joining Date</span>
+                                            <strong>January 15, 2025</strong>
+                                        </div>
+
+                                        <div class="profile-info-item">
+                                            <span>Account Status</span>
+                                            <strong class="active-text">
+                                                <i class="fas fa-circle"></i>
+                                                Active
+                                            </strong>
+                                        </div>
+
                                     </div>
                                 </div>
 
-                                <div class="profile-item">
-                                    <i class="fas fa-briefcase"></i>
-                                    <div>
-                                        <span>Role</span>
-                                        <p>Administrator</p>
+                                <!-- About -->
+                                <div class="profile-card profile-about-card">
+
+                                    <div class="profile-card-header">
+                                        <div>
+                                            <h3>About</h3>
+                                            <p>Short description about your profile</p>
+                                        </div>
+
+                                        <i class="fas fa-circle-info"></i>
                                     </div>
+
+                                    <p class="about-text">
+                                        Managing employees, organizational activities and
+                                        system operations to ensure smooth and efficient
+                                        workforce management.
+                                    </p>
+
                                 </div>
 
-                                <div class="profile-item">
-                                    <i class="fas fa-building"></i>
-                                    <div>
-                                        <span>Department</span>
-                                        <p>Management</p>
-                                    </div>
-                                </div>
+                                <!-- Account Security -->
+                                <div class="profile-card">
 
-                                <div class="profile-item">
-                                    <i class="fas fa-location-dot"></i>
-                                    <div>
-                                        <span>Location</span>
-                                        <p>Karachi, Pakistan</p>
+                                    <div class="profile-card-header">
+                                        <div>
+                                            <h3>Account Security</h3>
+                                            <p>Manage your account security</p>
+                                        </div>
+
+                                        <i class="fas fa-lock"></i>
+                                    </div>
+
+                                    <div class="security-item">
+                                        <div class="security-icon">
+                                            <i class="fas fa-key"></i>
+                                        </div>
+
+                                        <div>
+                                            <strong>Password</strong>
+                                            <p>Last updated recently</p>
+                                        </div>
+
+                                        <button class="change-password-btn">
+                                            Change
+                                        </button>
                                     </div>
                                 </div>
                             </div>
