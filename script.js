@@ -31,3 +31,30 @@ menuToggle.addEventListener("click", function () {
     navLinks.classList.toggle("show");
 });
 
+ 
+
+/* =========================================
+   SIMEC FEATURES SECTION - SCROLL REVEAL ANIMATION
+========================================= */
+const revealElements = document.querySelectorAll(".simec-features-section .scroll-reveal, .scroll-reveal");
+
+const revealOptions = {
+    threshold: 0.1, // Jaise hi element ka 10% hissa nazar aye
+    rootMargin: "0px 0px -40px 0px"
+};
+
+const revealOnScroll = new IntersectionObserver(function(entries, observer) {
+    entries.forEach(entry => {
+        if (!entry.isIntersecting) {
+            return;
+        } else {
+            entry.target.classList.add("active");
+            // Ek dafa animation chalne ke baad observer hatane ki zarurat nahi, 
+            // taake agar user upar-neeche scroll kare toh smoothly chale
+        }
+    });
+}, revealOptions);
+
+revealElements.forEach(el => {
+    revealOnScroll.observe(el);
+});
