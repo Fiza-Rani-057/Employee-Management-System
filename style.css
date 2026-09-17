@@ -376,7 +376,6 @@
 
  .hero-container h1 span {
      background: linear-gradient(135deg, #c084fc, #38bdf8);
-     -webkit-background-clip: text;
      -webkit-text-fill-color: transparent;
  }
 
@@ -735,7 +734,6 @@
 
  .hero-container h1 span {
      background: linear-gradient(135deg, #672bd0, #065075);
-     -webkit-background-clip: text;
      -webkit-text-fill-color: transparent;
  }
 
@@ -1078,7 +1076,6 @@
  /* Header Span Color */
 .simec-header h2 .highlight-text {
     background: linear-gradient(135deg, #7c3aed, #4f46e5);
-    -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 }
 
@@ -1212,7 +1209,6 @@
  body.dark-mode .simec-highlights {
      background: rgba(30, 41, 59, 0.7);
      border-color: rgba(255, 255, 255, 0.08);
-     backdrop-link: blur(10px);
  }
 
  body.dark-mode .highlight-pill {
