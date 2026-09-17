@@ -55,16 +55,15 @@ html {
 .nav-logo h3 {
     font-size: 24px;
     font-weight: 800;
-    color: #0f172a; /* Light mode mein text color */
+    color: #0f172a; 
     margin: 0;
     transition: color 0.3s ease;
 }
 
 .nav-logo h3 span {
-    color: #7c3aed; /* 'RA' ka purple color */
+    color: #7c3aed; 
 }
 
-/* Dark mode ke liye support */
 body.dark-mode .nav-logo h3 span {
      color: #7c3aed;
 }
@@ -1243,8 +1242,8 @@ body.dark-mode .nav-logo h3{
 
 /* Transparent Feature Card */
 .hr-feature-card {
-    background: transparent; /* Light mode mein halka translucent white */
-    backdrop-filter: blur(12px); /* Glass blur effect */
+    background: transparent; 
+    backdrop-filter: blur(12px); 
     border: none;
     border-radius: 20px;
     padding: 35px 20px;

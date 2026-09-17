@@ -31,8 +31,6 @@ menuToggle.addEventListener("click", function () {
     navLinks.classList.toggle("show");
 });
 
- 
-
 /* =========================================
    SIMEC FEATURES SECTION - SCROLL REVEAL ANIMATION
 ========================================= */
