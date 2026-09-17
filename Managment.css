@@ -113,14 +113,12 @@ body {
 }
 
 .sidebar h3 span {
-    color: #7c3aed; /* 'RA' ka purple color */
-    display: inline; /* Line break khatam karne ke liye */
+    color: #7c3aed; 
+    display: inline; 
     width: auto;
     height: auto;
-    background: transparent; /* Agar koi purana background box aa raha ho toh remove ho jaye */
-}
+    background: transparent; 
 
-/* Dark mode ke liye support */
 body.dark-mode .sidebar h3 {
     color: #f8fafc;
 }
@@ -1512,4 +1510,5 @@ body.dark-mode ::-webkit-scrollbar-thumb {
     .dashboard-date {
         width: 100%;
     }
+}
 }

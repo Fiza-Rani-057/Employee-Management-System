@@ -84,18 +84,18 @@ transition: background 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
 
 /* LOGO */
 
-.logo {
+.logo h3 {
     display: flex;
     align-items: center;
-    justify-content: center;
-    gap: 9px;
     margin-bottom: 25px;
-    color: #172033;
-    font-size: 22px;
+    color:#00010f;
+    font-size: 25px;
     font-weight: 800;
     letter-spacing: 1px;
 }
-
+.logo h3 span{
+    color: #7c3aed;
+}
 .logo-mark {
     width: 36px;
     height: 36px;
@@ -290,8 +290,8 @@ body.dark-mode .auth-box {
      
 }
 
-body.dark-mode .logo,
-body.dark-mode .auth-form h1 {
+body.dark-mode .logo h3,
+body.dark-mode .auth-form h1{
     color: #f8fafc;
 }
 
