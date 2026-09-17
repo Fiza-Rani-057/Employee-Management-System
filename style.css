@@ -9,7 +9,7 @@ html {
  }
 
  body {
-     font-family: Arial, Helvetica, sans-serif;
+   font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
      background: #f7f8fc;
      color: #19182c;
      transition: background 0.3s ease, color 0.3s ease;
@@ -1220,4 +1220,122 @@ html {
  body.dark-mode .highlight-pill {
      color: #e2e8f0;
  }
- 
+ /* =========================================
+   SIMEC 4-COLUMN GRID SECTION CSS (Transparent Cards)
+========================================= */
+.simec-grid-section {
+    padding: 90px 6%;
+    background: linear-gradient(135deg, rgba(124, 58, 237, 0.04), rgba(79, 70, 229, 0.08));
+    position: relative;
+    overflow: hidden;
+    transition: background 0.3s ease;
+}
+
+.hr-features-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 30px;
+    margin-top: 50px;
+}
+
+/* Transparent Feature Card */
+.hr-feature-card {
+    background: transparent; /* Light mode mein halka translucent white */
+    backdrop-filter: blur(12px); /* Glass blur effect */
+    border: none;
+    border-radius: 20px;
+    padding: 35px 20px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: all 0.4s ease;
+}
+
+/* White Circle & #7c3aed Icon */
+.hr-icon-circle {
+    width: 70px;
+    height: 70px;
+    background: rgba(255, 255, 255, 0.9);
+    color: #7c3aed;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 26px;
+    margin-bottom: 20px;
+    box-shadow: 0 10px 25px rgba(124, 58, 237, 0.1);
+    border: none;
+    transition: all 0.4s ease;
+}
+.hr-feature-card h3 {
+    font-size: 16px;
+    font-weight: bold;
+    color: #0f172a;
+    line-height: 1.4;
+    margin: 0;
+    transition: color 0.3s ease;
+}
+
+/* =========================================
+   DARK MODE STYLES (Transparent Cards)
+========================================= */
+body.dark-mode .simec-grid-section {
+    background: linear-gradient(135deg, #0b0f19, #130e26);
+}
+
+body.dark-mode .hr-feature-card {
+    background: rgba(30, 41, 59, 0.35); /* Dark mode mein transparent glass look */
+    backdrop-filter: blur(12px);
+    border: none;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+}
+
+body.dark-mode .hr-feature-card:hover {
+    background: rgba(30, 41, 59, 0.65);
+    box-shadow: 0 20px 40px rgba(124, 58, 237, 0.2);
+}
+
+body.dark-mode .hr-icon-circle {
+    background: rgba(30, 41, 59, 0.5);
+    color: #a78bfa;
+    border: none;
+}
+
+body.dark-mode .hr-feature-card:hover .hr-icon-circle {
+    background: #7c3aed;
+    color: #ffffff;
+}
+
+body.dark-mode .hr-feature-card h3 {
+    color: #f8fafc;
+}
+
+/* =========================================
+   RESPONSIVE DESIGN
+========================================= */
+@media (max-width: 1024px) {
+    .hr-features-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 600px) {
+    .hr-features-grid {
+        grid-template-columns: 1fr;
+    }
+}
+/* =========================================
+   SCROLL REVEAL ANIMATION STYLES
+========================================= */
+.scroll-reveal {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+    will-change: opacity, transform;
+}
+
+.scroll-reveal.active {
+    opacity: 1;
+    transform: translateY(0);
+}
