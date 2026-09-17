@@ -1075,6 +1075,12 @@
      font-weight: 600;
      color: #1e293b;
  }
+ /* Header Span Color */
+.simec-header h2 .highlight-text {
+    background: linear-gradient(135deg, #7c3aed, #4f46e5);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
 
  .simec-image-wrapper img {
      width: 100%;
