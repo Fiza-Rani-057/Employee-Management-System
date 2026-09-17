@@ -1268,6 +1268,11 @@ html {
     border: none;
     transition: all 0.4s ease;
 }
+.hr-icon-circle:hover {
+    background: #a78bfa;
+    color: white;
+    border: none;
+}
 .hr-feature-card h3 {
     font-size: 16px;
     font-weight: bold;
@@ -1285,16 +1290,11 @@ body.dark-mode .simec-grid-section {
 }
 
 body.dark-mode .hr-feature-card {
-    background: rgba(30, 41, 59, 0.35); /* Dark mode mein transparent glass look */
+    background: transparent;
     backdrop-filter: blur(12px);
     border: none;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
 }
 
-body.dark-mode .hr-feature-card:hover {
-    background: rgba(30, 41, 59, 0.65);
-    box-shadow: 0 20px 40px rgba(124, 58, 237, 0.2);
-}
 
 body.dark-mode .hr-icon-circle {
     background: rgba(30, 41, 59, 0.5);
