@@ -1458,3 +1458,255 @@ body.dark-mode .bento-img-card {
         grid-template-columns: 1fr;
     }
 }
+/* =========================================
+   EMPLYRA SPLIT CONTACT SECTION CSS
+========================================= */
+.simec-contact-section {
+    padding: 90px 6%;
+    background: linear-gradient(135deg, rgba(79, 70, 229, 0.05), rgba(124, 58, 237, 0.08));
+    position: relative;
+    overflow: hidden;
+    transition: background 0.3s ease;
+}
+
+/* Master Split Card */
+.contact-split-card {
+    display: grid;
+    grid-template-columns: 1.1fr 0.9fr;
+    background: rgba(255, 255, 255, 0.65);
+    backdrop-filter: blur(16px);
+    border: none;
+    border-radius: 24px;
+    overflow: hidden;
+    box-shadow: 0 20px 45px rgba(124, 58, 237, 0.06);
+    margin-top: 50px;
+    transition: all 0.4s ease;
+}
+
+.contact-split-card:hover {
+    box-shadow: 0 25px 55px rgba(124, 58, 237, 0.12);
+    background: rgba(255, 255, 255, 0.85);
+}
+
+/* Left Content Side */
+.contact-left-content {
+    padding: 45px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.contact-titles h3 {
+    font-size: 26px;
+    font-weight: 800;
+    color: #0f172a;
+    margin-bottom: 6px;
+}
+
+.contact-titles p {
+    font-size: 14px;
+    color: #64748b;
+    margin-bottom: 25px;
+}
+
+/* Mini Info Details */
+.contact-mini-info {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+    margin-bottom: 25px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid rgba(124, 58, 237, 0.1);
+}
+
+.mini-info-item span {
+    font-size: 12px;
+    font-weight: 700;
+    color: #7c3aed;
+    text-transform: uppercase;
+    display: block;
+    margin-bottom: 2px;
+}
+
+.mini-info-item p {
+    font-size: 13px;
+    color: #334155;
+    margin: 0;
+    font-weight: 600;
+}
+
+/* Form Styles */
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 12px 16px;
+    background: rgba(255, 255, 255, 0.7);
+    border: none;
+    border-radius: 12px;
+    font-size: 14px;
+    color: #0f172a;
+    outline: none;
+    transition: all 0.3s ease;
+    box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.02);
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    background: #ffffff;
+    box-shadow: 0 0 0 3px rgba(124, 58, 237, 0.15);
+}
+
+/* Submit Button */
+.simec-submit-btn {
+    padding: 15px 30px;
+    width: 100%;
+    background: linear-gradient(135deg, #7c3aed, #4f46e5);
+    color: #ffffff;
+    border: none;
+    border-radius: 12px;
+    font-size: 14px;
+    font-weight: 700;
+    cursor: pointer;
+    box-shadow: 0 8px 20px rgba(124, 58, 237, 0.25);
+    transition: all 0.3s ease;
+}
+
+.simec-submit-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 12px 25px rgba(124, 58, 237, 0.35);
+}
+
+/* Follow Us Section */
+.contact-follow-us {
+    margin-top: 25px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.contact-follow-us span {
+    font-size: 13px;
+    font-weight: 700;
+    color: #475569;
+}
+
+.social-links {
+    display: flex;
+    gap: 10px;
+}
+
+.social-links a {
+    width: 32px;
+    height: 32px;
+    background: rgba(124, 58, 237, 0.08);
+    color: #7c3aed;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 12px;
+    transition: all 0.3s ease;
+}
+
+.social-links a:hover {
+    background: #7c3aed;
+    color: #ffffff;
+    transform: translateY(-2px);
+}
+
+/* Right Image Side */
+.contact-right-image {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    min-height: 450px;
+}
+
+.contact-right-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* =========================================
+   DARK MODE STYLES
+========================================= */
+body.dark-mode .simec-contact-section {
+    background: linear-gradient(135deg, #0b0f19, #130e26);
+}
+
+body.dark-mode .contact-split-card {
+    background: rgba(30, 41, 59, 0.35);
+    box-shadow: 0 20px 45px rgba(0, 0, 0, 0.2);
+}
+
+body.dark-mode .contact-split-card:hover {
+    background: rgba(30, 41, 59, 0.6);
+    box-shadow: 0 25px 55px rgba(124, 58, 237, 0.2);
+}
+
+body.dark-mode .contact-titles h3,
+body.dark-mode .mini-info-item p {
+    color: #f8fafc;
+}
+
+body.dark-mode .contact-titles p,
+body.dark-mode .contact-follow-us span {
+    color: #94a3b8;
+}
+
+body.dark-mode .mini-info-item span {
+    color: #a78bfa;
+}
+
+body.dark-mode .contact-mini-info {
+    border-color: rgba(124, 58, 237, 0.2);
+}
+
+body.dark-mode .form-group input,
+body.dark-mode .form-group textarea {
+    background: rgba(15, 23, 42, 0.6);
+    color: #f8fafc;
+}
+
+body.dark-mode .form-group input:focus,
+body.dark-mode .form-group textarea:focus {
+    background: rgba(15, 23, 42, 0.9);
+    box-shadow: 0 0 0 3px rgba(124, 58, 237, 0.25);
+}
+
+body.dark-mode .social-links a {
+    background: rgba(124, 58, 237, 0.2);
+    color: #a78bfa;
+}
+
+body.dark-mode .social-links a:hover {
+    background: #7c3aed;
+    color: #ffffff;
+}
+
+/* =========================================
+   RESPONSIVE DESIGN
+========================================= */
+@media (max-width: 992px) {
+    .contact-split-card {
+        grid-template-columns: 1fr;
+    }
+    .contact-right-image {
+        min-height: 300px;
+    }
+}
+
+@media (max-width: 576px) {
+    .contact-mini-info {
+        grid-template-columns: 1fr;
+        gap: 10px;
+    }
+    .contact-left-content {
+        padding: 30px 20px;
+    }
+}
