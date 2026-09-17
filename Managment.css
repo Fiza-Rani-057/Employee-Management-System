@@ -84,7 +84,7 @@ body {
     transition: background var(--transition), border-color var(--transition);
 }
 
-.sidebar>h3 {
+.sidebar > h3 {
     height: 54px;
     display: flex;
     align-items: center;
@@ -94,30 +94,30 @@ body {
     font-weight: 700;
     letter-spacing: 0.5px;
     color: white;
-} 
-  
-/* Sidebar Logo Styling */
+}
+
 .sidebar-logo {
-    padding: 2 0px 24px;
+    padding: 2px 0 24px;
 }
 
 .sidebar h3 {
     font-size: 24px;
     font-weight: 800;
-    color: #0f172a; 
+    color: #0f172a;
     margin: 0;
-    display: flex; /* Agar icon ya background box dena hai toh inline-flex use karein */
+    display: flex;
     align-items: center;
-    gap: 0; /* Taake koi extra space na ho */
+    gap: 0;
     transition: color 0.3s ease;
 }
 
 .sidebar h3 span {
-    color: #7c3aed; 
-    display: inline; 
+    color: #7c3aed;
+    display: inline;
     width: auto;
     height: auto;
-    background: transparent; 
+    background: transparent;
+}
 
 body.dark-mode .sidebar h3 {
     color: #f8fafc;
@@ -127,7 +127,7 @@ body.dark-mode .sidebar h3 span {
     color: var(--primary) !important;
 }
 
-.sidebar>h3::after {
+.sidebar > h3::after {
     content: "";
     position: absolute;
     top: 68px;
@@ -348,7 +348,7 @@ main section.section-active {
     display: block;
 }
 
-main section>h2,
+main section > h2,
 .section-header h2 {
     margin-bottom: 18px;
     color: var(--text-main);
@@ -372,7 +372,7 @@ main section>h2,
     gap: 9px;
 }
 
-/* Dashboard Cards - Original */
+/* Dashboard Cards */
 
 .dashboard-cards {
     display: grid;
@@ -399,16 +399,12 @@ main section>h2,
     justify-content: center;
 }
 
-/* Card heading */
-
 .dashboard-cards .card h3 {
     margin-bottom: 13px;
     color: var(--text-main);
     font-size: 13px;
     font-weight: 600;
 }
-
-/* Card number */
 
 .dashboard-cards .card p {
     color: var(--text-main);
@@ -531,6 +527,7 @@ tbody tr:hover {
     max-width: 100%;
     max-height: 285px;
 }
+
 /* =========================
    PROFILE SECTION
 ========================= */
@@ -573,19 +570,13 @@ tbody tr:hover {
     opacity: 0.9;
 }
 
-
-/* =========================
-   PROFILE CONTAINER
-========================= */
+/* PROFILE CONTAINER */
 
 .admin-profile-container {
     width: 100%;
 }
 
-
-/* =========================
-   PROFILE HEADER
-========================= */
+/* PROFILE HEADER */
 
 .admin-profile-header {
     position: relative;
@@ -599,12 +590,11 @@ tbody tr:hover {
 
 .profile-cover {
     height: 145px;
-    background:
-        linear-gradient(
-            135deg,
-            var(--primary),
-            #2563eb
-        );
+    background: linear-gradient(
+        135deg,
+        var(--primary),
+        #2563eb
+    );
     position: relative;
 }
 
@@ -627,10 +617,7 @@ tbody tr:hover {
     position: relative;
 }
 
-
-/* =========================
-   PROFILE AVATAR
-========================= */
+/* PROFILE AVATAR */
 
 .profile-avatar {
     width: 105px;
@@ -663,10 +650,7 @@ tbody tr:hover {
     border-radius: 50%;
 }
 
-
-/* =========================
-   PROFILE MAIN INFO
-========================= */
+/* PROFILE MAIN INFO */
 
 .profile-main-info {
     padding-top: 13px;
@@ -697,10 +681,7 @@ tbody tr:hover {
     font-size: 11px;
 }
 
-
-/* =========================
-   PROFILE STATUS
-========================= */
+/* PROFILE STATUS */
 
 .profile-status {
     margin-left: auto;
@@ -723,10 +704,7 @@ tbody tr:hover {
     font-size: 7px;
 }
 
-
-/* =========================
-   PROFILE GRID
-========================= */
+/* PROFILE GRID */
 
 .profile-content-grid {
     display: grid;
@@ -734,10 +712,7 @@ tbody tr:hover {
     gap: 18px;
 }
 
-
-/* =========================
-   PROFILE CARDS
-========================= */
+/* PROFILE CARDS */
 
 .profile-card {
     background: var(--bg-card);
@@ -779,10 +754,7 @@ tbody tr:hover {
     font-size: 13px;
 }
 
-
-/* =========================
-   INFORMATION GRID
-========================= */
+/* INFORMATION GRID */
 
 .profile-info-grid {
     display: grid;
@@ -803,10 +775,7 @@ tbody tr:hover {
     font-weight: 600;
 }
 
-
-/* =========================
-   ABOUT
-========================= */
+/* ABOUT */
 
 .profile-about-card {
     min-height: 170px;
@@ -818,10 +787,7 @@ tbody tr:hover {
     line-height: 1.7;
 }
 
-
-/* =========================
-   ACTIVE STATUS
-========================= */
+/* ACTIVE STATUS */
 
 .active-text {
     display: flex;
@@ -834,10 +800,7 @@ tbody tr:hover {
     font-size: 7px;
 }
 
-
-/* =========================
-   SECURITY
-========================= */
+/* SECURITY */
 
 .security-item {
     display: flex;
@@ -886,21 +849,15 @@ tbody tr:hover {
     background: var(--primary-light);
 }
 
-
-/* =========================
-   RESPONSIVE
-========================= */
+/* RESPONSIVE */
 
 @media (max-width: 850px) {
-
     .profile-content-grid {
         grid-template-columns: 1fr;
     }
-
 }
 
 @media (max-width: 600px) {
-
     #profile-section .section-header {
         align-items: flex-start;
         gap: 15px;
@@ -933,6 +890,7 @@ tbody tr:hover {
         padding: 17px;
     }
 }
+
 /* Settings */
 
 .setting-tabs {
@@ -1117,7 +1075,7 @@ tbody tr:hover {
     margin-top: 14px;
 }
 
-.add-employee-form>.form-group:last-child {
+.add-employee-form > .form-group:last-child {
     display: flex;
     justify-content: flex-end;
     gap: 9px;
@@ -1180,7 +1138,7 @@ tbody tr:hover {
     gap: 12px;
 }
 
-.toast-content>i {
+.toast-content > i {
     color: var(--primary);
     font-size: 19px;
 }
@@ -1348,7 +1306,7 @@ body.dark-mode ::-webkit-scrollbar-thumb {
         font-size: 11px;
     }
 
-    main section>h2,
+    main section > h2,
     .section-header h2 {
         font-size: 23px;
     }
@@ -1376,6 +1334,8 @@ body.dark-mode ::-webkit-scrollbar-thumb {
         min-width: auto;
     }
 }
+
+/* Charts */
 
 .charts-container {
     display: grid;
@@ -1440,15 +1400,14 @@ body.dark-mode ::-webkit-scrollbar-thumb {
     justify-content: center;
 }
 
-@media(max-width:900px) {
-
+@media (max-width: 900px) {
     .chart-two,
     .chart-three {
         grid-column: span 12;
     }
 }
 
-@media(max-width:600px) {
+@media (max-width: 600px) {
     .charts-container {
         grid-template-columns: 1fr;
     }
@@ -1473,7 +1432,7 @@ body.dark-mode ::-webkit-scrollbar-thumb {
     margin-bottom: 24px;
 }
 
-.dashboard-heading>div:first-child span {
+.dashboard-heading > div:first-child span {
     display: block;
     font-size: 12px;
     font-weight: 700;
@@ -1495,9 +1454,7 @@ body.dark-mode ::-webkit-scrollbar-thumb {
     color: var(--text-muted);
 }
 
-
-
-@media(max-width:700px) {
+@media (max-width: 700px) {
     .dashboard-heading {
         align-items: flex-start;
         flex-direction: column;
@@ -1510,5 +1467,4 @@ body.dark-mode ::-webkit-scrollbar-thumb {
     .dashboard-date {
         width: 100%;
     }
-}
 }
