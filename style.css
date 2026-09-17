@@ -40,7 +40,6 @@ html {
      transition: 0.35s ease;
      font-weight: bold;
  }
-
  /* LOGO */
 
  .nav-logo {
@@ -52,22 +51,26 @@ html {
      letter-spacing: -0.5px;
  }
 
- .logo-icon {
-     width: 36px;
-     height: 36px;
-     display: flex;
-     align-items: center;
-     justify-content: center;
-     border-radius: 10px;
-     background: linear-gradient(135deg, #6d4aff, #9278ff);
-     color: black;
-     box-shadow: 0 7px 20px rgba(109, 74, 255, 0.25);
- }
 
- .nav-logo span {
-     color: #19182c;
- }
+.nav-logo h3 {
+    font-size: 24px;
+    font-weight: 800;
+    color: #0f172a; /* Light mode mein text color */
+    margin: 0;
+    transition: color 0.3s ease;
+}
 
+.nav-logo h3 span {
+    color: #7c3aed; /* 'RA' ka purple color */
+}
+
+/* Dark mode ke liye support */
+body.dark-mode .nav-logo h3 span {
+     color: #7c3aed;
+}
+body.dark-mode .nav-logo h3{
+    color: white;
+}
  /* NAV LINKS */
 
  .nav-links {
@@ -1481,6 +1484,7 @@ body.dark-mode .bento-img-card {
     box-shadow: 0 20px 45px rgba(124, 58, 237, 0.06);
     margin-top: 50px;
     transition: all 0.4s ease;
+    border: 1px solid #065075;
 }
 
 .contact-split-card:hover {
@@ -1708,5 +1712,247 @@ body.dark-mode .social-links a:hover {
     }
     .contact-left-content {
         padding: 30px 20px;
+    }
+}
+
+/* =========================================
+   EMPLYRA FOOTER SECTION CSS
+========================================= */
+.simec-footer-section {
+    padding: 70px 6% 30px;
+    background: linear-gradient(135deg, rgba(79, 70, 229, 0.08), rgba(124, 58, 237, 0.12));
+    position: relative;
+    overflow: hidden;
+    transition: background 0.3s ease;
+    border-top: 1px solid rgba(124, 58, 237, 0.1);
+}
+
+.footer-grid {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr 1fr 1.5fr;
+    gap: 40px;
+    margin-bottom: 50px;
+}
+
+/* Footer Widget Styles */
+.footer-widget h4 {
+    font-size: 16px;
+    font-weight: 700;
+    color: #0f172a;
+    margin-bottom: 20px;
+    position: relative;
+}
+
+.footer-widget h4::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -8px;
+    width: 30px;
+    height: 2px;
+    background: #7c3aed;
+    border-radius: 2px;
+}
+
+.footer-logo h3 {
+    font-size: 24px;
+    font-weight: 800;
+    color: #0f172a;
+    margin-bottom: 15px;
+}
+
+.footer-logo h3 span {
+    color: #7c3aed;
+}
+
+.brand-widget p,
+.newsletter-widget p {
+    font-size: 14px;
+    color: #475569;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+/* Footer Social Icons */
+.footer-socials {
+    display: flex;
+    gap: 10px;
+}
+
+.footer-socials a {
+    width: 36px;
+    height: 36px;
+    background: rgba(124, 58, 237, 0.08);
+    color: #7c3aed;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 13px;
+    transition: all 0.3s ease;
+}
+
+.footer-socials a:hover {
+    background: #7c3aed;
+    color: #ffffff;
+    transform: translateY(-3px);
+}
+
+/* Footer Links List */
+.footer-links {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.footer-links li a {
+    font-size: 14px;
+    color: #475569;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.footer-links li a:hover {
+    color: #7c3aed;
+    padding-left: 5px;
+}
+
+/* Newsletter Form */
+.footer-newsletter-form {
+    display: flex;
+    background: rgba(255, 255, 255, 0.7);
+    backdrop-filter: blur(10px);
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(124, 58, 237, 0.05);
+    border: 1px solid rgba(124, 58, 237, 0.15);
+}
+
+.footer-newsletter-form input {
+    width: 100%;
+    padding: 12px 15px;
+    background: transparent;
+    border: none;
+    font-size: 13px;
+    color: #0f172a;
+    outline: none;
+}
+
+.footer-newsletter-form button {
+    background: #7c3aed;
+    color: #ffffff;
+    border: none;
+    padding: 0 18px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.footer-newsletter-form button:hover {
+    background: #6d28d9;
+}
+
+/* Footer Bottom Bar */
+.footer-bottom {
+    padding-top: 25px;
+    border-top: 1px solid rgba(124, 58, 237, 0.1);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.footer-bottom p {
+    font-size: 13px;
+    color: #64748b;
+    margin: 0;
+}
+
+.footer-bottom-links {
+    display: flex;
+    gap: 20px;
+}
+
+.footer-bottom-links a {
+    font-size: 13px;
+    color: #64748b;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.footer-bottom-links a:hover {
+    color: #7c3aed;
+}
+
+/* =========================================
+   DARK MODE STYLES
+========================================= */
+body.dark-mode .simec-footer-section {
+    background: linear-gradient(135deg, #0b0f19, #130e26);
+    border-color: rgba(124, 58, 237, 0.2);
+}
+
+body.dark-mode .footer-widget h4 {
+    color: #f8fafc;
+}
+
+body.dark-mode .footer-logo h3 {
+    color: #f8fafc;
+}
+
+body.dark-mode .brand-widget p,
+body.dark-mode .newsletter-widget p,
+body.dark-mode .footer-links li a,
+body.dark-mode .footer-bottom p,
+body.dark-mode .footer-bottom-links a {
+    color: #94a3b8;
+}
+
+body.dark-mode .footer-links li a:hover {
+    color: #a78bfa;
+}
+
+body.dark-mode .footer-socials a {
+    background: rgba(124, 58, 237, 0.2);
+    color: #a78bfa;
+}
+
+body.dark-mode .footer-socials a:hover {
+    background: #7c3aed;
+    color: #ffffff;
+}
+
+body.dark-mode .footer-newsletter-form {
+    background: rgba(15, 23, 42, 0.6);
+    border-color: rgba(124, 58, 237, 0.25);
+}
+
+body.dark-mode .footer-newsletter-form input {
+    color: #f8fafc;
+}
+
+body.dark-mode .footer-bottom {
+    border-color: rgba(124, 58, 237, 0.2);
+}
+
+/* =========================================
+   RESPONSIVE DESIGN
+========================================= */
+@media (max-width: 992px) {
+    .footer-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 30px;
+    }
+}
+
+@media (max-width: 576px) {
+    .footer-grid {
+        grid-template-columns: 1fr;
+    }
+    .footer-bottom {
+        flex-direction: column;
+        gap: 15px;
+        text-align: center;
     }
 }

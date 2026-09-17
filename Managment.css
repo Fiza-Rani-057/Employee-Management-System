@@ -84,33 +84,53 @@ body {
     transition: background var(--transition), border-color var(--transition);
 }
 
-.sidebar>h1 {
+.sidebar>h3 {
     height: 54px;
     display: flex;
     align-items: center;
-    gap: 8px;
     padding: 0 9px;
     margin-bottom: 28px;
     font-size: 25px;
     font-weight: 700;
     letter-spacing: 0.5px;
-    color: var(--text-main);
-}
-
-.sidebar>h1 i {
-    width: 36px;
-    height: 30px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background: var(--primary);
     color: white;
-    border-radius: 9px;
-    font-size: 15px;
+} 
+  
+/* Sidebar Logo Styling */
+.sidebar-logo {
+    padding: 2 0px 24px;
 }
 
-.sidebar>h1::after {
-    content: "EMPLOYEE MANAGEMENT";
+.sidebar h3 {
+    font-size: 24px;
+    font-weight: 800;
+    color: #0f172a; 
+    margin: 0;
+    display: flex; /* Agar icon ya background box dena hai toh inline-flex use karein */
+    align-items: center;
+    gap: 0; /* Taake koi extra space na ho */
+    transition: color 0.3s ease;
+}
+
+.sidebar h3 span {
+    color: #7c3aed; /* 'RA' ka purple color */
+    display: inline; /* Line break khatam karne ke liye */
+    width: auto;
+    height: auto;
+    background: transparent; /* Agar koi purana background box aa raha ho toh remove ho jaye */
+}
+
+/* Dark mode ke liye support */
+body.dark-mode .sidebar h3 {
+    color: #f8fafc;
+}
+
+body.dark-mode .sidebar h3 span {
+    color: var(--primary) !important;
+}
+
+.sidebar>h3::after {
+    content: "";
     position: absolute;
     top: 68px;
     left: 65px;
