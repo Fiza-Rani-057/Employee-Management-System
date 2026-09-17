@@ -1723,7 +1723,8 @@ body.dark-mode .social-links a:hover {
     position: relative;
     overflow: hidden;
     transition: background 0.3s ease;
-    border-top: 1px solid rgba(124, 58, 237, 0.1);
+    border-top: 1px solid #065075;
+   
 }
 
 .footer-grid {
@@ -1856,7 +1857,7 @@ body.dark-mode .social-links a:hover {
 /* Footer Bottom Bar */
 .footer-bottom {
     padding-top: 25px;
-    border-top: 1px solid rgba(124, 58, 237, 0.1);
+    border-top: 1px solid #065075;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -1889,7 +1890,7 @@ body.dark-mode .social-links a:hover {
 ========================================= */
 body.dark-mode .simec-footer-section {
     background: linear-gradient(135deg, #0b0f19, #130e26);
-    border-color: rgba(124, 58, 237, 0.2);
+    border-color: #065075;
 }
 
 body.dark-mode .footer-widget h4 {
@@ -1932,7 +1933,7 @@ body.dark-mode .footer-newsletter-form input {
 }
 
 body.dark-mode .footer-bottom {
-    border-color: rgba(124, 58, 237, 0.2);
+    border-color: #065075;
 }
 
 /* =========================================
