@@ -182,42 +182,54 @@ cancelConfirmation.addEventListener('click', function () {
 });
 
 const confirmAction = document.getElementById('confirm-action');
-
 confirmAction.addEventListener('click', function () {
     if (rowToDelete) {
-        totalEmployee.textContent = employeesTable.children.length;
         rowToDelete.remove();
+        totalEmployee.textContent = employeesTable.children.length;
+
+        let activeCount = 0;
+
+        for (let i = 0; i < employeesTable.children.length; i++) {
+            if (employeesTable.children[i].cells[6].textContent.toLowerCase() === 'active') {
+                activeCount++;
+            }
+        }
+
+        activeEmployees.textContent = activeCount;
         rowToDelete = null;
         rowToEdit = null;
     }
-  if (positionToDelete) {
 
-    positionToDelete.remove();
-    totalPositions.textContent = positionsTable.children.length;
-    positionToDelete = null;
-    confirmationModal.classList.remove('active');
-}
- if (leaveToDelete) {
-    leaveToDelete.remove();
-
-    let pendingCount = 0;
-    for (let i = 0; i < leavesTable.children.length; i++) {
-        if (leavesTable.children[i].cells[7].textContent.toLowerCase() === 'pending') {
-            pendingCount++;
-        }
+    if (positionToDelete) {
+        positionToDelete.remove();
+        totalPositions.textContent = positionsTable.children.length;
+        positionToDelete = null;
     }
-    if (messageToDelete) {
-    messageToDelete.remove();
-    messageToDelete = null;
-}
-if (performanceToDelete) {
-    performanceToDelete.remove();
-    performanceToDelete = null;
-}
 
-    pendingLeaves.textContent = pendingCount;
-    leaveToDelete = null;
-}
+    if (leaveToDelete) {
+        leaveToDelete.remove();
+
+        let pendingCount = 0;
+
+        for (let i = 0; i < leavesTable.children.length; i++) {
+            if (leavesTable.children[i].cells[7].textContent.toLowerCase() === 'pending') {
+                pendingCount++;
+            }
+        }
+
+        pendingLeaves.textContent = pendingCount;
+        leaveToDelete = null;
+    }
+
+    if (messageToDelete) {
+        messageToDelete.remove();
+        messageToDelete = null;
+    }
+
+    if (performanceToDelete) {
+        performanceToDelete.remove();
+        performanceToDelete = null;
+    }
 
     confirmationModal.classList.remove('active');
 });
@@ -1179,16 +1191,22 @@ closeCalendar.addEventListener('click', function () {
     calendarModal.classList.remove('active');
 });
 
-// Delete Event
+  // Delete Calendar Event
+
 calendarTable.addEventListener('click', function (e) {
     const button = e.target.closest('button');
+
     if (!button) {
         return;
     }
 
     if (button.classList.contains('delete-calendar-btn')) {
-        const row = button.parentElement.parentElement;
-        row.remove();
+        rowToDelete = button.closest('tr');
+
+        confirmationTitle.textContent = 'Delete Event';
+        confirmationMessage.textContent = 'Are you sure you want to delete this event?';
+
+        confirmationModal.classList.add('active');
     }
 });
 
