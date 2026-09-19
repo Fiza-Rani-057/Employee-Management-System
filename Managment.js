@@ -2,20 +2,21 @@
 
 const sidebarItems = document.querySelectorAll(".sidebar li[data-section]");
 const sections = document.querySelectorAll("main section");
+let totalEmployee = document.querySelector('#total-employees');
 
-sidebarItems.forEach(function(item) {
+sidebarItems.forEach(function (item) {
 
-    item.addEventListener("click", function() {
+    item.addEventListener("click", function () {
         // Sab items se active hatao
-        sidebarItems.forEach(function(li) {
+        sidebarItems.forEach(function (li) {
             li.classList.remove("active");
         });
-        
+
         // Clicked item ko active karo
         item.classList.add("active");
 
         // Sab sections hide karo
-        sections.forEach(function(section) {
+        sections.forEach(function (section) {
             section.style.display = "none";
         });
 
@@ -80,10 +81,10 @@ employeeForm.addEventListener('submit', function (e) {
     row.dataset.hireDate = hireDate;
     row.dataset.salary = salary;
 
-   employeesTable.appendChild(row);
-   totalEmployee.textContent = employeesTable.children.length;
-   employeeForm.reset();
-   addEmployeeModal.classList.remove('active');
+    employeesTable.appendChild(row);
+    totalEmployee.textContent = employeesTable.children.length;
+    employeeForm.reset();
+    addEmployeeModal.classList.remove('active');
 });
 
 const closeAddEmployee = document.getElementById('add-employee-modal').getElementsByClassName('close-btn')[0];
@@ -229,6 +230,8 @@ deleteEmployee.addEventListener('click', function () {
     }
 });
 
+
+
 //  Themee Toggle 
 
 const savedTheme = localStorage.getItem("theme");
@@ -237,42 +240,42 @@ if (savedTheme === "dark") {
     document.body.classList.add("dark-mode");
 }
 //    Charts 
- document.addEventListener("DOMContentLoaded",function(){
+document.addEventListener("DOMContentLoaded", function () {
 
-    const productivityChart=document.getElementById("productivityChart");
+    const productivityChart = document.getElementById("productivityChart");
 
-    new Chart(productivityChart,{
-        type:"bar",
-        data:{
-            labels:["Engineering","Sales","Marketing","HR","Finance","Support"],
-            datasets:[{
-                label:"Productivity",
-                data:[85,72,68,90,65,78],
-                backgroundColor:"#8257e5",
-                borderRadius:7
+    new Chart(productivityChart, {
+        type: "bar",
+        data: {
+            labels: ["Engineering", "Sales", "Marketing", "HR", "Finance", "Support"],
+            datasets: [{
+                label: "Productivity",
+                data: [85, 72, 68, 90, 65, 78],
+                backgroundColor: "#8257e5",
+                borderRadius: 7
             }]
         },
-        options:{
-            responsive:true,
-            maintainAspectRatio:false,
-            plugins:{
-                legend:{
-                    display:false
+        options: {
+            responsive: true,
+            maintainAspectRatio: false,
+            plugins: {
+                legend: {
+                    display: false
                 }
             },
-            scales:{
-                x:{
-                    grid:{
-                        display:false
+            scales: {
+                x: {
+                    grid: {
+                        display: false
                     },
-                    ticks:{
-                        color:"#8b949e"
+                    ticks: {
+                        color: "#8b949e"
                     }
                 },
-                y:{
-                    beginAtZero:true,
-                    ticks:{
-                        color:"#8b949e"
+                y: {
+                    beginAtZero: true,
+                    ticks: {
+                        color: "#8b949e"
                     }
                 }
             }
@@ -280,42 +283,42 @@ if (savedTheme === "dark") {
     });
 
 
-    const attendanceChart=document.getElementById("attendanceChart");
+    const attendanceChart = document.getElementById("attendanceChart");
 
-    new Chart(attendanceChart,{
-        type:"line",
-        data:{
-            labels:["Jan","Feb","Mar","Apr","May","Jun"],
-            datasets:[{
-                label:"Attendance",
-                data:[82,88,85,91,87,94],
-                borderColor:"#8257e5",
-                backgroundColor:"rgba(130,87,229,.12)",
-                fill:true,
-                tension:.4
+    new Chart(attendanceChart, {
+        type: "line",
+        data: {
+            labels: ["Jan", "Feb", "Mar", "Apr", "May", "Jun"],
+            datasets: [{
+                label: "Attendance",
+                data: [82, 88, 85, 91, 87, 94],
+                borderColor: "#8257e5",
+                backgroundColor: "rgba(130,87,229,.12)",
+                fill: true,
+                tension: .4
             }]
         },
-        options:{
-            responsive:true,
-            maintainAspectRatio:false,
-            plugins:{
-                legend:{
-                    display:false
+        options: {
+            responsive: true,
+            maintainAspectRatio: false,
+            plugins: {
+                legend: {
+                    display: false
                 }
             },
-            scales:{
-                x:{
-                    grid:{
-                        display:false
+            scales: {
+                x: {
+                    grid: {
+                        display: false
                     },
-                    ticks:{
-                        color:"#8b949e"
+                    ticks: {
+                        color: "#8b949e"
                     }
                 },
-                y:{
-                    beginAtZero:true,
-                    ticks:{
-                        color:"#8b949e"
+                y: {
+                    beginAtZero: true,
+                    ticks: {
+                        color: "#8b949e"
                     }
                 }
             }
@@ -323,32 +326,32 @@ if (savedTheme === "dark") {
     });
 
 
-    const leaveChart=document.getElementById("leaveChart");
+    const leaveChart = document.getElementById("leaveChart");
 
-    new Chart(leaveChart,{
-        type:"doughnut",
-        data:{
-            labels:["Approved","Pending","Rejected"],
-            datasets:[{
-                data:[60,25,15],
-                backgroundColor:[
+    new Chart(leaveChart, {
+        type: "doughnut",
+        data: {
+            labels: ["Approved", "Pending", "Rejected"],
+            datasets: [{
+                data: [60, 25, 15],
+                backgroundColor: [
                     "#8257e5",
                     "#39d353",
                     "#4ca1af"
                 ],
-                borderWidth:0
+                borderWidth: 0
             }]
         },
-        options:{
-            responsive:true,
-            maintainAspectRatio:false,
-            cutout:"70%",
-            plugins:{
-                legend:{
-                    position:"bottom",
-                    labels:{
-                        color:"#8b949e",
-                        padding:15
+        options: {
+            responsive: true,
+            maintainAspectRatio: false,
+            cutout: "70%",
+            plugins: {
+                legend: {
+                    position: "bottom",
+                    labels: {
+                        color: "#8b949e",
+                        padding: 15
                     }
                 }
             }
@@ -356,40 +359,40 @@ if (savedTheme === "dark") {
     });
 
 
-    const performanceChart=document.getElementById("performanceChart");
+    const performanceChart = document.getElementById("performanceChart");
 
-    new Chart(performanceChart,{
-        type:"bar",
-        data:{
-            labels:["Excellent","Good","Average","Needs Improvement"],
-            datasets:[{
-                label:"Employees",
-                data:[35,45,15,5],
-                backgroundColor:"#8257e5",
-                borderRadius:7
+    new Chart(performanceChart, {
+        type: "bar",
+        data: {
+            labels: ["Excellent", "Good", "Average", "Needs Improvement"],
+            datasets: [{
+                label: "Employees",
+                data: [35, 45, 15, 5],
+                backgroundColor: "#8257e5",
+                borderRadius: 7
             }]
         },
-        options:{
-            responsive:true,
-            maintainAspectRatio:false,
-            plugins:{
-                legend:{
-                    display:false
+        options: {
+            responsive: true,
+            maintainAspectRatio: false,
+            plugins: {
+                legend: {
+                    display: false
                 }
             },
-            scales:{
-                x:{
-                    grid:{
-                        display:false
+            scales: {
+                x: {
+                    grid: {
+                        display: false
                     },
-                    ticks:{
-                        color:"#8b949e"
+                    ticks: {
+                        color: "#8b949e"
                     }
                 },
-                y:{
-                    beginAtZero:true,
-                    ticks:{
-                        color:"#8b949e"
+                y: {
+                    beginAtZero: true,
+                    ticks: {
+                        color: "#8b949e"
                     }
                 }
             }
@@ -397,6 +400,103 @@ if (savedTheme === "dark") {
     });
 
 });
-//    Add employee card 
 
- let totalEmployee = document.querySelector('#total-employees');
+
+//  Add department
+
+const addDepartmentsBtn = document.querySelector('#add-department-btn');
+const departmentModal = document.getElementById('department-modal');
+const departmentForm = document.getElementById('department-form');
+const departmentTable = document.getElementById('department-table').getElementsByTagName('tbody')[0];
+const totalDepartments = document.getElementById('total-departments');
+
+let departmentToDelete = null;
+
+addDepartmentsBtn.addEventListener('click', () => {
+    departmentForm.reset();
+    departmentModal.classList.add('active');
+});
+
+departmentForm.addEventListener('submit', (e) => {
+    e.preventDefault();
+    const departmentName = document.getElementById('department-name').value;
+    const manager = document.getElementById('department-manager').value;
+    const budget = document.getElementById('department-budget').value;
+    const deptRow = document.createElement('tr');
+
+    deptRow.innerHTML = `
+     <td>${departmentTable.children.length + 1}</td>
+        <td>${departmentName}</td>
+        <td>${manager || 'Not Assigned'}</td>
+        <td>${budget}</td>
+        <td>0</td>
+        <td>
+            <button type="button" class="action-btn edit-btn">
+                <i class="fas fa-pen"></i>
+            </button>
+            <button type="button" class="action-btn delete-btn">
+                <i class="fas fa-trash"></i>
+            </button>
+        </td>
+    `
+    departmentTable.appendChild(deptRow);
+    totalDepartments.textContent = departmentTable.children.length;
+
+    departmentForm.reset();
+    departmentModal.classList.remove('active');
+});
+
+departmentTable.addEventListener('click', (e) => {
+    const button = e.target.closest('button');
+
+    if (!button) {
+        return;
+    }
+    const row = button.parentElement.parentElement;
+
+    if (button.classList.contains('delete-btn')) {
+        departmentToDelete = row;
+        confirmationMessage.textContent =
+            'Are you sure you want to delete ' + row.cells[1].textContent + '?';
+
+        confirmationModal.classList.add('active');
+    }
+    if (button.classList.contains('edit-btn')) {
+        document.getElementById('department-name').value = row.cells[1].textContent;
+        document.getElementById('department-manager').value = row.cells[2].textContent;
+        document.getElementById('department-budget').value = row.cells[3].textContent;
+
+        departmentModal.classList.add('active');
+    }
+
+});
+const cancelDepartment = document.querySelector('#cancel-department');
+
+cancelDepartment.addEventListener('click', () => {
+    departmentForm.reset();
+    departmentModal.classList.remove('active');
+});
+
+const closeDepartment = departmentModal.querySelector('.close-btn');
+
+closeDepartment.addEventListener('click', () => {
+    departmentModal.classList.remove('active');
+    departmentForm.reset();
+});
+
+const confirmDepartmentDelete = document.getElementById('confirm-action');
+const cancelDepartmentDelete = document.getElementById('cancel-confirmation');
+
+confirmDepartmentDelete.addEventListener('click' , ()=>{
+    if(departmentToDelete){
+        departmentToDelete.remove();
+        departmentToDelete = null;
+        totalDepartments.textContent = departmentTable.children.length;
+         confirmationModal.classList.remove('active');
+    }
+});
+
+cancelDepartmentDelete.addEventListener('click', function () {
+    departmentToDelete = null;
+    confirmationModal.classList.remove('active');
+});
