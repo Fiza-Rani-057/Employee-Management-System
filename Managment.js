@@ -457,8 +457,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
 });
 
-
-//  Add department
+// ======================== Department ==========================
 
 const addDepartmentsBtn = document.querySelector('#add-department-btn');
 const departmentModal = document.getElementById('department-modal');
@@ -467,94 +466,148 @@ const departmentTable = document.getElementById('department-table').getElementsB
 const totalDepartments = document.getElementById('total-departments');
 
 let departmentToDelete = null;
+let departmentToEdit = null;
 
+
+// Add Department Button
 addDepartmentsBtn.addEventListener('click', () => {
+
     departmentForm.reset();
+    departmentToEdit = null;
+
     departmentModal.classList.add('active');
+
 });
 
+
+// Add / Edit Department
 departmentForm.addEventListener('submit', (e) => {
+
     e.preventDefault();
+
     const departmentName = document.getElementById('department-name').value;
     const manager = document.getElementById('department-manager').value;
     const budget = document.getElementById('department-budget').value;
-    const deptRow = document.createElement('tr');
 
-    deptRow.innerHTML = `
-     <td>${departmentTable.children.length + 1}</td>
-        <td>${departmentName}</td>
-        <td>${manager || 'Not Assigned'}</td>
-        <td>${budget}</td>
-        <td>0</td>
-        <td>
-            <button type="button" class="action-btn edit-btn">
-                <i class="fas fa-pen"></i>
-            </button>
-            <button type="button" class="action-btn delete-btn">
-                <i class="fas fa-trash"></i>
-            </button>
-        </td>
-    `
-    departmentTable.appendChild(deptRow);
+
+    // Edit Department
+    if (departmentToEdit) {
+
+        departmentToEdit.cells[1].textContent = departmentName;
+        departmentToEdit.cells[2].textContent = manager || 'Not Assigned';
+        departmentToEdit.cells[3].textContent = budget;
+
+        departmentToEdit = null;
+
+    }
+
+
+    // Add Department
+    else {
+
+        const deptRow = document.createElement('tr');
+
+        deptRow.innerHTML = `
+            <td>${departmentTable.children.length + 1}</td>
+            <td>${departmentName}</td>
+            <td>${manager || 'Not Assigned'}</td>
+            <td>${budget}</td>
+            <td>0</td>
+            <td>
+                <button type="button" class="action-btn edit-btn">
+                    <i class="fas fa-pen"></i>
+                </button>
+
+                <button type="button" class="action-btn delete-btn">
+                    <i class="fas fa-trash"></i>
+                </button>
+            </td>
+        `;
+
+        departmentTable.appendChild(deptRow);
+
+    }
+
+
     totalDepartments.textContent = departmentTable.children.length;
 
     departmentForm.reset();
     departmentModal.classList.remove('active');
+
 });
 
+
+// Edit / Delete Department
 departmentTable.addEventListener('click', (e) => {
+
     const button = e.target.closest('button');
 
     if (!button) {
         return;
     }
+
     const row = button.parentElement.parentElement;
 
+
+    // Delete Department
     if (button.classList.contains('delete-btn')) {
+
         departmentToDelete = row;
+
+        confirmationTitle.textContent = 'Delete Department';
+
         confirmationMessage.textContent =
-            'Are you sure you want to delete ' + row.cells[1].textContent + '?';
+            'Are you sure you want to delete ' +
+            row.cells[1].textContent +
+            '?';
 
         confirmationModal.classList.add('active');
+
     }
+
+
+    // Edit Department
     if (button.classList.contains('edit-btn')) {
-        document.getElementById('department-name').value = row.cells[1].textContent;
-        document.getElementById('department-manager').value = row.cells[2].textContent;
-        document.getElementById('department-budget').value = row.cells[3].textContent;
+
+        departmentToEdit = row;
+
+        document.getElementById('department-name').value =
+            row.cells[1].textContent;
+
+        document.getElementById('department-manager').value =
+            row.cells[2].textContent;
+
+        document.getElementById('department-budget').value =
+            row.cells[3].textContent;
 
         departmentModal.classList.add('active');
+
     }
 
 });
+
+
+// Cancel Department
 const cancelDepartment = document.querySelector('#cancel-department');
 
 cancelDepartment.addEventListener('click', () => {
+
     departmentForm.reset();
+    departmentToEdit = null;
     departmentModal.classList.remove('active');
+
 });
 
+
+// Close Department Modal
 const closeDepartment = departmentModal.querySelector('.close-btn');
 
 closeDepartment.addEventListener('click', () => {
-    departmentModal.classList.remove('active');
+
     departmentForm.reset();
-});
+    departmentToEdit = null;
+    departmentModal.classList.remove('active');
 
-const confirmDepartmentDelete = document.getElementById('confirm-action');
-const cancelDepartmentDelete = document.getElementById('cancel-confirmation');
-
-confirmDepartmentDelete.addEventListener('click', () => {
-    if (departmentToDelete) {
-        departmentToDelete.remove();
-        departmentToDelete = null;
-        totalDepartments.textContent = departmentTable.children.length;
-        confirmationModal.classList.remove('active');
-    }
-});
-
-cancelDepartmentDelete.addEventListener('click', function () {
-    departmentToDelete = null;
-    confirmationModal.classList.remove('active');
 });
 
 //  ==============Search=====================
