@@ -4,9 +4,7 @@ const signupForm = document.getElementById("signup-form");
 const showSignup = document.getElementById("show-signup");
 const showLogin = document.getElementById("show-login");
 
-
 /* SWITCH LOGIN / SIGN UP */
-
 showSignup.addEventListener("click", function () {
     loginForm.classList.add("hidden");
     signupForm.classList.remove("hidden");
@@ -17,68 +15,45 @@ showLogin.addEventListener("click", function () {
     loginForm.classList.remove("hidden");
 });
 
-
 /* PASSWORD SHOW / HIDE */
-
 function passwordToggle(inputId, buttonId) {
-
     const input = document.getElementById(inputId);
     const button = document.getElementById(buttonId);
-
     if (!input || !button) {
         return;
     }
-
     button.addEventListener("click", function () {
-
         const icon = button.querySelector("i");
-
         if (input.type === "password") {
-
             input.type = "text";
             icon.className = "fas fa-eye-slash";
-
         } else {
-
             input.type = "password";
             icon.className = "fas fa-eye";
-
         }
-
     });
 }
 
 passwordToggle("password", "login-password-toggle");
 passwordToggle("signup-password", "signup-password-toggle");
 
-
 /* SIGN UP */
-
 const signupButton = document.getElementById("signup");
-
 signupButton.addEventListener("click", function () {
-
     const name = document.getElementById("signup-name").value.trim();
     const email = document.getElementById("signup-email").value.trim();
     const password = document.getElementById("signup-password").value;
     const confirmPassword = document.getElementById("confirm-password").value;
 
-
     if (!name || !email || !password || !confirmPassword) {
-
         alert("Please fill all fields.");
         return;
-
     }
-
 
     if (password !== confirmPassword) {
-
         alert("Passwords do not match.");
         return;
-
     }
-
 
     const user = {
         name: name,
@@ -86,107 +61,52 @@ signupButton.addEventListener("click", function () {
         password: password
     };
 
-
-    localStorage.setItem(
-        "emplyraUser",
-        JSON.stringify(user)
-    );
-
-
+    localStorage.setItem("emplyraUser", JSON.stringify(user));
     alert("Account created successfully!");
-
-
     signupForm.classList.add("hidden");
     loginForm.classList.remove("hidden");
-
-
     document.getElementById("email").value = email;
-
 });
 
-
 /* LOGIN */
-
 const loginButton = document.getElementById("login");
-
 loginButton.addEventListener("click", function () {
-
     const email = document.getElementById("email").value.trim();
     const password = document.getElementById("password").value;
 
-
     if (!email || !password) {
-
         alert("Please enter email and password.");
         return;
-
     }
 
-
     /* ADMIN LOGIN */
-
-    if (
-        email === "admin@gmail.com" &&
-        password === "admin1234"
-    ) {
-
+    if (email === "admin@gmail.com" && password === "admin1234") {
         localStorage.setItem("emplyraLoggedIn", "true");
         localStorage.setItem("emplyraUserName", "Admin");
         localStorage.setItem("emplyraRole", "admin");
-
         window.location.href = "Managment.html";
-
         return;
     }
-
 
     /* NORMAL USER LOGIN */
-
-    const savedUser = JSON.parse(
-        localStorage.getItem("emplyraUser")
-    );
-
-
+    const savedUser = JSON.parse(localStorage.getItem("emplyraUser"));
     if (!savedUser) {
-
         alert("No account found. Please Sign Up first.");
         return;
-
     }
 
-
-    if (
-        email === savedUser.email &&
-        password === savedUser.password
-    ) {
-
+    if (email === savedUser.email && password === savedUser.password) {
         localStorage.setItem("emplyraLoggedIn", "true");
-        localStorage.setItem(
-            "emplyraUserName",
-            savedUser.name
-        );
-        localStorage.setItem(
-            "emplyraRole",
-            "user"
-        );
-
-
+        localStorage.setItem("emplyraUserName", savedUser.name);
+        localStorage.setItem("emplyraRole", "user");
         window.location.href = "index.html";
-
     } else {
-
         alert("Invalid email or password.");
-
     }
-
 });
 
-
 /* APPLY SAVED THEME */
-
 const savedTheme = localStorage.getItem("theme");
 if (savedTheme === "dark") {
     document.body.classList.add("dark-mode");
-
 }
-
