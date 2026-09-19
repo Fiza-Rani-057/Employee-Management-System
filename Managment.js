@@ -3,6 +3,7 @@
 const sidebarItems = document.querySelectorAll(".sidebar li[data-section]");
 const sections = document.querySelectorAll("main section");
 let totalEmployee = document.querySelector('#total-employees');
+const activeEmployees = document.querySelector('#active-employees');
 
 sidebarItems.forEach(function (item) {
 
@@ -83,6 +84,14 @@ employeeForm.addEventListener('submit', function (e) {
 
     employeesTable.appendChild(row);
     totalEmployee.textContent = employeesTable.children.length;
+
+    let activeCount = 0;
+    for(let i = 0; i< employeesTable.children.length; i++){
+         if (employeesTable.children[i].cells[6].textContent === 'active') {
+        activeCount++;
+    }
+    activeEmployees.textContent = activeCount;
+    }
     employeeForm.reset();
     addEmployeeModal.classList.remove('active');
 });
@@ -504,7 +513,7 @@ cancelDepartmentDelete.addEventListener('click', function () {
 //  ==============Search=====================
 const employeeSearch = document.querySelector('#search-input');
 
-employeeSearch.addEventListener('input', ()=> {
+employeeSearch.addEventListener('input', () => {
 
     const searchValue = employeeSearch.value.toLowerCase();
     const rows = employeesTable.children;
