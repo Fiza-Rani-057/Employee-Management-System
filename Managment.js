@@ -2,8 +2,9 @@
 
 const sidebarItems = document.querySelectorAll(".sidebar li[data-section]");
 const sections = document.querySelectorAll("main section");
-let totalEmployee = document.querySelector('#total-employees');
+const totalEmployee = document.querySelector('#total-employees');
 const activeEmployees = document.querySelector('#active-employees');
+const totalPositions = document.querySelector('#total-positions');
 
 sidebarItems.forEach(function (item) {
 
@@ -107,6 +108,7 @@ const employeesTable = document.getElementById('employees-table').getElementsByT
 
 const confirmationModal = document.getElementById('confirmation-modal');
 const confirmationMessage = document.getElementById('confirmation-message');
+const confirmationTitle = document.getElementById('confirmation-title');
 
 // Temporarily employ row ko store kren ga 
 
@@ -188,7 +190,13 @@ confirmAction.addEventListener('click', function () {
         rowToDelete = null;
         rowToEdit = null;
     }
+  if (positionToDelete) {
 
+    positionToDelete.remove();
+    totalPositions.textContent = positionsTable.children.length;
+    positionToDelete = null;
+    confirmationModal.classList.remove('active');
+}
     confirmationModal.classList.remove('active');
 });
 
@@ -539,4 +547,176 @@ employeeSearch.addEventListener('input', () => {
         }
     }
 });
+//  ======================== Positions ==========================
+// Add Position
 
+const addPositionBtn = document.getElementById('add-position-btn');
+const positionModal = document.getElementById('position-modal');
+const positionForm = document.getElementById('position-form');
+const positionsTable = document.getElementById('positions-table').getElementsByTagName('tbody')[0];
+const totalpositions = document.getElementById('total-positions');
+
+let positionToEdit = null;
+let positionToDelete = null;
+
+
+// Add Position Button
+
+addPositionBtn.addEventListener('click', function () {
+    positionToEdit = null;
+    positionForm.reset();
+    positionModal.classList.add('active');
+
+});
+// Save Position
+
+positionForm.addEventListener('submit', function (e) {
+
+    e.preventDefault();
+    const positionTitle = document.getElementById('position-title').value;
+    const department = document.getElementById('position-department').value;
+    const salary = document.getElementById('position-salary').value;
+
+    // Edit Existing Position
+    if (positionToEdit) {
+        positionToEdit.cells[1].textContent = positionTitle;
+        positionToEdit.cells[2].textContent = department;
+        positionToEdit.cells[3].textContent = salary;
+
+        positionToEdit = null;
+
+    }
+
+    // Add New Position
+
+    else {
+
+        const positionRow = document.createElement('tr');
+
+        positionRow.innerHTML = `
+            <td>${positionsTable.children.length + 1}</td>
+            <td>${positionTitle}</td>
+            <td>${department}</td>
+            <td>${salary}</td>
+            <td>0</td>
+            <td>
+                <button type="button" class="action-btn edit-position-btn">
+                    <i class="fas fa-pen"></i>
+                </button>
+
+                <button type="button" class="action-btn delete-position-btn">
+                    <i class="fas fa-trash"></i>
+                </button>
+            </td>
+        `;
+
+        positionsTable.appendChild(positionRow);
+
+    }
+
+
+    totalPositions.textContent = positionsTable.children.length;
+
+    positionForm.reset();
+
+    positionModal.classList.remove('active');
+
+});
+
+
+// Edit and Delete Position
+
+positionsTable.addEventListener('click', function (e) {
+
+    const button = e.target.closest('button');
+
+    if (!button) {
+        return;
+    }
+
+    const row = button.parentElement.parentElement;
+
+
+    // Edit Position
+
+    if (button.classList.contains('edit-position-btn')) {
+
+        positionToEdit = row;
+
+        document.getElementById('position-title').value =
+            row.cells[1].textContent;
+
+        document.getElementById('position-department').value =
+            row.cells[2].textContent;
+
+        document.getElementById('position-salary').value =
+            row.cells[3].textContent;
+
+        positionModal.classList.add('active');
+
+    }
+
+
+    // Delete Position
+
+    if (button.classList.contains('delete-position-btn')) {
+
+        positionToDelete = row;
+
+        confirmationTitle.textContent = 'Delete Position';
+        confirmationMessage.textContent =
+            'Are you sure you want to delete this position?';
+        confirmationModal.classList.add('active');
+    }
+
+});
+// Confirm Delete
+
+confirmAction.addEventListener('click', function () {
+    // Delete Employee
+    if (rowToDelete) {
+        rowToDelete.remove();
+        totalEmployee.textContent =
+            employeesTable.children.length;
+        rowToDelete = null;
+
+    }
+
+
+    // Delete Department
+    if (departmentToDelete) {
+        departmentToDelete.remove();
+        totalDepartments.textContent =
+            departmentTable.children.length;
+        departmentToDelete = null;
+    }
+    // Delete Position
+
+    if (positionToDelete) {
+        positionToDelete.remove();
+        totalPositions.textContent =
+            positionsTable.children.length;
+        positionToDelete = null;
+    }
+    confirmationModal.classList.remove('active');
+
+});
+
+// Cancel Position
+
+const cancelPosition = document.getElementById('cancel-position');
+cancelPosition.addEventListener('click', function () {
+    positionForm.reset();
+    positionToEdit = null;
+    positionModal.classList.remove('active');
+});
+// Close Position Modal
+
+const closePosition =
+    positionModal.querySelector('.close-btn');
+closePosition.addEventListener('click', function () {
+    positionForm.reset();
+    positionToEdit = null;
+    positionModal.classList.remove('active');
+
+});
