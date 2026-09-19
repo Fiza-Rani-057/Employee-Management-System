@@ -199,6 +199,7 @@ confirmAction.addEventListener('click', function () {
         rowToDelete = null;
         rowToEdit = null;
     }
+    let salaryToDelete = null;
 
     if (positionToDelete) {
         positionToDelete.remove();
@@ -230,6 +231,10 @@ confirmAction.addEventListener('click', function () {
         performanceToDelete.remove();
         performanceToDelete = null;
     }
+    if (salaryToDelete) {
+    salaryToDelete.remove();
+    salaryToDelete = null;
+}
 
     confirmationModal.classList.remove('active');
 });
@@ -705,35 +710,36 @@ positionsTable.addEventListener('click', function (e) {
 
 });
 // Confirm Delete
-
 confirmAction.addEventListener('click', function () {
+
     // Delete Employee
     if (rowToDelete) {
         rowToDelete.remove();
-        totalEmployee.textContent =
-            employeesTable.children.length;
+        totalEmployee.textContent = employeesTable.children.length;
         rowToDelete = null;
-
     }
-
 
     // Delete Department
     if (departmentToDelete) {
         departmentToDelete.remove();
-        totalDepartments.textContent =
-            departmentTable.children.length;
+        totalDepartments.textContent = departmentTable.children.length;
         departmentToDelete = null;
     }
-    // Delete Position
 
+    // Delete Position
     if (positionToDelete) {
         positionToDelete.remove();
-        totalPositions.textContent =
-            positionsTable.children.length;
+        totalPositions.textContent = positionsTable.children.length;
         positionToDelete = null;
     }
-    confirmationModal.classList.remove('active');
 
+    // Delete Salary
+    if (salaryToDelete) {
+        salaryToDelete.remove();
+        salaryToDelete = null;
+    }
+
+    confirmationModal.classList.remove('active');
 });
 
 // Cancel Position
