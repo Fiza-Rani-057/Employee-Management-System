@@ -487,16 +487,46 @@ closeDepartment.addEventListener('click', () => {
 const confirmDepartmentDelete = document.getElementById('confirm-action');
 const cancelDepartmentDelete = document.getElementById('cancel-confirmation');
 
-confirmDepartmentDelete.addEventListener('click' , ()=>{
-    if(departmentToDelete){
+confirmDepartmentDelete.addEventListener('click', () => {
+    if (departmentToDelete) {
         departmentToDelete.remove();
         departmentToDelete = null;
         totalDepartments.textContent = departmentTable.children.length;
-         confirmationModal.classList.remove('active');
+        confirmationModal.classList.remove('active');
     }
 });
 
 cancelDepartmentDelete.addEventListener('click', function () {
     departmentToDelete = null;
     confirmationModal.classList.remove('active');
+});
+
+//  ==============Search=====================
+const employeeSearch = document.querySelector('#search-input');
+
+employeeSearch.addEventListener('input', function () {
+
+    const searchValue = employeeSearch.value.toLowerCase();
+    const rows = employeesTable.children;
+
+    for (let i = 0; i < rows.length; i++) {
+
+        const row = rows[i];
+
+        const name = row.cells[1].textContent.toLowerCase();
+        const department = row.cells[2].textContent.toLowerCase();
+        const position = row.cells[3].textContent.toLowerCase();
+        const email = row.cells[4].textContent.toLowerCase();
+
+        if (
+            name.includes(searchValue) ||
+            department.includes(searchValue) ||
+            position.includes(searchValue) ||
+            email.includes(searchValue)
+        ) {
+            row.style.display = '';
+        } else {
+            row.style.display = 'none';
+        }
+    }
 });
