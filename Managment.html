@@ -320,6 +320,7 @@
                     </section>
 
                     <section id="calender-section" class="section">
+
                         <div class="section-header">
                             <h2>Calendar</h2>
 
@@ -339,20 +340,27 @@
                                         <th>Actions</th>
                                     </tr>
                                 </thead>
+
                                 <tbody></tbody>
                             </table>
                         </div>
-                    </section>
 
+                    </section>
                     <section id="performance-section" class="section">
+
                         <div class="section-header">
-                            <h2> Performance</h2>
+                            <h2>Performance</h2>
+
+                            <button id="add-performance-btn" class="btn btn-primary">
+                                <i class="fas fa-plus"></i> Add Performance
+                            </button>
                         </div>
 
                         <div class="table-container">
                             <table id="performance-table">
                                 <thead>
                                     <tr>
+                                        <th>ID</th>
                                         <th>Employee</th>
                                         <th>Department</th>
                                         <th>Performance</th>
@@ -360,24 +368,25 @@
                                         <th>Actions</th>
                                     </tr>
                                 </thead>
+
                                 <tbody></tbody>
                             </table>
                         </div>
+
                     </section>
 
                     <section id="messages-section" class="section">
                         <div class="section-header">
-                            <h2> Messages</h2>
-
+                            <h2>Messages</h2>
                             <button id="new-message-btn" class="btn btn-primary">
                                 <i class="fas fa-plus"></i> New Message
                             </button>
                         </div>
-
                         <div class="table-container">
                             <table id="messages-table">
                                 <thead>
                                     <tr>
+                                        <th>ID</th>
                                         <th>Sender</th>
                                         <th>Message</th>
                                         <th>Date</th>
@@ -920,7 +929,38 @@
             </form>
         </div>
     </div>
-
+    <div id="calendar-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn">&times;</span>
+            <h2>Add New Event</h2>
+            <form id="calendar-form">
+                <div class="form-group">
+                    <label for="calendar-date">Date*</label>
+                    <input type="date" id="calendar-date" required>
+                </div>
+                <div class="form-group">
+                    <label for="calendar-event">Event*</label>
+                    <input type="text" id="calendar-event" required>
+                </div>
+                <div class="form-group">
+                    <label for="calendar-time">Time*</label>
+                    <input type="time" id="calendar-time" required>
+                </div>
+                <div class="form-group">
+                    <label for="calendar-location">Location*</label>
+                    <input type="text" id="calendar-location" required>
+                </div>
+                <div class="form-actions">
+                    <button type="button" class="btn btn-secondary" id="cancel-calendar">
+                        Cancel
+                    </button>
+                    <button type="submit" class="btn btn-primary">
+                        Save Event
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
     <div id="salary-modal" class="modal">
         <div class="modal-content">
             <span class="close-btn">&times;</span>
@@ -976,10 +1016,6 @@
                 </div>
 
                 <div class="form-actions">
-                    <button type="button" class="btn btn-danger" id="delete-salary">
-                        <i class="fas fa-trash"></i> Delete
-                    </button>
-
                     <button type="button" class="btn btn-secondary" id="cancel-salary">
                         Cancel
                     </button>
@@ -1055,6 +1091,94 @@
 
                     <button type="submit" class="btn btn-primary">
                         Save Leave
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+    <div id="performance-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn">&times;</span>
+            <h2 id="performance-modal-title">
+                Add Performance
+            </h2>
+            <form id="performance-form">
+                <input type="hidden" id="performance-id">
+                <div class="form-group">
+                    <label for="performance-employee">
+                        Employee*
+                    </label>
+                    <select id="performance-employee" required>
+                        <option value="">Select Employee</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="performance-rating">
+                        Performance*
+                    </label>
+                    <select id="performance-rating" required>
+                        <option value="">Select Performance</option>
+                        <option value="Excellent">Excellent</option>
+                        <option value="Good">Good</option>
+                        <option value="Average">Average</option>
+                        <option value="Needs Improvement">
+                            Needs Improvement
+                        </option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="performance-status">
+                        Status*
+                    </label>
+                    <select id="performance-status" required>
+                        <option value="Active">Active</option>
+                        <option value="Completed">Completed</option>
+                        <option value="Pending">Pending</option>
+                    </select>
+                </div>
+                <div class="form-actions">
+                    <button type="button" class="btn btn-secondary" id="cancel-performance">
+                        Cancel
+                    </button>
+                    <button type="submit" class="btn btn-primary">
+                        Save Performance
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+    <div id="message-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn">&times;</span>
+            <h2>New Message</h2>
+            <form id="message-form">
+                <div class="form-group">
+                    <label for="message-sender">
+                        Sender*
+                    </label>
+                    <input type="text" id="message-sender" required>
+                </div>
+                <div class="form-group">
+                    <label for="message-text">
+                        Message*
+                    </label>
+                    <textarea id="message-text" rows="4" required></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="message-status">
+                        Status*
+                    </label>
+                    <select id="message-status" required>
+                        <option value="Unread">Unread</option>
+                        <option value="Read">Read</option>
+                    </select>
+                </div>
+                <div class="form-actions">
+                    <button type="button" class="btn btn-secondary" id="cancel-message">
+                        Cancel
+                    </button>
+                    <button type="submit" class="btn btn-primary">
+                        Send Message
                     </button>
                 </div>
             </form>

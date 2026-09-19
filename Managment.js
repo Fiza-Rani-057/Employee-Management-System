@@ -206,6 +206,14 @@ confirmAction.addEventListener('click', function () {
             pendingCount++;
         }
     }
+    if (messageToDelete) {
+    messageToDelete.remove();
+    messageToDelete = null;
+}
+if (performanceToDelete) {
+    performanceToDelete.remove();
+    performanceToDelete = null;
+}
 
     pendingLeaves.textContent = pendingCount;
     leaveToDelete = null;
@@ -838,6 +846,538 @@ leavesTable.addEventListener('click', function (e) {
         leaveToDelete = row;
         confirmationTitle.textContent = 'Delete Leave';
         confirmationMessage.textContent = 'Are you sure you want to delete this leave?';
+        confirmationModal.classList.add('active');
+    }
+});
+// ======================== Payroll ==========================
+
+const addSalaryBtn = document.getElementById('add-salary-btn');
+const salaryModal = document.getElementById('salary-modal');
+const salaryForm = document.getElementById('salary-form');
+const salariesTable = document.getElementById('salaries-table').getElementsByTagName('tbody')[0];
+
+let salaryToDelete = null;
+
+// Add Salary
+addSalaryBtn.addEventListener('click', function () {
+    salaryForm.reset();
+    const salaryEmployee = document.getElementById('salary-employee');
+    salaryEmployee.innerHTML = `<option value="">Select Employee</option>`;
+
+    // Employees dropdown fill
+    for (let i = 0; i < employeesTable.children.length; i++) {
+        const employeeName = employeesTable.children[i].cells[1].textContent;
+        const option = document.createElement('option');
+        option.value = employeeName;
+        option.textContent = employeeName;
+        salaryEmployee.appendChild(option);
+    }
+
+    salaryModal.classList.add('active');
+});
+
+// Save Salary
+salaryForm.addEventListener('submit', function (e) {
+    e.preventDefault();
+
+    const employee = document.getElementById('salary-employee').value;
+    const basicSalary = document.getElementById('salary-basic').value;
+    const month = document.getElementById('salary-month').value;
+    const allowances = document.getElementById('salary-allowances').value || 0;
+    const deductions = document.getElementById('salary-deductions').value || 0;
+    const status = document.getElementById('salary-status').value;
+
+    // Employee ki Position find karo
+    let position = "";
+    for (let i = 0; i < employeesTable.children.length; i++) {
+        if (employeesTable.children[i].cells[1].textContent === employee) {
+            position = employeesTable.children[i].cells[3].textContent;
+            break;
+        }
+    }
+
+    // Net Salary
+    const netSalary = Number(basicSalary) + Number(allowances) - Number(deductions);
+
+    // New Row
+    const salaryRow = document.createElement('tr');
+    salaryRow.innerHTML = `
+        <td>${salariesTable.children.length + 1}</td>
+        <td>${employee}</td>
+        <td>${position}</td>
+        <td>${basicSalary}</td>
+        <td>${allowances}</td>
+        <td>${deductions}</td>
+        <td>${netSalary}</td>
+        <td>${month}</td>
+        <td>${status}</td>
+        <td>
+            <button type="button" class="action-btn delete-salary-btn">
+                <i class="fas fa-trash"></i>
+            </button>
+        </td>
+    `;
+
+    salariesTable.appendChild(salaryRow);
+    salaryForm.reset();
+    salaryModal.classList.remove('active');
+});
+
+// Cancel Salary
+const cancelSalary = document.getElementById('cancel-salary');
+cancelSalary.addEventListener('click', function () {
+    salaryForm.reset();
+    salaryModal.classList.remove('active');
+});
+
+// Close Salary Modal
+const closeSalary = salaryModal.querySelector('.close-btn');
+closeSalary.addEventListener('click', function () {
+    salaryForm.reset();
+    salaryModal.classList.remove('active');
+});
+
+// Delete Salary
+salariesTable.addEventListener('click', function (e) {
+    const button = e.target.closest('button');
+    if (!button) {
+        return;
+    }
+
+    if (button.classList.contains('delete-salary-btn')) {
+        salaryToDelete = button.parentElement.parentElement;
+        confirmationTitle.textContent = 'Delete Salary';
+        confirmationMessage.textContent = 'Are you sure you want to delete this salary?';
+        confirmationModal.classList.add('active');
+    }
+});
+
+ // ======================== Reports ==========================
+
+const reportType = document.getElementById('report-type');
+const generateReport = document.getElementById('generate-report');
+
+let reportChart = null;
+
+generateReport.addEventListener('click', function () {
+    const selectedReport = reportType.value;
+
+    // Agar pehle chart bana hua hai to remove karo
+    if (reportChart) {
+        reportChart.destroy();
+    }
+
+    // Department Distribution
+    if (selectedReport === 'department-distribution') {
+        reportChart = new Chart(
+            document.getElementById('report-chart'),
+            {
+                type: 'bar',
+                data: {
+                    labels: ['IT', 'HR', 'Finance'],
+                    datasets: [{
+                        label: 'Employees',
+                        data: [
+                            countDepartment('IT'),
+                            countDepartment('HR'),
+                            countDepartment('Finance')
+                        ]
+                    }]
+                },
+                options: {
+                    responsive: true
+                }
+            }
+        );
+    }
+
+    // Salary Distribution
+    if (selectedReport === 'salary-distribution') {
+        reportChart = new Chart(
+            document.getElementById('report-chart'),
+            {
+                type: 'bar',
+                data: {
+                    labels: ['Employees'],
+                    datasets: [{
+                        label: 'Salary',
+                        data: [
+                            getTotalSalary()
+                        ]
+                    }]
+                },
+                options: {
+                    responsive: true
+                }
+            }
+        );
+    }
+
+    // Hiring Trends
+    if (selectedReport === 'hiring-trends') {
+        reportChart = new Chart(
+            document.getElementById('report-chart'),
+            {
+                type: 'line',
+                data: {
+                    labels: ['Employees'],
+                    datasets: [{
+                        label: 'Total Employees',
+                        data: [
+                            employeesTable.children.length
+                        ]
+                    }]
+                },
+                options: {
+                    responsive: true
+                }
+            }
+        );
+    }
+
+    // Attrition Rate
+    if (selectedReport === 'attrition-rate') {
+        let terminated = 0;
+        for (let i = 0; i < employeesTable.children.length; i++) {
+            if (employeesTable.children[i].cells[6].textContent.toLowerCase() === 'terminated') {
+                terminated++;
+            }
+        }
+
+        reportChart = new Chart(
+            document.getElementById('report-chart'),
+            {
+                type: 'doughnut',
+                data: {
+                    labels: ['Active', 'Terminated'],
+                    datasets: [{
+                        data: [
+                            employeesTable.children.length - terminated,
+                            terminated
+                        ]
+                    }]
+                },
+                options: {
+                    responsive: true
+                }
+            }
+        );
+    }
+
+    // Leave Analysis
+    if (selectedReport === 'leave-analysis') {
+        let pending = 0;
+        let approved = 0;
+        let rejected = 0;
+
+        for (let i = 0; i < leavesTable.children.length; i++) {
+            const status = leavesTable.children[i].cells[7].textContent.toLowerCase();
+            if (status === 'pending') {
+                pending++;
+            }
+            if (status === 'approved') {
+                approved++;
+            }
+            if (status === 'rejected') {
+                rejected++;
+            }
+        }
+
+        reportChart = new Chart(
+            document.getElementById('report-chart'),
+            {
+                type: 'doughnut',
+                data: {
+                    labels: ['Pending', 'Approved', 'Rejected'],
+                    datasets: [{
+                        data: [
+                            pending,
+                            approved,
+                            rejected
+                        ]
+                    }]
+                },
+                options: {
+                    responsive: true
+                }
+            }
+        );
+    }
+});
+
+// Count employees by department
+function countDepartment(department) {
+    let count = 0;
+    for (let i = 0; i < employeesTable.children.length; i++) {
+        if (employeesTable.children[i].cells[2].textContent === department) {
+            count++;
+        }
+    }
+    return count;
+}
+
+// Calculate total salary
+function getTotalSalary() {
+    let total = 0;
+    for (let i = 0; i < salariesTable.children.length; i++) {
+        total += Number(salariesTable.children[i].cells[6].textContent);
+    }
+    return total;
+}
+
+// ======================== Calendar ==========================
+
+const addCalendarEvent = document.getElementById('add-calendar-event');
+const calendarModal = document.getElementById('calendar-modal');
+const calendarForm = document.getElementById('calendar-form');
+const calendarTable = document.getElementById('calendar-table').getElementsByTagName('tbody')[0];
+
+// Add Event Button
+addCalendarEvent.addEventListener('click', function () {
+    calendarForm.reset();
+    calendarModal.classList.add('active');
+});
+
+// Save Event
+calendarForm.addEventListener('submit', function (e) {
+    e.preventDefault();
+
+    const date = document.getElementById('calendar-date').value;
+    const eventName = document.getElementById('calendar-event').value;
+    const time = document.getElementById('calendar-time').value;
+    const location = document.getElementById('calendar-location').value;
+
+    const row = document.createElement('tr');
+    row.innerHTML = `
+        <td>${date}</td>
+        <td>${eventName}</td>
+        <td>${time}</td>
+        <td>${location}</td>
+        <td>
+            <button type="button" class="action-btn delete-calendar-btn">
+                <i class="fas fa-trash"></i>
+            </button>
+        </td>
+    `;
+
+    calendarTable.appendChild(row);
+    calendarForm.reset();
+    calendarModal.classList.remove('active');
+});
+
+// Cancel
+const cancelCalendar = document.getElementById('cancel-calendar');
+cancelCalendar.addEventListener('click', function () {
+    calendarForm.reset();
+    calendarModal.classList.remove('active');
+});
+
+// Close
+const closeCalendar = calendarModal.querySelector('.close-btn');
+closeCalendar.addEventListener('click', function () {
+    calendarForm.reset();
+    calendarModal.classList.remove('active');
+});
+
+// Delete Event
+calendarTable.addEventListener('click', function (e) {
+    const button = e.target.closest('button');
+    if (!button) {
+        return;
+    }
+
+    if (button.classList.contains('delete-calendar-btn')) {
+        const row = button.parentElement.parentElement;
+        row.remove();
+    }
+});
+
+// ======================== Performance ==========================
+
+const addPerformanceBtn = document.getElementById('add-performance-btn');
+const performanceModal = document.getElementById('performance-modal');
+const performanceForm = document.getElementById('performance-form');
+const performanceTable = document
+    .getElementById('performance-table')
+    .getElementsByTagName('tbody')[0];
+
+let performanceToDelete = null;
+
+addPerformanceBtn.addEventListener('click', function () {
+    performanceForm.reset();
+    const performanceEmployee =
+        document.getElementById('performance-employee');
+
+    performanceEmployee.innerHTML =
+        `<option value="">Select Employee</option>`;
+
+    for (let i = 0; i < employeesTable.children.length; i++) {
+        const employeeName =
+            employeesTable.children[i].cells[1].textContent;
+        const option = document.createElement('option');
+
+        option.value = employeeName;
+        option.textContent = employeeName;
+
+        performanceEmployee.appendChild(option);
+    }
+
+    performanceModal.classList.add('active');
+});
+
+performanceForm.addEventListener('submit', function (e) {
+    e.preventDefault();
+
+    const employee =
+        document.getElementById('performance-employee').value;
+    const performance =
+        document.getElementById('performance-rating').value;
+    const status =
+        document.getElementById('performance-status').value;
+
+    let department = "";
+
+    for (let i = 0; i < employeesTable.children.length; i++) {
+        if (
+            employeesTable.children[i].cells[1].textContent
+            === employee
+        ) {
+            department =
+                employeesTable.children[i].cells[2].textContent;
+            break;
+        }
+    }
+
+    const performanceRow = document.createElement('tr');
+
+    performanceRow.innerHTML = `
+        <td>${performanceTable.children.length + 1}</td>
+        <td>${employee}</td>
+        <td>${department}</td>
+        <td>${performance}</td>
+        <td>${status}</td>
+        <td>
+            <button type="button"
+                class="action-btn delete-performance-btn">
+                <i class="fas fa-trash"></i>
+            </button>
+        </td>
+    `;
+
+    performanceTable.appendChild(performanceRow);
+
+    performanceForm.reset();
+    performanceModal.classList.remove('active');
+});
+
+const cancelPerformance =
+    document.getElementById('cancel-performance');
+
+cancelPerformance.addEventListener('click', function () {
+    performanceForm.reset();
+    performanceModal.classList.remove('active');
+});
+
+const closePerformance =
+    performanceModal.querySelector('.close-btn');
+
+closePerformance.addEventListener('click', function () {
+    performanceForm.reset();
+    performanceModal.classList.remove('active');
+});
+
+performanceTable.addEventListener('click', function (e) {
+    const button = e.target.closest('button');
+
+    if (!button) {
+        return;
+    }
+
+    if (button.classList.contains('delete-performance-btn')) {
+        performanceToDelete =
+            button.parentElement.parentElement;
+
+        confirmationTitle.textContent = 'Delete Performance';
+        confirmationMessage.textContent =
+            'Are you sure you want to delete this performance?';
+
+        confirmationModal.classList.add('active');
+    }
+});
+// ======================== Messages ==========================
+
+const newMessageBtn = document.getElementById('new-message-btn');
+const messageModal = document.getElementById('message-modal');
+const messageForm = document.getElementById('message-form');
+const messagesTable = document
+    .getElementById('messages-table')
+    .getElementsByTagName('tbody')[0];
+
+let messageToDelete = null;
+
+newMessageBtn.addEventListener('click', function () {
+    messageForm.reset();
+    messageModal.classList.add('active');
+});
+
+messageForm.addEventListener('submit', function (e) {
+    e.preventDefault();
+
+    const sender = document.getElementById('message-sender').value;
+    const message = document.getElementById('message-text').value;
+    const status = document.getElementById('message-status').value;
+    const date = new Date().toLocaleDateString();
+
+    const messageRow = document.createElement('tr');
+
+    messageRow.innerHTML = `
+        <td>${messagesTable.children.length + 1}</td>
+        <td>${sender}</td>
+        <td>${message}</td>
+        <td>${date}</td>
+        <td>${status}</td>
+        <td>
+            <button type="button"
+                class="action-btn delete-message-btn">
+                <i class="fas fa-trash"></i>
+            </button>
+        </td>
+    `;
+
+    messagesTable.appendChild(messageRow);
+
+    messageForm.reset();
+    messageModal.classList.remove('active');
+});
+
+const cancelMessage = document.getElementById('cancel-message');
+
+cancelMessage.addEventListener('click', function () {
+    messageForm.reset();
+    messageModal.classList.remove('active');
+});
+
+const closeMessage = messageModal.querySelector('.close-btn');
+
+closeMessage.addEventListener('click', function () {
+    messageForm.reset();
+    messageModal.classList.remove('active');
+});
+
+messagesTable.addEventListener('click', function (e) {
+    const button = e.target.closest('button');
+
+    if (!button) {
+        return;
+    }
+
+    if (button.classList.contains('delete-message-btn')) {
+        messageToDelete = button.parentElement.parentElement;
+
+        confirmationTitle.textContent = 'Delete Message';
+        confirmationMessage.textContent =
+            'Are you sure you want to delete this message?';
+
         confirmationModal.classList.add('active');
     }
 });
