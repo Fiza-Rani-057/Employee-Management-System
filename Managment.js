@@ -531,5 +531,3 @@ employeeSearch.addEventListener('input', ()=> {
     }
 });
 
-//===================== Filter =================
-
