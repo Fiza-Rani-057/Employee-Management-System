@@ -80,9 +80,10 @@ employeeForm.addEventListener('submit', function (e) {
     row.dataset.hireDate = hireDate;
     row.dataset.salary = salary;
 
-    employeesTable.appendChild(row);
-    employeeForm.reset();
-    addEmployeeModal.classList.remove('active');
+   employeesTable.appendChild(row);
+   totalEmployee.textContent = employeesTable.children.length;
+   employeeForm.reset();
+   addEmployeeModal.classList.remove('active');
 });
 
 const closeAddEmployee = document.getElementById('add-employee-modal').getElementsByClassName('close-btn')[0];
@@ -172,6 +173,7 @@ const confirmAction = document.getElementById('confirm-action');
 
 confirmAction.addEventListener('click', function () {
     if (rowToDelete) {
+        totalEmployee.textContent = employeesTable.children.length;
         rowToDelete.remove();
         rowToDelete = null;
         rowToEdit = null;
@@ -395,3 +397,6 @@ if (savedTheme === "dark") {
     });
 
 });
+//    Add employee card 
+
+ let totalEmployee = document.querySelector('#total-employees');
