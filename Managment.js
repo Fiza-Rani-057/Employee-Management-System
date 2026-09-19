@@ -197,6 +197,20 @@ confirmAction.addEventListener('click', function () {
     positionToDelete = null;
     confirmationModal.classList.remove('active');
 }
+ if (leaveToDelete) {
+    leaveToDelete.remove();
+
+    let pendingCount = 0;
+    for (let i = 0; i < leavesTable.children.length; i++) {
+        if (leavesTable.children[i].cells[7].textContent.toLowerCase() === 'pending') {
+            pendingCount++;
+        }
+    }
+
+    pendingLeaves.textContent = pendingCount;
+    leaveToDelete = null;
+}
+
     confirmationModal.classList.remove('active');
 });
 
@@ -719,4 +733,111 @@ closePosition.addEventListener('click', function () {
     positionToEdit = null;
     positionModal.classList.remove('active');
 
+});
+
+// ======================== Leave ==========================
+
+const addLeaveBtn = document.getElementById('add-leave-btn');
+const leaveModal = document.getElementById('leave-modal');
+const leaveForm = document.getElementById('leave-form');
+const leavesTable = document.getElementById('leaves-table').getElementsByTagName('tbody')[0];
+const pendingLeaves = document.getElementById('pending-leaves');
+
+// Add Leave Button
+addLeaveBtn.addEventListener('click', function () {
+    leaveForm.reset();
+    const leaveEmployee = document.getElementById('leave-employee');
+    leaveEmployee.innerHTML = `<option value="">Select Employee</option>`;
+
+    for (let i = 0; i < employeesTable.children.length; i++) {
+        const employeeName = employeesTable.children[i].cells[1].textContent;
+        const option = document.createElement('option');
+        option.value = employeeName;
+        option.textContent = employeeName;
+        leaveEmployee.appendChild(option);
+    }
+    leaveModal.classList.add('active');
+});
+
+// Save Leave
+leaveForm.addEventListener('submit', function (e) {
+    e.preventDefault();
+
+    const employee = document.getElementById('leave-employee').value;
+    const start = document.getElementById('leave-start').value;
+    const end = document.getElementById('leave-end').value;
+    const type = document.getElementById('leave-type').value;
+    const status = document.getElementById('leave-status').value;
+    const reason = document.getElementById('leave-reason').value;
+
+    // Calculate Days
+    const startDate = new Date(start);
+    const endDate = new Date(end);
+    const timeDifference = endDate - startDate;
+    const days = Math.floor(timeDifference / (1000 * 60 * 60 * 24)) + 1;
+
+    // Create Row
+    const leaveRow = document.createElement('tr');
+    leaveRow.innerHTML = `
+        <td>${leavesTable.children.length + 1}</td>
+        <td>${employee}</td>
+        <td>${type}</td>
+        <td>${start}</td>
+        <td>${end}</td>
+        <td>${days}</td>
+        <td>${reason}</td>
+        <td>${status}</td>
+        <td>
+            <button type="button" class="action-btn delete-leave-btn">
+                <i class="fas fa-trash"></i>
+            </button>
+        </td>
+    `;
+
+    leavesTable.appendChild(leaveRow);
+
+    // Pending Leaves Count
+    let pendingCount = 0;
+    for (let i = 0; i < leavesTable.children.length; i++) {
+        if (leavesTable.children[i].cells[7].textContent.toLowerCase() === 'pending') {
+            pendingCount++;
+        }
+    }
+    pendingLeaves.textContent = pendingCount;
+
+    leaveForm.reset();
+    leaveModal.classList.remove('active');
+});
+
+// Cancel Leave
+const cancelLeave = document.getElementById('cancel-leave');
+cancelLeave.addEventListener('click', function () {
+    leaveForm.reset();
+    leaveModal.classList.remove('active');
+});
+
+// Close Leave Modal
+const closeLeave = leaveModal.querySelector('.close-btn');
+closeLeave.addEventListener('click', function () {
+    leaveForm.reset();
+    leaveModal.classList.remove('active');
+});
+
+// Delete Leave
+let leaveToDelete = null;
+
+leavesTable.addEventListener('click', function (e) {
+    const button = e.target.closest('button');
+    if (!button) {
+        return;
+    }
+
+    const row = button.parentElement.parentElement;
+
+    if (button.classList.contains('delete-leave-btn')) {
+        leaveToDelete = row;
+        confirmationTitle.textContent = 'Delete Leave';
+        confirmationMessage.textContent = 'Are you sure you want to delete this leave?';
+        confirmationModal.classList.add('active');
+    }
 });
