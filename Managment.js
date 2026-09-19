@@ -468,45 +468,33 @@ const totalDepartments = document.getElementById('total-departments');
 let departmentToDelete = null;
 let departmentToEdit = null;
 
-
 // Add Department Button
 addDepartmentsBtn.addEventListener('click', () => {
-
     departmentForm.reset();
     departmentToEdit = null;
-
     departmentModal.classList.add('active');
 
 });
 
-
 // Add / Edit Department
 departmentForm.addEventListener('submit', (e) => {
-
     e.preventDefault();
 
     const departmentName = document.getElementById('department-name').value;
     const manager = document.getElementById('department-manager').value;
     const budget = document.getElementById('department-budget').value;
-
-
     // Edit Department
     if (departmentToEdit) {
 
         departmentToEdit.cells[1].textContent = departmentName;
         departmentToEdit.cells[2].textContent = manager || 'Not Assigned';
         departmentToEdit.cells[3].textContent = budget;
-
         departmentToEdit = null;
 
     }
-
-
     // Add Department
     else {
-
         const deptRow = document.createElement('tr');
-
         deptRow.innerHTML = `
             <td>${departmentTable.children.length + 1}</td>
             <td>${departmentName}</td>
@@ -523,70 +511,44 @@ departmentForm.addEventListener('submit', (e) => {
                 </button>
             </td>
         `;
-
         departmentTable.appendChild(deptRow);
-
     }
-
-
     totalDepartments.textContent = departmentTable.children.length;
-
     departmentForm.reset();
     departmentModal.classList.remove('active');
 
 });
 
-
 // Edit / Delete Department
 departmentTable.addEventListener('click', (e) => {
-
     const button = e.target.closest('button');
-
     if (!button) {
         return;
     }
-
     const row = button.parentElement.parentElement;
-
-
     // Delete Department
     if (button.classList.contains('delete-btn')) {
-
         departmentToDelete = row;
-
         confirmationTitle.textContent = 'Delete Department';
-
         confirmationMessage.textContent =
             'Are you sure you want to delete ' +
             row.cells[1].textContent +
             '?';
-
-        confirmationModal.classList.add('active');
-
+       confirmationModal.classList.add('active');
     }
-
-
     // Edit Department
     if (button.classList.contains('edit-btn')) {
-
         departmentToEdit = row;
-
         document.getElementById('department-name').value =
             row.cells[1].textContent;
-
         document.getElementById('department-manager').value =
             row.cells[2].textContent;
-
         document.getElementById('department-budget').value =
             row.cells[3].textContent;
-
         departmentModal.classList.add('active');
-
     }
 
 });
-
-
 // Cancel Department
 const cancelDepartment = document.querySelector('#cancel-department');
 
