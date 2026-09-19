@@ -504,7 +504,7 @@ cancelDepartmentDelete.addEventListener('click', function () {
 //  ==============Search=====================
 const employeeSearch = document.querySelector('#search-input');
 
-employeeSearch.addEventListener('input', function () {
+employeeSearch.addEventListener('input', ()=> {
 
     const searchValue = employeeSearch.value.toLowerCase();
     const rows = employeesTable.children;
@@ -530,3 +530,6 @@ employeeSearch.addEventListener('input', function () {
         }
     }
 });
+
+//===================== Filter =================
+
