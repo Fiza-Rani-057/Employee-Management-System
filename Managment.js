@@ -279,13 +279,11 @@ editEmployeeForm.addEventListener('submit', function (e) {
 //  Themee Toggle 
 
 const savedTheme = localStorage.getItem("theme");
-
 if (savedTheme === "dark") {
     document.body.classList.add("dark-mode");
 }
 //    Charts 
 document.addEventListener("DOMContentLoaded", function () {
-
     const productivityChart = document.getElementById("productivityChart");
 
     new Chart(productivityChart, {
