@@ -1406,3 +1406,34 @@ messagesTable.addEventListener('click', function (e) {
         confirmationModal.classList.add('active');
     }
 });
+//    =====================Setting=====================
+ const tabButtons = document.querySelectorAll('.tab-btn, .tab-btn-active');
+const tabContents = document.querySelectorAll('.tab-content, .tab-content-active');
+
+tabButtons.forEach(function(button) {
+    button.addEventListener('click', function() {
+
+        tabButtons.forEach(function(btn) {
+            btn.classList.remove('tab-btn-active');
+            btn.classList.add('tab-btn');
+        });
+
+        tabContents.forEach(function(content) {
+            content.classList.remove('tab-content-active');
+            content.classList.add('tab-content');
+        });
+
+        button.classList.remove('tab-btn');
+        button.classList.add('tab-btn-active');
+
+        const tabName = button.getAttribute('data-tab');
+
+        document.querySelector(
+            '.tab-content[data-tab="' + tabName + '"]'
+        ).classList.remove('tab-content');
+
+        document.querySelector(
+            '.tab-content[data-tab="' + tabName + '"]'
+        ).classList.add('tab-content-active');
+    });
+});
