@@ -275,18 +275,6 @@ editEmployeeForm.addEventListener('submit', function (e) {
     rowToEdit = null;
 });
 
-const deleteEmployee = document.getElementById('delete-employee');
-
-deleteEmployee.addEventListener('click', function () {
-    if (rowToEdit) {
-        rowToDelete = rowToEdit;
-        confirmationMessage.textContent = 'Are you sure you want to delete ' + rowToEdit.cells[1].textContent + '?';
-        confirmationModal.classList.add('active');
-        document.getElementById('edit-employee-modal').classList.remove('active');
-    }
-});
-
-
 
 //  Themee Toggle 
 
